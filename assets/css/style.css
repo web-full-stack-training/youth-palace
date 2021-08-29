@@ -1,0 +1,149 @@
+#latest-news {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  font-family: "Source Sans Pro", sans-serif !important;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  line-height: 1.5;
+  color: #343531;
+}
+
+#latest-news {
+  font-weight: 300;
+  width: 100%;
+  background-color: #F5F9F6;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+}
+
+#content {
+  height: 355px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#first-ad, #second-ad, #third-ad {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+  padding: 15px;
+  z-index: 1;
+}
+
+#first-ad, #third-ad {
+  margin: 43px;
+}
+
+#medical, #doc, #vac {
+  width: 262px;
+  height: 163px;
+}
+
+h5 {
+  max-width: 262px;
+}
+
+#portrait-one, #portrait-two, #portrait-three {
+  width: 28px;
+  height: 28px;
+}
+
+#name-one, #name-two, #name-three {
+  font-size: 12px;
+  color: black;
+}
+
+#user-one, #user-two, #user-three {
+  display: inline-flex;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+
+#news-one, #news-two, #news-three {
+  padding: 15px 0 10px 15px;
+}
+
+#news-one:hover,
+#news-three:hover,
+#news-two:hover {
+  transition: .3s;
+  color: #00D9A5;
+  cursor: pointer;
+}
+
+#clock-one, #clock-two, #clock-three {
+  font-size: 12px;
+  color: #6D7170;
+}
+
+#small-img-one, #small-img-two, #small-img-three {
+  width: 262px;
+  background-color: white;
+}
+
+#content-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+#read-more {
+  background-color: #00D9A5;
+  color: white;
+  border: white;
+  border-radius: 4px;
+  padding: 8px 24px 8px 24px;
+}
+
+#read-more:hover {
+  transition: .3s;
+  background-color: #596262;
+}
+
+.covid a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #4E5AFE;
+  color: #fff;
+  border-radius: 40px;
+  z-index: 99 !important;
+  margin-top: 10px;
+  margin-left: 8px;
+}
+
+.covid-none {
+  text-decoration: none;
+}
+
+.covid-none:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.img {
+  width: 262px;
+  height: 163px;
+  overflow: hidden;
+}
+
+#medical:hover,
+#doc:hover,
+#vac:hover {
+  transform: scale(1.5);
+  transition-duration: .2s;
+  transition-timing-function: linear;
+  max-width: 262px;
+  max-height: 163px;
+}
