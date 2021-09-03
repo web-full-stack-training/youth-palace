@@ -1,0 +1,10 @@
+.about-bg{
+    background-image: url("../images/bg_image_2.jpg");
+    height: 300px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.members{
+    width: 100%;
+}
