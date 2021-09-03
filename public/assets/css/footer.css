@@ -1,10 +1,10 @@
 @media screen and (max-width: 1024px) and (min-width: 767px){
-    .footer-mama p{
+    .footer-p{
         margin-left: 210px !important;
     }
 }
 @media screen and (max-width: 768px) and (min-width: 424px){
-    .footer-mama p {
+    .footer-p {
         margin-left: 150px !important;
     }
     .footer-one{
@@ -28,11 +28,11 @@
     .footer-mama{
         height: 720px !important;
     }
-    .footer-mama hr{
+    .footer-hr{
         margin-top: 60px !important;
         width: 70% !important;
     }
-    .footer-mama p{
+    .footer-p{
         margin-left: 65px !important;
     }
 }
@@ -40,7 +40,7 @@
     .footer-four{
         margin-left: 45px !important;
     }
-    .footer-mama p{
+    .footer-p{
         font-size: 10px;
     }
 }
@@ -115,7 +115,7 @@ body {
     margin-top: 5px;
 }
 
-.footer-mama hr {
+.footer-hr {
     background-color: #4F5E5B;
     display: flex;
     align-items: flex-end;
@@ -123,13 +123,13 @@ body {
     margin: 0 auto;
 }
 
-.footer-mama p {
+.footer-p {
     margin-left: 370px;
     margin-top: 10px;
     color: white;
 }
 
-.footer-mama p a {
+.footer-p-a {
     color: #07be94;
     text-decoration: none;
 }
