@@ -72,7 +72,7 @@ button {
 
 .abc {
   position: relative;
-  background-image: url("../images/bg_image_1.jpg");
+  background-image: url("../images/bg_image_2.jpg");
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
   height: 500px;
