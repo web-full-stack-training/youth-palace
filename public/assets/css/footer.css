@@ -1,46 +1,46 @@
-@media screen and (max-width: 1024px) and (min-width: 767px){
-    .footer-p{
+@media screen and (max-width: 1024px) and (min-width: 767px) {
+    .footer-p-Copyright {
         margin-left: 210px !important;
-    }
+    } 
 }
-@media screen and (max-width: 768px) and (min-width: 424px){
-    .footer-p {
+@media screen and (max-width: 768px) and (min-width: 424px) {
+    .footer-p-Copyright {
         margin-left: 150px !important;
     }
-    .footer-one{
+    .Company {
         margin-right: 0!important;
     }
-    .footer-two, .footer-three {
+    .More, .Our-partner {
         margin: 15px 0 !important;
     }
-    .footer-four{
+    .Contact {
         margin-left: 65px !important;
     }
 }
-@media screen and (max-width: 425px) and (min-width: 374px){
-    .footer-four-i {
+@media screen and (max-width: 425px) and (min-width: 374px) {
+    .footer-four-Social-Media {
         margin-top: 80px !important;
         margin-left: -129px !important;
     }
-    .footer-con{
+    .footer-con {
         display: grid !important;
     }
-    .footer-mama{
+    .footer-main {
         height: 720px !important;
     }
-    .footer-hr{
+    .footer-bottom-band {
         margin-top: 60px !important;
         width: 70% !important;
     }
-    .footer-p{
+    .footer-p-Copyright {
         margin-left: 65px !important;
     }
 }
-@media screen and (max-width: 375px){
-    .footer-four{
+@media screen and (max-width: 375px) {
+    .footer-four {
         margin-left: 45px !important;
     }
-    .footer-p{
+    .footer-p-Copyright {
         font-size: 10px;
     }
 }
@@ -48,7 +48,7 @@ body {
     margin: 0;
 }
 
-.footer-mama {
+.footer-main {
     width: 100%;
     height: 450px;
     background-color: #2D3B38;
@@ -72,24 +72,27 @@ body {
     padding: 0;
 }
 
-.footer-con ul {
+.company-ul, .more-ul, .Our-partner-ul, .contact-ul {
     list-style: none;
     color: white;
     padding: 0;
 }
 
-.footer-con ul li {
-    margin: 10px 0;
+.company-ul, .more-ul, .Our-partner-ul, .contact-ul li {
+     margin: 10px 0;
+     color: white;
 }
 
-.footer-con ul li a {
-    color: white;
+.company-ul, .more-ul, .Our-partner-ul, .contact-ul li a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
     transition: all .2s ease;
 }
+.company-ul li {
+    color: white;
+}
 
-.footer-con ul li a:hover {
+.company-ul, .more-ul, .Our-partner-ul, .contact-ul li a:hover {
     color: white;
 }
 
@@ -115,7 +118,7 @@ body {
     margin-top: 5px;
 }
 
-.footer-hr {
+.footer-bottom-band {
     background-color: #4F5E5B;
     display: flex;
     align-items: flex-end;
@@ -123,7 +126,7 @@ body {
     margin: 0 auto;
 }
 
-.footer-p {
+.footer-p-Copyright {
     margin-left: 370px;
     margin-top: 10px;
     color: white;
@@ -134,7 +137,7 @@ body {
     text-decoration: none;
 }
 
-.footer-four-h {
+.footer-four-h-Social-Media {
     margin-top: 40px;
 }
 .footer-one-block{
