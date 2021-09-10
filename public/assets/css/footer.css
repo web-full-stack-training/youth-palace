@@ -83,7 +83,7 @@ body {
      color: white;
 }
 
-.company-ul, .more-ul, .Our-partner-ul, .contact-ul li a {
+.help-links{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
     transition: all .2s ease;
@@ -132,7 +132,7 @@ body {
     color: white;
 }
 
-.footer-p-a {
+.MAcode-text {
     color: #07be94;
     text-decoration: none;
 }
