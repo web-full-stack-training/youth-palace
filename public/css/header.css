@@ -1,0 +1,193 @@
+.first-part-header {
+    display: flex;
+    position: relative;
+    width: 969px;
+    height: 64px;
+    background: #423E75;
+}
+
+.first {
+    position: absolute;
+    width: 125px;
+    height: 24px;
+    left: 8px;
+    top: calc(50% - 24px / 2);
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.icons-f {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.icons-i {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    Top: 35px;
+    Left: 306px;
+    color: white;
+}
+
+.icons-t {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.social {
+    position: absolute;
+    left: 130px;
+    top: 24px;
+}
+
+.phone {
+    position: absolute;
+    right: 25.28%;
+    bottom: 25.18%;
+    color: white;
+    display: flex;
+    top: 24px;
+    left: 370px;
+}
+
+.phone i {
+    margin-top: -4px;
+}
+
+.phone-number {
+    position: absolute;
+    width: 119px;
+    height: 32px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 25px;
+    bottom: -16px;
+    color: #FFFFFF;
+}
+
+.menu-adress {
+    position: absolute;
+    color: white;
+    height: 40px;
+    left: 540px;
+    display: flex;
+}
+
+.location {
+    position: relative;
+    top: 21px;
+    margin-right: 7px;
+}
+
+.facebook {
+    color: white;
+    width: 11px;
+    height: 10px;
+}
+
+.insta {
+    color: white;
+    margin: 0 15px;
+    width: 11px;
+    height: 10px;
+}
+
+.twitter {
+    color: white;
+    width: 11px;
+    height: 10px;
+}
+
+.language {
+    position: absolute;
+    margin-left: 849px;
+    color: white;
+    top: 21px;
+    font-size: 20px;
+}
+
+.second-header {
+    position: relative;
+    width: 969px;
+    height: 64px;
+    background: #FFFFFF;
+
+}
+
+.second-header img {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 5px;
+    top: 3px;
+    background: url('photo/youthpalacelogo 1.png');
+}
+
+.Youth {
+    position: absolute;
+    width: 187px;
+    height: 42px;
+    left: 80px;
+
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    /* or 133% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #7FFFD4;
+
+}
+
+.palace {
+    display: flex;
+    position: relative;
+    left: 150px;
+}
+
+.palace h2 {
+    margin-top: 24px;
+}
+
+.header-href {
+    position: absolute;
+    height: 24px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 32px;
+    color: #6C5CE7;
+    top: 20px;
+    left: 340px;
+}
+
+.header-href a {
+    text-decoration: none;
+    margin-left: 15px;
+}
