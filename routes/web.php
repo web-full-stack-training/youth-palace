@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
-
+Route::get('/send-message', 'SendEmailController@index');
+Route::post('/send-message/send', 'SendEmailController@send');
 
