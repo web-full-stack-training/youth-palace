@@ -1,8 +1,7 @@
 .about-us {
     position: relative;
-    width: 969px;
+    width: 100%;
     height: 601px;
-    border: 1px solid black;
     background: #FFFFFF;
     mix-blend-mode: normal;
     display: flex;
@@ -14,29 +13,22 @@
     width: 350px;
     height: 350px;
     margin: 131px 596px 120px 23px;
-    background: url('imgbin-volunteering-portable-network-graphics-community-computer-icons-heart-volunteers-g11EER6PJ9c7hQ7WWSyiSrfA1-removebg-preview 1.png');
 }
 
 .test {
-
     position: absolute;
     width: 163px;
     height: 24px;
-
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
     font-size: 28px;
     line-height: 24px;
-    /* identical to box height, or 86% */
-
     display: flex;
     align-items: flex-end;
     text-align: center;
     letter-spacing: 0.25px;
-
     color: #000000;
-
 }
 
 .content {
@@ -48,12 +40,10 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 24px;
-    /* or 133% */
     margin-top: 60px;
     display: flex;
     align-items: flex-end;
     letter-spacing: 0.25px;
-
     color: #000000;
 }
 
@@ -63,5 +53,4 @@
 
 .content p {
     margin-right: 80px;
-
 }

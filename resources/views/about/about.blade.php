@@ -1,9 +1,10 @@
 @extends('app')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
+    <link rel="stylesheet" href="{{asset('css/about.css')}}">
+
     <div class="about-us">
         <h1 class="info">About Us</h1>
-        <img src="{{asset('/photo/imgbin-volunteering-portable-network-graphics-community-computer-icons-heart-volunteers-g11EER6PJ9c7hQ7WWSyiSrfA1-removebg-preview 1.png)')}}">
+        <img src="{{ asset('photo/imgbin-volunteering-portable-network-graphics-community-computer-icons-heart-volunteers-g11EER6PJ9c7hQ7WWSyiSrfA1-removebg-preview 1.png)') }}">
         <div class="text">
             <h2> Who are we</h2>
             <div class="content">
