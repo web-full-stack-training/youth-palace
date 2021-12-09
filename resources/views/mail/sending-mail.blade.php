@@ -3,10 +3,11 @@
 
 The body of your message.
 
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => '999@gmail.com'])
 Button Text
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+<div>
+    Name: {{ $name }}
+</div>
 @endcomponent

@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\SendingMail;
 use App\Http\Requests\ContactFormRequest;
 use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -30,4 +31,12 @@ class ContactController extends Controller
             'message' => 'Your message sent successfully'
         ]);
     }
-}
+
+
+    public function mail()
+    {
+        $name = '';
+        Mail::to('999leap@gmail.com')->send(new SendingMail($name));
+
+        return 'Email sent Successfully';
+    }
