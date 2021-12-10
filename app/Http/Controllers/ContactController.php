@@ -26,17 +26,11 @@ class ContactController extends Controller
             'message' => $inputs['message']
         ]);
 
+        Mail::to($inputs['email'])->send(new SendingMail($inputs['user_name']));
+
         return response()->json([
             'status' => true,
             'message' => 'Your message sent successfully'
         ]);
     }
-
-
-    public function mail()
-    {
-        $name = '';
-        Mail::to('999leap@gmail.com')->send(new SendingMail($name));
-
-        return 'Email sent Successfully';
-    }
+}
