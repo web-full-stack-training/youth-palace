@@ -41,6 +41,6 @@
         <a href="#">Volunteering</a>
         <a href="#">Media</a>
         <a href="#">Feedback</a>
-        <a href="#">About as</a>
+        <a href="/about" class="{{ (Request::path() === 'about' ? 'active-menu' : '') }}">About as </a>
     </div>
 </div>
