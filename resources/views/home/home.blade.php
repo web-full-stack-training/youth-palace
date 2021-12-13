@@ -6,10 +6,10 @@
         <img class="main-img" src="{{asset('images/bg_image_2%201.jpg')}}">
         <div class="welcome-text">
             <p class="welcome-text-title">
-                LET'S MAKE YOUR LIFE HOPPIER
+                LET'S MAKE YOUR LIFE HAPPIER
             </p>
             <p class="welcome-text-description">
-                HEALITY LIVING
+                HEALTHY LIVING
             </p>
         </div>
 
@@ -19,9 +19,9 @@
             <div class="about-div">
                 <p class="about-p-header">About Pure Hearts</p>
                 <div class="first-line-about">
-                    <img class="children" src="{{asset(' images/about-1%201.png')}}">
-                    <img class="red-heart" src="{{asset('images/heart-2%201.png')}}">
-                    <img class="green-heart" src="{{asset('images/heart-3%201.png')}}">
+                    <img class="children" src="{{asset('images/about.png')}}">
+                    <img class="red-heart" src="{{asset('images/red-heart.png')}}">
+                    <img class="green-heart" src="{{asset('images/green-heart.png')}}">
                 </div>
                 <div>
                     <p class="text-about">
@@ -37,7 +37,7 @@
                 </div>
                 <div class="little-divs-about">
                     <div class="little-div-first">
-                        <img>
+                        <img src="{{asset('images/volunteers.png')}}">
                         <p>
                             357
                         </p>
@@ -46,7 +46,7 @@
                         </h2>
                     </div>
                     <div class="little-div-second">
-                        <img>
+                        <img src="{{asset('images/beneficiaries.png')}}">
                         <p>
                             1907
                         </p>
@@ -153,7 +153,7 @@
                     <h2 class="our-works-h2">Our Works</h2>
                     <div class="our-works">
                         <div class="first-child-our-works js">
-                            <img src="{{asset('25%20Ways%20to%20Volunteer%20in%20Your%20Community%201.png')}}" alt="">
+                            <img src="{{asset('images/volunteer-in-your-community.png')}}" alt="">
                             <h2>
                                 Reusable components available for every layout
                             </h2>
@@ -165,7 +165,7 @@
                             </button>
                         </div>
                         <div class="second-child-our-works js">
-                            <img src="{{asset('Cheap-Affordable-Volunteer-Programs-Header%201.png')}}" alt="">
+                            <img src="{{asset('images/cheap-affordable-volunteer-programs-header.png')}}" alt="">
                             <h2>
                                 Reusable components available for every layout
                             </h2>
@@ -177,13 +177,13 @@
                             </button>
                         </div>
                         <div class="first-child-our-works-first js">
-                            <img src="{{asset('25%20Ways%20to%20Volunteer%20in%20Your%20Community%201.png')}}" alt="">
+                            <img src="{{asset('images/volunteer-in-your-community.png')}}" alt="">
                             <button type="button">
                                 Read more
                             </button>
                         </div>
                         <div class="second-child-our-works-second js">
-                            <img src="{{asset('Cheap-Affordable-Volunteer-Programs-Header%201.png')}}" alt="">
+                            <img src="{{asset('images/cheap-affordable-volunteer-programs-header.png')}}" alt="">
                             <button type="button">
                                 Read more
                             </button>
@@ -206,7 +206,7 @@
                     <div class="test">
                         <div class="latest-news-first-part">
                             <div class="col latest">
-                                <img src="{{asset('images (2) 1.jpg')}}" alt="">
+                                <img src="{{asset('images/volunteers-needed.jpg')}}" alt="">
                                 <h3>
                                     Made by reusable components
                                 </h3>
@@ -257,7 +257,7 @@
 
 
                             <div class="col latest" style="margin-left: 20px">
-                                <img src="{{asset('images/images (2) 1.jpg')}}" alt="">
+                                <img src="{{asset('images/volunteers-needed.jpg')}}" alt="">
                                 <button type="button">
                                     Read more
                                 </button>

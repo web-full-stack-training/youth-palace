@@ -30,7 +30,7 @@
 
 .welcome-text-description {
     position: absolute;
-    width: 385px;
+    width: 400px;
     height: 41px;
     left: 77px;
     top: 211px;
@@ -90,7 +90,6 @@
     position: absolute;
     width: 85px;
     height: 68px;
-    background: url('images/heart-2 1.png');
     margin: 76px 619px 442px 265px;
 }
 
@@ -98,7 +97,6 @@
     position: absolute;
     width: 40px;
     height: 33px;
-    background: url('images/heart-3 1.png');
     margin: 135px 509px 418px 330px;
 }
 
@@ -158,7 +156,6 @@
     width: 100px;
     height: 100px;
     margin: 6px 17px 99px 18px;
-    background: url('images/adoption-png-3-removebg-preview 1.png');
     border-radius: 50%;
 }
 
@@ -199,7 +196,6 @@
     width: 96.26px;
     height: 100px;
     margin: 0 18.74px 105px 20px;
-    background: url('images/242-2422051_adoption-grants-heart-in-hand-icon-removebg-preview 1.png');
     border-radius: 50%;
 }
 
