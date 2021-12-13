@@ -178,12 +178,24 @@
                         </div>
                         <div class="first-child-our-works-first js">
                             <img src="{{asset('images/volunteer-in-your-community.png')}}" alt="">
+                            <h2>
+                                Reusable components available for every layout
+                            </h2>
+                            <p>
+                                Let me explain the meaning reusable component as I feel it contextually.
+                            </p>
                             <button type="button">
                                 Read more
                             </button>
                         </div>
                         <div class="second-child-our-works-second js">
                             <img src="{{asset('images/cheap-affordable-volunteer-programs-header.png')}}" alt="">
+                            <h2>
+                                Reusable components available for every layout
+                            </h2>
+                            <p>
+                                Let me explain the meaning reusable component as I feel it contextually.
+                            </p>
                             <button type="button">
                                 Read more
                             </button>
@@ -258,25 +270,48 @@
 
                             <div class="col latest" style="margin-left: 20px">
                                 <img src="{{asset('images/volunteers-needed.jpg')}}" alt="">
+                                <h3>
+                                    Made by reusable components
+                                </h3>
+                                <p>
+                                    Let me explain the meaning reusable component as I feel it contextually.
+                                </p>
                                 <button type="button">
                                     Read more
                                 </button>
                             </div>
                             <div class="col latest">
                                 <img src="{{asset('images/community-award-2%201.jpg')}} " alt="">
+                                <h3>
+                                    Made by reusable components
+                                </h3>
+                                <p>
+                                    Let me explain the meaning reusable component as I feel it contextually.
+                                </p>
                                 <button type="button">
                                     Read more
                                 </button>
                             </div>
                             <div class="col latest">
-                                <img src="{{asset('images/prepare-for-a-successful-volunteer-program-in-3-thoughtful-steps-588a393c7d0b5%201.jpg')}} "
-                                     alt="">
+                                <img src="{{asset('images/prepare-for-a-successful-volunteer-program-in-3-thoughtful-steps-588a393c7d0b5%201.jpg')}} " alt="">
+                                <h3>
+                                    Made by reusable components
+                                </h3>
+                                <p>
+                                    Let me explain the meaning reusable component as I feel it contextually.
+                                </p>
                                 <button type="button">
                                     Read more
                                 </button>
                             </div>
                             <div class="col latest">
                                 <img src=" {{asset('images/Youth-for-Integration-India-2%201.jpg')}}" alt="">
+                                <h3>
+                                    Made by reusable components
+                                </h3>
+                                <p>
+                                    Let me explain the meaning reusable component as I feel it contextually.
+                                </p>
                                 <button type="button">
                                     Read more
                                 </button>
