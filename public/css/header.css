@@ -1,171 +1,73 @@
-.first-part-header {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 64px;
+.header {
     background: #423E75;
-    justify-content: space-around;
+    padding: 15px 5px;
 }
 
-.first {
-    width: 125px;
-    height: 24px;
-    margin-left: 8px;
-    top: calc(50% - 24px / 2);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 32px;
+.header .social-medias {
     display: flex;
     align-items: center;
-    text-align: center;
-    color: #FFFFFF;
+    margin-left: 15px;
 }
 
-.icons-f {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    color: white;
-}
-
-.icons-i {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    Top: 35px;
-    Left: 306px;
-    color: white;
-}
-
-.icons-t {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    color: white;
-}
-
-.social {
-    margin-left: 130px;
-    margin-top: -35px;
-}
-
-.phone {
-    color: white;
-    display: flex;
-    margin: 24px 25.28% 25.18% 370px;
-}
-
-.phone i {
-    margin-top: -4px;
-}
-
-.phone-number {
-    width: 119px;
-    height: 32px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 32px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-left: 20px;
-    margin-top: -10px;
-    color: #FFFFFF;
-}
-
-.menu-adress {
-    color: white;
-    height: 40px;
-    display: flex;
-    margin-top: -305px;
-    margin-left: 520px;
-}
-
-.location {
-    position: relative;
-    top: 21px;
-    margin-right: 7px;
-}
-
-.facebook {
-    color: white;
-    width: 11px;
-    height: 10px;
-}
-
-.insta {
-    color: white;
-    margin: 0 15px;
-    width: 11px;
-    height: 10px;
-}
-
-.twitter {
-    color: white;
-    width: 11px;
-    height: 10px;
-}
-
-.language {
-    margin-left: 849px;
-    color: white;
-    margin-top: -25px;
+.header .social-medias i, .header .right-side i {
+    margin-right: 15px;
     font-size: 20px;
+    color: #fff;
 }
 
-.second-header {
-    position: relative;
+.header .right-side i {
+    margin-right: 5px;
+}
+
+.header .social-medias i {
+    cursor: pointer;
+}
+
+.sub-header {
     width: 100%;
     height: 64px;
     background: #FFFFFF;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 10px;
 }
 
-.second-header img {
-    width: 58px;
-    height: 58px;
-}
-
-.Youth {
-    width: 187px;
-    height: 42px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 29px;
-    line-height: 32px;
+.sub-header .site-logo {
     display: flex;
     align-items: center;
-    text-align: center;
+}
+
+.sub-header .site-logo p {
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sub-header .site-logo > p:nth-of-type(1) {
     color: #7FFFD4;
-    margin-left: 20px;
-
+    margin-right: 5px;
 }
 
-.youth-palace {
+.header-menus {
     display: flex;
-    position: relative;
-}
-
-.palace {
-    margin-left: -100px;
-}
-
-.header-href {
-    height: 24px;
+    align-items: center;
+    height: 100%;
+    padding-right: 15px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 32px;
     color: #6C5CE7;
-    margin-left: 280px;
-    margin-top: 25px;
+    transition: all .3s ease;
 }
 
-.header-href a {
+.header-menus a {
     text-decoration: none;
-    margin-left: 15px;
+    margin-left: 11px;
+}
+
+.header-menus a:hover {
+    text-decoration: underline;
+    color: #685ad0;
 }
