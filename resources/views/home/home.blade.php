@@ -1,5 +1,6 @@
 @extends('app')
 @section('content')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
     <div id="header-background-image">
@@ -16,100 +17,126 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="about-div">
+            <div class="about-div row d-flex justify-content-center">
                 <p class="about-p-header">About Pure Hearts</p>
-                <div class="first-line-about">
-                    <img class="children" src="{{asset('images/about.png')}}">
-                    <img class="red-heart" src="{{asset('images/red-heart.png')}}">
-                    <img class="green-heart" src="{{asset('images/green-heart.png')}}">
+                <div class="col-3">
+                    <div class="first-line-about d-flex justify-content-center">
+                        <img class="children" src="{{ asset('images/about.png') }}">
+                        <img class="red-heart" src="{{ asset('images/red-heart.png') }}">
+                        <img class="green-heart" src="{{ asset('images/green-heart.png') }}">
+                    </div>
                 </div>
-                <div>
-                    <p class="text-about">
-                        Here to Bring People Together<br>
-                        to Help
-                    </p>
+                <div class="col-3">
+                    <div class="d-flex justify-content-center mt-4">
+                        <p class="text-about">
+                            Here to Bring People Together<br>
+                            to Help
+                        </p>
 
-                    <p class="text-about-second">
-                        The majority have suffered alteration all injected humours randomises.
-                        <br><br>
-                        There are many variations of passages of lorem ipsum available, but the majority have suffered alteration all form injected humours randomises don't look even slightly belvable.
-                    </p>
-                </div>
-                <div class="little-divs-about">
-                    <div class="little-div-first">
-                        <img src="{{asset('images/volunteers.png')}}">
-                        <p>
-                            357
+                        <p class="text-about-second">
+                            The majority have suffered alteration all injected humours randomises.
+                            <br><br>
+                            There are many variations of passages of lorem ipsum available, but the majority have suffered alteration all form injected humours randomises don't look even slightly belvable.
                         </p>
-                        <h2>
-                            Volunteers
-                        </h2>
                     </div>
-                    <div class="little-div-second">
-                        <img src="{{asset('images/beneficiaries.png')}}">
-                        <p>
-                            1907
-                        </p>
-                        <h2>
-                            Beneficiaries
-                        </h2>
+                </div>
+                <div class="col-2">
+                    <div class="little-divs-about d-flex justify-content-center mt-3">
+                        <div class="little-div-first d-flex justify-content-center align-items-center flex-column">
+                            <img src="{{asset('images/volunteers.png')}}" width="110px" height="110px">
+                            <p>
+                                357
+                            </p>
+                            <h2>
+                                Volunteers
+                            </h2>
+                        </div>
+                        <div class="little-div-second d-flex justify-content-center align-items-center flex-column">
+                            <img src="{{asset('images/beneficiaries.png')}}" width="100px" height="100px">
+                            <p>
+                                1907
+                            </p>
+                            <h2>
+                                Beneficiaries
+                            </h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-12">
-            <div class="charity-With-Difference-div">
+
+        <div class="col-12 charity-With-Difference-header">
+            <div class="charity-With-Difference-div row d-flex justify-content-center">
                 <h2> Charity With Difference </h2>
-                <div class="first-line">
-                    <div class="first-line-child">
-                        <img src="{{asset('images/feature-v1-1%201.png')}}">
+                <div class="col-2">
+                    <div class="first-line row ">
+                        <div class="first-line-child">
+                            <img src="images/feature-v1-1%201.png" width="125px" height="110px">
+                        </div>
+                        <div class="first-line-child-text">
+                            <h2 class="mt-1">
+                                Get Inspire And Help
+                            </h2>
+                            <p>
+                                Please donate to <br>
+                                change the world if <br>
+                                you are inspired by us.
+                            </p>
+                        </div>
+
+                        <button type="button">
+                            Read more
+                        </button>
                     </div>
-                    <h2>
-                        Get Inspire And Help
-                    </h2>
-                    <p>
-                        Please donate to <br>
-                        change the world if <br>
-                        you are inspired by us.
-                    </p>
-                    <button type="button">
-                        Read more
-                    </button>
                 </div>
-                <div class="second-line">
-                    <div class="second-line-child">
-                        <img src="{{asset('images/feature-v1-2%201.png')}}">
+                <div class="col-2">
+                    <div class="second-line row" style="margin-left: 30px">
+                        <div class="second-line-child">
+                            <img src="images/feature-v1-2%201.png">
+                        </div>
+                        <div class="second-line-child-text">
+                            <h2>
+                                Send Us Donations
+                            </h2>
+                            <p>
+                                Want to help with this<br>
+                                pandemic, please join<br>
+                                us as a volunteer.
+                            </p>
+                        </div>
+
+                        <button type="button">
+                            Read more
+                        </button>
                     </div>
-                    <h2>
-                        Send Us Donations
-                    </h2>
-                    <p>
-                        Want to help with this<br>
-                        pandemic, please join<br>
-                        us as a volunteer.
-                    </p>
-                    <button type="button">
-                        Read more
-                    </button>
                 </div>
-                <div class="third-line">
-                    <div class="third-line-child">
-                        <img src="{{asset('images/feature-v1-3%201.png')}}">
+                <div class="col-2">
+                    <div class="third-line row " style="margin-left: 60px">
+                        <div class="third-line-child">
+                            <img src="images/feature-v1-3%201.png">
+                        </div>
+                        <div class="third-line-child-text">
+                            <h2>
+                                Send Us Donations
+                            </h2>
+                            <p>
+                                Want to help with this<br>
+                                pandemic, please join<br>
+                                us as a volunteer.
+                            </p>
+                        </div>
+                        <button type="button">
+                            Read more
+                        </button>
                     </div>
-                    <h2>
-                        Send Us Donations
-                    </h2>
-                    <p>
-                        Want to help with this<br>
-                        pandemic, please join<br>
-                        us as a volunteer.
-                    </p>
-                    <button type="button">
-                        Read more
-                    </button>
                 </div>
+
+
+
             </div>
+
         </div>
+
         <div class="col-12">
             <div class="our-mission-div">
                 <h2> Our Mission & Goals </h2>
@@ -147,6 +174,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-12">
             <div class="our-works-container">
                 <div class="content">
@@ -211,6 +239,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-12">
             <div class="latest-news-container">
                 <div class="latest-news">

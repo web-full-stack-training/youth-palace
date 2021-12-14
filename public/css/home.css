@@ -1,3 +1,6 @@
+body {
+    background-color: #7FFFD4;
+}
 #header-background-image .main-img {
     position: relative;
     width: 100%;
@@ -73,39 +76,37 @@
     margin: 0;
 }
 
-.about-div div {
-    position: absolute;
-    left: 23.9%;
-}
-
 .children {
     position: absolute;
-    width: 380px;
-    height: 382px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
-    margin: 131px 574px 73px 15px;
+    top: 25%;
+    left: 20%;
 }
 
 .red-heart {
     position: absolute;
-    width: 85px;
-    height: 68px;
-    margin: 76px 619px 442px 265px;
+    top: 15%;
+    left: 35%;
+    width: 95px;
+    height: 80px;
 }
 
 .green-heart {
     position: absolute;
-    width: 40px;
-    height: 33px;
-    margin: 135px 509px 418px 330px;
+    top: 28%;
+    left: 39%;
+    width: 50px;
+    height: 45px;
 }
 
 .text-about {
-
     position: absolute;
-    width: 219px;
+    top: 20%;
+    left: 47%;
+    width: 380px;
     height: 90px;
-    font-family: Inter;
     font-style: normal;
     font-weight: bold;
     font-size: 25px;
@@ -114,12 +115,13 @@
     align-items: center;
     letter-spacing: 0.25px;
     color: #000000;
-    margin: 84px 289px 412px 461px;
 }
 
 .text-about-second {
     position: absolute;
-    width: 318px;
+    top: 36%;
+    left: 47%;
+    width: 335px;
     height: 240px;
     font-family: sans-serif;
     font-style: normal;
@@ -130,37 +132,29 @@
     align-items: flex-end;
     letter-spacing: 0.25px;
     color: #000000;
-    margin: 180px 190px 166px 461px;
 }
 
 .little-div-first {
     position: absolute;
-    width: 135px;
+    top: 22%;
+    left: 72%;
+    width: 150px;
     height: 205px;
-    margin: 88px 32px 293px 802px;
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .little-div-second {
     position: absolute;
-    width: 135px;
+    top: 62%;
+    left: 72%;
+    width: 150px;
     height: 205px;
-    margin: 327px 32px 54px 802px;
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.little-div-first img {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    margin: 6px 17px 99px 18px;
-    border-radius: 50%;
-}
-
 .little-div-first p {
-    position: absolute;
     width: 35px;
     height: 24px;
     font-family: system-ui;
@@ -171,12 +165,10 @@
     display: flex;
     align-items: flex-end;
     letter-spacing: 0.25px;
-    margin: 114px 49px 67px 51px;
     color: #EF831F;
 }
 
 .little-div-first h2 {
-    position: absolute;
     width: 99px;
     height: 24px;
     font-family: sans-serif;
@@ -187,20 +179,10 @@
     display: flex;
     align-items: flex-end;
     letter-spacing: 0.25px;
-    margin: 162px 18px 19px 18px;
     color: #000000;
 }
 
-.little-div-second img {
-    position: absolute;
-    width: 96.26px;
-    height: 100px;
-    margin: 0 18.74px 105px 20px;
-    border-radius: 50%;
-}
-
 .little-div-second p {
-    position: absolute;
     width: 45px;
     height: 24px;
     font-family: system-ui;
@@ -211,12 +193,10 @@
     display: flex;
     align-items: flex-end;
     letter-spacing: 0.25px;
-    margin: 103px 44px 78px 46px;
     color: #EF831F;
 }
 
 .little-div-second h2 {
-    position: absolute;
     width: 119px;
     height: 24px;
     font-family: sans-serif;
@@ -227,76 +207,68 @@
     display: flex;
     align-items: flex-end;
     letter-spacing: 0.25px;
-    margin: 151px 7px 30px 9px;
     color: #000000;
 }
 
-.charity-With-Difference-div {
+.charity-With-Difference-header {
     position: relative;
     width: 100%;
-    height: 573px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     mix-blend-mode: normal;
-    margin-top: 12px;
+    margin-top: 15px;
+    height: 650px;
 }
 
 .charity-With-Difference-div h2 {
-    position: absolute;
-    width: 352px;
-    height: 24px;
-    left: 40%;
-    top: 25px;
+    margin-top: 15px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
     line-height: 24px;
-    display: flex;
-    align-items: flex-end;
     text-align: center;
     letter-spacing: 0.25px;
-
     color: #000000;
 }
 
-.first-line {
-    position: absolute;
-    width: 250px;
-    height: 404px;
+.first-line, .second-line, .third-line {
+    width: 270px;
+    min-height: 404px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    margin: 100px 683px 69px 36px;
-    left: 23.9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 
-.first-line-child {
+.first-line-child, .second-line-child, .third-line-child {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 215px;
     background: #FFFFFF;
     mix-blend-mode: screen;
     box-shadow: 0 4px 4px gray;
+    width: 250px;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.first-line-child img {
-    margin: 37px 25.66px 252px 70px;
+.first-line-child-text, .second-line-child-text, .third-line-child-text  {
+    position: relative;
+    z-index: 2;
+    margin-top: 300px !important;
+    margin-left: 20px;
 }
 
-.first-line h2 {
-    position: absolute;
+.first-line h2, .second-line h2, .third-line h2  {
     width: 201px;
     height: 24px;
-    left: 25px;
-    top: 202px;
-    margin: 13px 0 0 0;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    display: flex;
-    align-items: flex-end;
     letter-spacing: 0.2px;
     color: #000000;
 }
@@ -306,14 +278,12 @@
     width: 197px;
     height: 72px;
     left: 27px;
-    top: 253px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 24px;
     display: flex;
-    align-items: flex-end;
     text-align: center;
     letter-spacing: 0.2px;
     color: #000000;
@@ -321,14 +291,12 @@
 
 .first-line button, .third-line button, .second-line button {
     position: absolute;
-    margin: 372px 50px 0 50px;
     width: 150px;
     height: 32px;
     border: 1px solid #ADADAD;
     box-sizing: border-box;
     border-radius: 16px;
-    top: 8px;
-    bottom: 8px;
+    top: 125%;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -341,92 +309,6 @@
     color: #6C5CE7;
     background-color: white;
 }
-
-.second-line {
-    position: absolute;
-    width: 250px;
-    height: 404px;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    margin: 100px 368px 69px 351px;
-    left: 23.9%;
-}
-
-.second-line-child {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 215px;
-    background: #FFFFFF;
-    mix-blend-mode: screen;
-    box-shadow: 0 4px 4px gray;
-}
-
-.second-line-child img {
-    margin: 37px 25.66px 252px 70px;
-}
-
-.second-line h2 {
-    position: absolute;
-    width: 201px;
-    height: 24px;
-    left: 25px;
-    top: 202px;
-    margin: 13px 0 0 0;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    display: flex;
-    align-items: flex-end;
-    letter-spacing: 0.2px;
-    color: #000000;
-}
-
-.third-line {
-    position: absolute;
-    width: 250px;
-    height: 404px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    margin: 100px 44px 69px 675px;
-    left: 23.9%;
-}
-
-.third-line-child {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 215px;
-    background: #FFFFFF;
-    mix-blend-mode: screen;
-    box-shadow: 0 4px 4px gray;
-}
-
-.third-line-child img {
-    margin: 37px 25.66px 252px 70px;
-}
-
-.third-line h2 {
-    position: absolute;
-    width: 201px;
-    height: 24px;
-    left: 25px;
-    top: 202px;
-    margin: 13px 0 0 0;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    display: flex;
-    align-items: flex-end;
-    letter-spacing: 0.2px;
-    color: #000000;
-}
-
 .our-mission-div {
     position: relative;
     width: 100%;
@@ -575,6 +457,7 @@
     justify-content: center;
     align-items: center;
     transform: translateX(0);
+    margin-top: 15px;
 }
 
 .our-works-h2 {
@@ -785,12 +668,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .content {
     position: relative;
     width: 969px;
-    height: 550px;
+    height: 615px;
     mix-blend-mode: normal;
     display: flex;
     justify-content: center;
@@ -844,6 +728,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 15px;
 }
 
 .latest-news-first-part {
