@@ -1,3 +1,5 @@
+@extends('app')
+@section('content')
 <link rel="stylesheet" href="{{asset('css/media.css')}}">
 <h1 class="page-name">Media</h1>
 <div class="container-fluid news-top ">
@@ -50,3 +52,4 @@
         <div class="col-1 "></div>
     </div>
 </div>
+@endsection

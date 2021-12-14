@@ -8,6 +8,6 @@ class MediaController extends Controller
 {
     public function index()
     {
-        return view('media');
+        return view('media.media');
     }
 }
