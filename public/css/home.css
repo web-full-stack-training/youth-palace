@@ -1,6 +1,3 @@
-body {
-    background-color: #7FFFD4;
-}
 #header-background-image .main-img {
     position: relative;
     width: 100%;
@@ -51,62 +48,45 @@ body {
 .about-div {
     position: relative;
     width: 100%;
-    height: 586px;
     background: #FFFFFF;
     mix-blend-mode: normal;
-    margin-top: 12px;
+    margin: 10px 0;
+    padding: 70px 35px;
 }
 
 .about-p-header {
-    position: absolute;
-    width: 275px;
-    height: 24px;
-    left: 45%;
-    top: 17px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
     line-height: 24px;
     display: flex;
-    align-items: flex-end;
-    text-align: center;
-    letter-spacing: 0.25px;
+    align-items: center;
     color: #000000;
-    margin: 0;
+    margin-bottom: 59px;
+    justify-content: center;
 }
 
 .children {
-    position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 65%;
     border-radius: 50%;
-    top: 25%;
-    left: 20%;
 }
 
 .red-heart {
     position: absolute;
-    top: 15%;
-    left: 35%;
-    width: 95px;
-    height: 80px;
+    top: 1%;
+    width: 12%;
+    right: 17%;
 }
 
 .green-heart {
     position: absolute;
-    top: 28%;
-    left: 39%;
-    width: 50px;
-    height: 45px;
+    top: 14%;
+    right: 13%;
+    width: 8%;
 }
 
 .text-about {
-    position: absolute;
-    top: 20%;
-    left: 47%;
-    width: 380px;
-    height: 90px;
     font-style: normal;
     font-weight: bold;
     font-size: 25px;
@@ -118,11 +98,6 @@ body {
 }
 
 .text-about-second {
-    position: absolute;
-    top: 36%;
-    left: 47%;
-    width: 335px;
-    height: 240px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -135,19 +110,14 @@ body {
 }
 
 .little-div-first {
-    position: absolute;
-    top: 22%;
-    left: 72%;
     width: 150px;
     height: 205px;
+    margin-bottom: 5px;
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .little-div-second {
-    position: absolute;
-    top: 62%;
-    left: 72%;
     width: 150px;
     height: 205px;
     background: #FFFFFF;

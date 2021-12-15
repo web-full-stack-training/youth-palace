@@ -15,19 +15,19 @@
         </div>
 
     </div>
-    <div class="row">
-        <div class="col-12">
+    <div class="row m-0">
+        <div class="col-12 p-0">
             <div class="about-div row d-flex justify-content-center">
                 <p class="about-p-header">About Pure Hearts</p>
-                <div class="col-3">
-                    <div class="first-line-about d-flex justify-content-center">
+                <div class="col-5">
+                    <div class="first-line-about d-flex justify-content-center position-relative">
                         <img class="children" src="{{ asset('images/about.png') }}">
                         <img class="red-heart" src="{{ asset('images/red-heart.png') }}">
                         <img class="green-heart" src="{{ asset('images/green-heart.png') }}">
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="d-flex justify-content-center mt-4">
+                <div class="col-4">
+                    <div class="d-flex justify-content-center flex-column">
                         <p class="text-about">
                             Here to Bring People Together<br>
                             to Help
@@ -40,8 +40,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="little-divs-about d-flex justify-content-center mt-3">
+                <div class="col-3">
+                    <div class="little-divs-about d-flex justify-content-center flex-column">
                         <div class="little-div-first d-flex justify-content-center align-items-center flex-column">
                             <img src="{{asset('images/volunteers.png')}}" width="110px" height="110px">
                             <p>
