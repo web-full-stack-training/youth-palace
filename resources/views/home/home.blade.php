@@ -71,7 +71,7 @@
                 <div class="col-2">
                     <div class="first-line row ">
                         <div class="first-line-child">
-                            <img src="images/feature-v1-1%201.png" width="125px" height="110px">
+                            <img src="{{asset('images/feature-v1-1%201.png')}}" width="125px" height="110px">
                         </div>
                         <div class="first-line-child-text">
                             <h2 class="mt-1">
@@ -92,7 +92,7 @@
                 <div class="col-2">
                     <div class="second-line row" style="margin-left: 30px">
                         <div class="second-line-child">
-                            <img src="images/feature-v1-2%201.png">
+                            <img src="{{asset('images/feature-v1-2%201.png')}}">
                         </div>
                         <div class="second-line-child-text">
                             <h2>
@@ -113,7 +113,7 @@
                 <div class="col-2">
                     <div class="third-line row " style="margin-left: 60px">
                         <div class="third-line-child">
-                            <img src="images/feature-v1-3%201.png">
+                            <img src="{{asset('images/feature-v1-3%201.png')}}">
                         </div>
                         <div class="third-line-child-text">
                             <h2>
@@ -130,11 +130,7 @@
                         </button>
                     </div>
                 </div>
-
-
-
             </div>
-
         </div>
 
         <div class="col-12">

@@ -337,18 +337,18 @@ body {
 
 .our-mission-div-header-img {
     position: absolute;
-    width: 421px;
-    height: 486px;
-    left: 23.9%;
+    width: 440px;
+    height: 490px;
+    left: 26%;
     margin: 83px 517px 29px 31px;
 }
 
 .our-mission-child-div {
     position: absolute;
-    width: 541px;
+    width: 555px;
     height: 408px;
-    left: 23.9%;
-    margin: 122px 41px 68px 387px;
+    margin-top: 122px;
+    left: 44%;
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -674,7 +674,7 @@ body {
 .content {
     position: relative;
     width: 969px;
-    height: 615px;
+    height: 650px;
     mix-blend-mode: normal;
     display: flex;
     justify-content: center;
@@ -710,12 +710,12 @@ body {
 }
 
 .test div {
-    margin: 20px 20px 0 0;
+    margin: 20px 35px 0 0;
     width: 180px;
 }
 
 .latest-news {
-    width: 47%;
+    width: 41%;
     height: 550px;
     margin-top: 15px;
     position: relative;
