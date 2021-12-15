@@ -23,9 +23,7 @@ Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
 Route::get('/special-programs', [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
-
-
-
+Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
 
 
 
