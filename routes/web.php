@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
+Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
+
 
 
 
