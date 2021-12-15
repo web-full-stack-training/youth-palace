@@ -68,7 +68,7 @@
         <div class="col-12 charity-With-Difference-header">
             <div class="charity-With-Difference-div row d-flex justify-content-center">
                 <h2> Charity With Difference </h2>
-                <div class="col-2">
+                <div class="col-4 col-xl-3 d-flex justify-content-center p-0">
                     <div class="first-line row ">
                         <div class="first-line-child">
                             <img src="{{asset('images/feature-v1-1%201.png')}}" width="125px" height="110px">
@@ -78,8 +78,8 @@
                                 Get Inspire And Help
                             </h2>
                             <p>
-                                Please donate to <br>
-                                change the world if <br>
+                                Please donate to
+                                change the world if
                                 you are inspired by us.
                             </p>
                         </div>
@@ -89,7 +89,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-4 col-xl-3  d-flex justify-content-center p-0">
                     <div class="second-line row" style="margin-left: 30px">
                         <div class="second-line-child">
                             <img src="{{asset('images/feature-v1-2%201.png')}}">
@@ -99,8 +99,8 @@
                                 Send Us Donations
                             </h2>
                             <p>
-                                Want to help with this<br>
-                                pandemic, please join<br>
+                                Want to help with this
+                                pandemic, please join
                                 us as a volunteer.
                             </p>
                         </div>
@@ -110,7 +110,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-4 col-xl-3  d-flex justify-content-center p-0">
                     <div class="third-line row " style="margin-left: 60px">
                         <div class="third-line-child">
                             <img src="{{asset('images/feature-v1-3%201.png')}}">
@@ -120,8 +120,8 @@
                                 Send Us Donations
                             </h2>
                             <p>
-                                Want to help with this<br>
-                                pandemic, please join<br>
+                                Want to help with this
+                                pandemic, please join
                                 us as a volunteer.
                             </p>
                         </div>
@@ -138,10 +138,10 @@
                 <h2> Our Mission & Goals </h2>
                 <img class="our-mission-div-header-img" src="{{asset('images/mission-goals%201.png')}}">
                 <div class="our-mission-child-div">
-                    <h2>
+                    <h3>
                         Small Donations Make Bigger Impact On
                         Someone’s Life, Act Today!
-                    </h2>
+                    </h3>
                     <p>
                         Our mission is to make the world a better place for<br>
                         everyone. Everyone has their rights equally and we<br>
@@ -149,24 +149,27 @@
                         education, treatment and accommodation for everyone<br>
                         who is living in poverty.
                     </p>
-                    <div class="home-shelter">
-                        <img src="{{asset('images/shelter-1456246-1229776%201.png')}}">
-                        <p>
-                            Home Shelter
-                        </p>
+                    <div class="our-mission-child-div-icons">
+                        <div class="home-shelter">
+                            <img src="{{asset('images/shelter-1456246-1229776%201.png')}}">
+                            <p>
+                                Home Shelter
+                            </p>
+                        </div>
+                        <div class="water-and-food">
+                            <img src="{{asset('images/output-onlinepngtools%20(15)%201.png')}}">
+                            <p>
+                                Water And Food
+                            </p>
+                        </div>
+                        <div class="love-the-world">
+                            <img src="{{asset('images/12-120763_2-hearts-clipart-removebg-preview%201.png')}}">
+                            <p>
+                                Love The World
+                            </p>
+                        </div>
                     </div>
-                    <div class="water-and-food">
-                        <img src="{{asset('images/output-onlinepngtools%20(15)%201.png')}}">
-                        <p>
-                            Water And Food
-                        </p>
-                    </div>
-                    <div class="love-the-world">
-                        <img src="{{asset('images/12-120763_2-hearts-clipart-removebg-preview%201.png')}}">
-                        <p>
-                            Love The World
-                        </p>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -30,18 +30,18 @@ function arrowLeftAndRight(direction) {
         lastPosition = y * (children.length - 1);
         if (coin === children.length - 2) {
             content.style.transform = `translateX(0px)`;
-            x = (-488 + 10);
+            x = -Math.abs(y);
             coin = 0;
         } else {
             content.style.transform = `translateX(${x}px)`;
-            x += (-488 + 10);
+            x += -Math.abs(y);
             coin++;
         }
     }
 
     if (direction === 'left') {
         let z = getTranslateX(content);
-        z = -Math.abs(z + 478);
+        z = -Math.abs(z + Math.abs(y));
         content.style.transform = `translateX(${z}px)`;
         x = z;
     }
@@ -106,7 +106,7 @@ arrowLeftLatest.addEventListener('click', function () {
 setInterval(function () {
     let res = getTranslateX(contentLatest);
     if (res === 0) {
-        arrowLeftLatest.style.color = '#cdc6c6';
+        arrowLeftLatest.style.color = '#FFFFFF';
     } else {
         arrowLeftLatest.style.color = 'black';
     }
@@ -115,7 +115,6 @@ setInterval(function () {
     } else {
         arrowRightLatest.style.color = 'black';
     }
-
     if (res === 0) {
         arrowLeft.style.color = '#cdc6c6';
     } else {

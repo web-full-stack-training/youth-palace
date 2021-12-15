@@ -1,3 +1,6 @@
+body {
+    background-color: #7FFFD4;
+}
 #header-background-image .main-img {
     position: relative;
     width: 100%;
@@ -203,7 +206,7 @@
 
 .first-line, .second-line, .third-line {
     width: 270px;
-    min-height: 404px;
+    min-height: 500px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: flex;
     justify-content: center;
@@ -213,9 +216,7 @@
 }
 
 .first-line-child, .second-line-child, .third-line-child {
-    position: absolute;
     background: #FFFFFF;
-    mix-blend-mode: screen;
     box-shadow: 0 4px 4px gray;
     width: 250px;
     height: 190px;
@@ -226,8 +227,6 @@
 
 .first-line-child-text, .second-line-child-text, .third-line-child-text  {
     position: relative;
-    z-index: 2;
-    margin-top: 300px !important;
     margin-left: 20px;
 }
 
@@ -260,13 +259,11 @@
 }
 
 .first-line button, .third-line button, .second-line button {
-    position: absolute;
     width: 150px;
     height: 32px;
     border: 1px solid #ADADAD;
     box-sizing: border-box;
     border-radius: 16px;
-    top: 125%;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -275,9 +272,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    letter-spacing: 0.25px;
     color: #6C5CE7;
     background-color: white;
+    position: absolute;
+    bottom: 0;
 }
 .our-mission-div {
     position: relative;
@@ -286,6 +284,9 @@
     background: #FFFFFF;
     mix-blend-mode: normal;
     margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .our-mission-div h2 {
@@ -306,40 +307,37 @@
 }
 
 .our-mission-div-header-img {
-    position: absolute;
+    margin-top: 20px;
     width: 440px;
     height: 490px;
-    left: 26%;
-    margin: 83px 517px 29px 31px;
 }
 
 .our-mission-child-div {
-    position: absolute;
+    position: relative;
     width: 555px;
     height: 408px;
-    margin-top: 122px;
-    left: 44%;
     background: #FFFFFF;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    margin-left: -50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 35px;
 }
 
 .our-mission-child-div h2 {
-    position: absolute;
     width: 523px;
     height: 8px;
     font-family: sans-serif;
     font-size: 22px;
     line-height: 24px;
     color: #000000;
-    left: 32px;
-    top: 40px;
 }
 
 .our-mission-child-div p {
-    position: absolute;
     width: 482px;
     height: 120px;
-    margin: 84px 27px 204px 32px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -347,10 +345,6 @@
     display: flex;
     align-items: flex-end;
     color: #000000;
-}
-
-.home-shelter {
-    margin: 155px 382px 39px 20px;
 }
 
 .home-shelter img {
@@ -363,6 +357,8 @@
 
 .home-shelter p {
     position: absolute;
+    bottom: 25px;
+    left: 55px;
     width: 119px;
     font-family: sans-serif;
     font-style: normal;
@@ -385,6 +381,8 @@
 
 .water-and-food p {
     position: absolute;
+    bottom: 25px;
+    left: 230px;
     width: 140px;
     font-family: sans-serif;
     font-size: 18px;
@@ -393,7 +391,6 @@
 }
 
 .water-and-food {
-    margin: 155px 209px 70px 192px;
 }
 
 .love-the-world img {
@@ -406,6 +403,8 @@
 
 .love-the-world p {
     position: absolute;
+    bottom: 25px;
+    right: 20px;
     width: 136px;
     font-family: sans-serif;
     font-style: normal;
@@ -416,7 +415,6 @@
 }
 
 .love-the-world {
-    margin: 155px 34px 70px 353px;
 }
 
 .our-works {
@@ -685,7 +683,7 @@
 }
 
 .latest-news {
-    width: 41%;
+    width: 940px;
     height: 550px;
     margin-top: 15px;
     position: relative;
