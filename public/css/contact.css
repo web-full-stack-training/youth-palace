@@ -17,6 +17,10 @@
     flex-direction: column;
 }
 
+.contact-us-page h2 {
+    margin-bottom: 40px;
+}
+
 .contact-page p {
     color: #b1b1b1;
     font-weight: 600;

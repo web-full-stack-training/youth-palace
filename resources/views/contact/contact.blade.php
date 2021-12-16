@@ -6,6 +6,7 @@
 
     <div class="contact-us">
         <div class="contact-us-page">
+            <h2>Contact us</h2>
             <div class="contact-page">
                 <p>CONTACT</p>
                 <div class="contact-page-information">
