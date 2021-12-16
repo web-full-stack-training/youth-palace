@@ -1,0 +1,63 @@
+.contact-us {
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-page {
+    display: flex;
+    margin-right: 350px; /*stex absalut tai u togosnerov tanim? */
+}
+.contact-us-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact-page p {
+    color: #b1b1b1;
+    font-weight: 600;
+    margin-right: 200px; /*stex absalut tai u togosnerov tanim? */
+}
+
+.contact-page-information {
+    color: #7769e4;
+    margin-left: 200px; /*stex absalut tai u togosnerov tanim? */
+}
+.keep-in-touch {
+    display: flex;
+    margin-right: 350px;
+}
+
+.keep-in-touch p {
+    margin-right: 100px;
+}
+
+.keep-in-touch-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 170px;
+}
+
+.keep-in-touch-input input {
+    width: 530px;
+    margin: 20px 0;
+}
+
+.keep-in-touch-input textarea {
+    width: 530px;
+    height: 200px;
+    margin: 20px 0;
+}
+.contact-us-icons {
+    margin-top: 30px;
+}
+.home-icon {
+    color: #7769e4;
+    font-size: 25px;
+}
