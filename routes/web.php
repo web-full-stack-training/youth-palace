@@ -24,7 +24,18 @@ Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
 Route::get('/special-programs', [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
-Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
+
+
+Route::get('admin/login','Auth\AdminAuthController@getLogin')->name('adminLogin');
+Route::post('admin/login', 'Auth\AdminAuthController@postLogin')->name('adminLoginPost');
+Route::get('admin/logout', 'Auth\AdminAuthController@logout')->name('adminLogout');
+
+Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
+    // Admin Dashboard
+    Route::get('dashboard','AdminController@dashboard')->name('dashboard');
+});
+
+//Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
 
 
 
