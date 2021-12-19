@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,6 @@ Route::get('/special-programs', [\App\Http\Controllers\SpecialProgramsController
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
 Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
 
-
-
+Route::get('/lang', [LocalizationController::class, "index"]);
+Route::get('/', [LocalizationController::class, "lang_change"])->name('LangChange');
 
