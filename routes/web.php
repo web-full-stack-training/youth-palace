@@ -28,5 +28,5 @@ Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class
 Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
 
 Route::get('/lang', [LocalizationController::class, "index"]);
-Route::get('/', [LocalizationController::class, "lang_change"])->name('LangChange');
+Route::get('/lang', [LocalizationController::class, "lang_change"])->name('LangChange');
 
