@@ -1,4 +1,4 @@
 @extends('app')
 @section('content')
-<h1>Admin-Login page</h1>
+    <h1>feedback</h1>
 @endsection

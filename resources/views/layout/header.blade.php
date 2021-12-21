@@ -35,12 +35,12 @@
         <p>Palace</p>
     </div>
     <div class="header-menus">
-        <a href="#">Special Programs</a>
-        <a href="#">Clubs</a>
-        <a href="#">Collaboration</a>
-        <a href="#">Volunteering</a>
-        <a href="#">Media</a>
-        <a href="#">Feedback</a>
-        <a href="#">About as</a>
+        <a href="/special-programs"  class="{{ (Request::path() === 'special-programs' ? 'active-menu' : '') }}">Special Programs</a>
+        <a href="/clubs" class="{{ (Request::path() === 'clubs' ? 'active-menu' : '') }}">Clubs</a>
+        <a href="/collaboration"  class="{{ (Request::path() === 'collaboration' ? 'active-menu' : '') }}">Collaboration</a>
+        <a href="/volunteering"  class="{{ (Request::path() === 'volunteering' ? 'active-menu' : '') }}">Volunteering</a>
+        <a href="/media"  class="{{ (Request::path() === 'media' ? 'active-menu' : '') }}">Media</a>
+        <a href="/feedback"  class="{{ (Request::path() === 'feedback' ? 'active-menu' : '') }}">Feedback</a>
+        <a href="/about" class="{{ (Request::path() === 'about' ? 'active-menu' : '') }}">About as</a>
     </div>
 </div>
