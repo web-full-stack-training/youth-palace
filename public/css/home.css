@@ -101,6 +101,7 @@ body {
 }
 
 .text-about-second {
+    width: 450px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -258,25 +259,6 @@ body {
     color: #000000;
 }
 
-.first-line button, .third-line button, .second-line button {
-    width: 150px;
-    height: 32px;
-    border: 1px solid #ADADAD;
-    box-sizing: border-box;
-    border-radius: 16px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6C5CE7;
-    background-color: white;
-    position: absolute;
-    bottom: 0;
-}
 .our-mission-div {
     position: relative;
     width: 100%;
@@ -390,9 +372,6 @@ body {
     color: #000000;
 }
 
-.water-and-food {
-}
-
 .love-the-world img {
     position: absolute;
     width: 144px;
@@ -414,15 +393,12 @@ body {
     color: #000000;
 }
 
-.love-the-world {
-}
-
 .our-works {
     position: relative;
-    width: 969px;
+    width: 890px;
     height: 550px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     transform: translateX(0);
     margin-top: 15px;
@@ -445,7 +421,6 @@ body {
 .arrow-left {
     position: absolute;
     left: 18px;
-    top: 275px;
     font-size: 23px;
     color: black;
     width: 30px;
@@ -457,7 +432,6 @@ body {
 
 .arrow-right {
     position: absolute;
-    top: 275px;
     right: 16px;
     font-size: 23px;
     color: black;
@@ -467,17 +441,22 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.first-child-our-works img {
-    position: absolute;
+.first-child-our-works, .second-child-our-works, .first-child-our-works-first, .second-child-our-works-second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-right: 50px;
+}
+.our-works img, .our-works img {
     width: 370px;
-    height: 270.38px;
-    left: 0;
-    top: -2px;
-    margin: 81px 252px 198px 74px;
+    height: 270px;
+    margin-left: 35px;
+    margin-top: 35px;
 }
 
-.first-child-our-works h2 {
+.our-works h2 {
     font-family: sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -485,30 +464,25 @@ body {
     line-height: 36px;
     letter-spacing: 0.25px;
     color: #2D3436;
-    margin: 349px 55px 129px 74px;
+    margin-left: 37px;
+    margin-top: 10px;
+    margin-right: 50px;
 }
 
-.first-child-our-works p {
-    position: absolute;
-    left: 0;
-    bottom: 40px;
+.our-works p {
     font-size: 18px;
     line-height: 32px;
     color: #2D3436;
-    margin-left: 74px;
-    margin-right: 525px;
-    margin-bottom: 25px;
+    margin-left: 37px;
+    margin-right: 25px;
 }
 
-.first-child-our-works button {
-    position: absolute;
+.our-works button {
     width: 150px;
     height: 32px;
     border: 1px solid #ADADAD;
     box-sizing: border-box;
     border-radius: 16px;
-    top: 8px;
-    bottom: 8px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -520,114 +494,23 @@ body {
     letter-spacing: 0.25px;
     color: #6C5CE7;
     background-color: white;
-    margin: 490px 775px 18px 74px;
-}
-
-.second-child-our-works img {
-    position: absolute;
-    width: 370px;
-    height: 265.17px;
-    left: 0;
-    top: -1px;
-    margin: 82px 67px 202px 532px;
-}
-
-.second-child-our-works h2 {
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 36px;
-    letter-spacing: 0.25px;
-    color: #2D3436;
-    margin: 349px 75px 129px 45px;
-}
-
-.second-child-our-works p {
-    position: absolute;
-    left: 0;
-    bottom: 40px;
-    margin-left: 535px;
-    margin-right: 90px;
-    margin-bottom: 25px;
-    font-size: 18px;
-    line-height: 32px;
-    color: #2D3436;
-}
-
-.second-child-our-works button {
-    position: absolute;
-    width: 150px;
-    height: 32px;
-    border: 1px solid #ADADAD;
-    box-sizing: border-box;
-    border-radius: 16px;
-    top: 8px;
-    bottom: 8px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.25px;
-    color: #6C5CE7;
-    background-color: white;
-    margin: 490px 775px 18px 45px;
+    margin-top: 15px;
 }
 
 .first-child-our-works-first {
-    position: absolute;
-    top: 80px;
-    left: 1010px;
+
 }
 
 .first-child-our-works-first button {
-    position: absolute;
-    width: 150px;
-    height: 32px;
-    border: 1px solid #ADADAD;
-    box-sizing: border-box;
-    border-radius: 16px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.25px;
-    color: #6C5CE7;
-    background-color: white;
+
 }
 
 .second-child-our-works-second {
-    position: absolute;
-    top: 80px;
-    left: 1460px;
+
 }
 
 .second-child-our-works-second button {
-    position: absolute;
-    width: 150px;
-    height: 32px;
-    border: 1px solid #ADADAD;
-    box-sizing: border-box;
-    border-radius: 16px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.25px;
-    color: #6C5CE7;
-    background-color: white;
+
 }
 
 .our-works-container {
@@ -641,7 +524,7 @@ body {
 
 .content {
     position: relative;
-    width: 969px;
+    width: 980px;
     height: 650px;
     mix-blend-mode: normal;
     display: flex;
@@ -650,18 +533,6 @@ body {
     margin-top: 15px;
     overflow: hidden;
 }
-
-/*.row {*/
-/*    width: 1000px;*/
-/*    height: 600px;*/
-/*    margin-top: 50px;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    flex-direction: column;*/
-/*    align-content: center;*/
-/*    margin-left: 217px;*/
-/*}*/
 
 .first, .second, .third, .fourth, .fifth, .sixth {
     width: 200px;

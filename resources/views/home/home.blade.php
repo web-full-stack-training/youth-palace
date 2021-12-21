@@ -29,37 +29,40 @@
                 <div class="col-4">
                     <div class="d-flex justify-content-center flex-column">
                         <p class="text-about">
-                            Here to Bring People Together<br>
-                            to Help
+                            @foreach($about as $data)
+                                {{ $data['title_information'] }}
+                            @endforeach
                         </p>
 
                         <p class="text-about-second">
-                            The majority have suffered alteration all injected humours randomises.
-                            <br><br>
-                            There are many variations of passages of lorem ipsum available, but the majority have suffered alteration all form injected humours randomises don't look even slightly belvable.
+                            @foreach($about as $data)
+                                {{ $data['description_information'] }}
+                            @endforeach
                         </p>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="little-divs-about d-flex justify-content-center flex-column">
-                        <div class="little-div-first d-flex justify-content-center align-items-center flex-column">
-                            <img src="{{asset('images/volunteers.png')}}" width="110px" height="110px">
-                            <p>
-                                357
-                            </p>
-                            <h2>
-                                Volunteers
-                            </h2>
-                        </div>
-                        <div class="little-div-second d-flex justify-content-center align-items-center flex-column">
-                            <img src="{{asset('images/beneficiaries.png')}}" width="100px" height="100px">
-                            <p>
-                                1907
-                            </p>
-                            <h2>
-                                Beneficiaries
-                            </h2>
-                        </div>
+                        @foreach($about as $data)
+                            <div class="little-div-first d-flex justify-content-center align-items-center flex-column">
+                                <img src="{{asset('images/volunteers.png')}}" width="110px" height="110px">
+                                <p>
+                                    {{ $data['quantity_volunteers'] }}
+                                </p>
+                                <h2>
+                                    Volunteers
+                                </h2>
+                            </div>
+                            <div class="little-div-second d-flex justify-content-center align-items-center flex-column">
+                                <img src="{{asset('images/beneficiaries.png')}}" width="100px" height="100px">
+                                <p>
+                                    {{ $data['quantity_beneficiaries'] }}
+                                </p>
+                                <h2>
+                                    Beneficiaries
+                                </h2>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -68,68 +71,53 @@
         <div class="col-12 charity-With-Difference-header">
             <div class="charity-With-Difference-div row d-flex justify-content-center">
                 <h2> Charity With Difference </h2>
-                <div class="col-4 col-xl-3 d-flex justify-content-center p-0">
-                    <div class="first-line row ">
-                        <div class="first-line-child">
-                            <img src="{{asset('images/feature-v1-1%201.png')}}" width="125px" height="110px">
+                @foreach($charity as $data)
+                    <div class="col-4 col-xl-3 d-flex justify-content-center p-0">
+                        <div class="first-line row ">
+                            <div class="first-line-child">
+                                <img src="{{asset('images/feature-v1-1%201.png')}}" width="125px" height="110px">
+                            </div>
+                            <div class="first-line-child-text">
+                                <h2 class="mt-1">
+                                    {{ $data['first_title'] }}
+                                </h2>
+                                <p>
+                                    {{ $data['first_description'] }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="first-line-child-text">
-                            <h2 class="mt-1">
-                                Get Inspire And Help
-                            </h2>
-                            <p>
-                                Please donate to
-                                change the world if
-                                you are inspired by us.
-                            </p>
-                        </div>
-
-                        <button type="button">
-                            Read more
-                        </button>
                     </div>
-                </div>
-                <div class="col-4 col-xl-3  d-flex justify-content-center p-0">
-                    <div class="second-line row" style="margin-left: 30px">
-                        <div class="second-line-child">
-                            <img src="{{asset('images/feature-v1-2%201.png')}}">
+                    <div class="col-4 col-xl-3  d-flex justify-content-center p-0">
+                        <div class="second-line row" style="margin-left: 30px">
+                            <div class="second-line-child">
+                                <img src="{{asset('images/feature-v1-2%201.png')}}">
+                            </div>
+                            <div class="second-line-child-text">
+                                <h2>
+                                    {{ $data['second_title'] }}
+                                </h2>
+                                <p>
+                                    {{ $data['second_description'] }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="second-line-child-text">
-                            <h2>
-                                Send Us Donations
-                            </h2>
-                            <p>
-                                Want to help with this
-                                pandemic, please join
-                                us as a volunteer.
-                            </p>
-                        </div>
-
-                        <button type="button">
-                            Read more
-                        </button>
                     </div>
-                </div>
-                <div class="col-4 col-xl-3  d-flex justify-content-center p-0">
-                    <div class="third-line row " style="margin-left: 60px">
-                        <div class="third-line-child">
-                            <img src="{{asset('images/feature-v1-3%201.png')}}">
+                    <div class="col-4 col-xl-3  d-flex justify-content-center p-0">
+                        <div class="third-line row " style="margin-left: 60px">
+                            <div class="third-line-child">
+                                <img src="{{asset('images/feature-v1-3%201.png')}}">
+                            </div>
+                            <div class="third-line-child-text">
+                                <h2>
+                                    {{ $data['third_title'] }}
+                                </h2>
+                                <p>
+                                    {{ $data['third_description'] }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="third-line-child-text">
-                            <h2>
-                                Send Us Donations
-                            </h2>
-                            <p>
-                                Want to help with this
-                                pandemic, please join
-                                us as a volunteer.
-                            </p>
-                        </div>
-                        <button type="button">
-                            Read more
-                        </button>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
