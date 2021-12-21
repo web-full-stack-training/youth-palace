@@ -1,4 +1,4 @@
 @extends('app')
 @section('content')
-    <h1>collaboration</h1>
+    <h1>special-programs</h1>
 @endsection

@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 <div class="container-fluid py-3 mt-3 bg-white footer-container">
     <div class="row d-flex justify-content-center">
@@ -56,10 +57,9 @@
                         <label for="form-message">
                             <span class="text-danger"></span>
                         </label>
-                        <textarea id="form-message" name="message" class="form-control contact-form-inputs"
-                                  placeholder="Leave your message"
-                        >
-                        </textarea>
+                            {{--no need to change the order of the code for textarea--}}
+                        <textarea  id="form-message" name="message"  class="form-control contact-form-inputs"
+                                   placeholder="Leave your message"></textarea>
                         <small class="text-danger error-message">Message is required</small>
                     </div>
                     <div class="form-group col-sm-4">
@@ -73,4 +73,5 @@
         </div>
     </div>
 </div>
+
 <script src="{{ asset('js/footer.js') }}"></script>
