@@ -16,9 +16,9 @@ class CreateVolunteeringsTable extends Migration
         Schema::create('volunteerings', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
-            $table->string('image_path');
-            $table->string('email');
-            $table->string('description');
+            $table->string('image_path')->nullable();
+            $table->string('email')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
