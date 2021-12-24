@@ -71,3 +71,8 @@
     text-decoration: underline;
     color: #685ad0;
 }
+
+.header-menus .active-menu {
+    text-decoration: underline;
+    color: #685ad0;
+}
