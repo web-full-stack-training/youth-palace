@@ -22,7 +22,7 @@ Route::get('/clubs', [\App\Http\Controllers\ClubsController::class, 'index']);
 Route::get('/collaboration', [\App\Http\Controllers\CollaborationController::class, 'index']);
 Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index']);
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
-Route::get('/special-programs', [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
+Route::get('/special-programs/{skip}/{limit}', [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
 
 
