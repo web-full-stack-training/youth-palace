@@ -14,9 +14,12 @@ class CreateCollaborationsTable extends Migration
     public function up()
     {
         Schema::create('collaborations', function (Blueprint $table) {
-            $table->id()->autoIncrement()->primary();
-            $table->text('img_path');
+            $table->id();
             $table->string('name');
+            $table->text('img_path')->nullable();
+            $table->longText('description')->nullable();
+            $table->string('website_url')->nullable();
+            $table->json('social_medias')->nullable();
             $table->timestamps();
         });
     }
