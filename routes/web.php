@@ -46,7 +46,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('clubs',[\App\Http\Controllers\Admin\ClubsController::class, 'index'])->name('clubs');
     Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
     Route::get('volunteering',[\App\Http\Controllers\Admin\VolunteeringController::class, 'index'])->name('volunteering');
-    Route::get('media',[\App\Http\Controllers\Admin\MediaController::class, 'index'])->name('media');
     Route::get('feedback',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('feedback');
 
     // Manage about info
@@ -56,6 +55,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('about-us/create',[\App\Http\Controllers\Admin\AboutAsController::class, 'showCreateForm'])->name('show.create.form');
     Route::get('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'editAboutInfo'])->name('edit.about.info');
+
+    //Manage media info
+    Route::get('media',[\App\Http\Controllers\Admin\MediaController::class, 'index'])->name('media');
+    Route::get('media/create',[\App\Http\Controllers\Admin\MediaController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('media/create',[\App\Http\Controllers\Admin\MediaController::class, 'addMediaInfo'])->name('add.media.info');
+    Route::get('media/edit',[\App\Http\Controllers\Admin\MediaController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('media/edit',[\App\Http\Controllers\Admin\MediaController::class, 'editMediaInfo'])->name('edit.media.info');
+    Route::post('media', [\App\Http\Controllers\Admin\MediaController::class, 'showMediaPage'])->name('show.media.page');
 
     // Manage contacts
     Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
