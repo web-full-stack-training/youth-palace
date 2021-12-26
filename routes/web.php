@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
-
+Route::get('/clubs', [\App\Http\Controllers\ClubsController::class, 'index']);
 
