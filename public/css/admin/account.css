@@ -1,0 +1,16 @@
+.admin-account-card {
+    width: 100%;
+    height: 250px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.edit-account-info {
+    cursor: pointer;
+}
+
+.admin-account-details {
+    padding: 3px 0;
+    border-bottom: 1px solid grey;
+}
