@@ -22,7 +22,7 @@ Route::get('/clubs', [\App\Http\Controllers\ClubsController::class, 'index']);
 Route::get('/collaboration', [\App\Http\Controllers\CollaborationController::class, 'index']);
 Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index']);
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
-Route::get('/special-programs/{skip}/{limit}', [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
+Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
 
 
@@ -42,7 +42,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('account',[\App\Http\Controllers\Admin\AccountController::class, 'index'])->name('account');
     Route::get('account/edit',[\App\Http\Controllers\Admin\AccountController::class, 'showEditAccountForm'])->name('show.edit.account');
     Route::post('account/edit',[\App\Http\Controllers\Admin\AccountController::class, 'editAccount'])->name('edit.account');
-    Route::get('special-programs',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'index'])->name('special.programs');
     Route::get('clubs',[\App\Http\Controllers\Admin\ClubsController::class, 'index'])->name('clubs');
     Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
     Route::get('volunteering',[\App\Http\Controllers\Admin\VolunteeringController::class, 'index'])->name('volunteering');
@@ -60,3 +59,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     // Manage contacts
     Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
 });
+
+    // Manage special-program-page-info
+    Route::get('special-programs',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'index'])->name('special.programs');
+    Route::get('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'addSpecialProgramInfo'])->name('add.specialProgram.info');
+    Route::get('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
+    Route::get('special-programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('special-programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'editSpecialProgramInfo'])->name('edit.SpecialProgram.info');
+
