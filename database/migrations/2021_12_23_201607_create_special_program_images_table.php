@@ -15,12 +15,8 @@ class CreateSpecialProgramImagesTable extends Migration
     {
         Schema::create('special_program_images', function (Blueprint $table) {
             $table->id();
-            $table->text('image_path1');
-            $table->text('image_path2');
-            $table->text('image_path3');
-            $table->text('image_path4');
-            $table->text('image_path5');
-            $table->text('image_path6');
+            $table->unsignedBigInteger('special_programs_id');
+            $table->text('image_path');
             $table->timestamps();
         });
     }
