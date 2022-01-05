@@ -13,7 +13,7 @@ class SpecialProgramsController extends Controller
 {
     public function index()
     {
-        $specialProgram = SpecialProgram::first();
+        $specialProgram = SpecialProgram::all();
 
         return view('admin.special-programs.show', compact('specialProgram'));
     }

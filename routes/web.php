@@ -61,10 +61,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 });
 
     // Manage special-program-page-info
-    Route::get('special_programs',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'index'])->name('special.programs');
-    Route::get('special_programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
-    Route::post('special_programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'addSpecialProgramInfo'])->name('add.specialProgram.info');
-    Route::get('special_programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
-    Route::get('special_programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showEditForm'])->name('show.edit.form');
-    Route::post('special_programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'editSpecialProgramInfo'])->name('edit.SpecialProgram.info');
+    Route::get('Special-Programs',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'index'])->name('special.programs');
+    Route::get('Special-Programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('Special-Programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'addSpecialProgramInfo'])->name('add.specialProgram.info');
+    Route::get('Special-Programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
+    Route::get('Special-Programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('Special-Programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'editSpecialProgramInfo'])->name('edit.SpecialProgram.info');
 

@@ -19,6 +19,6 @@ class SpecialProgramsController extends Controller
         $programs = SpecialProgram::with('specialProgramImages')
             ->skip($skip)->limit($limit)->get();
 
-//        return
+  //     return
     }
 }
