@@ -45,7 +45,7 @@
                         <div class="little-div-first d-flex justify-content-center align-items-center flex-column">
                             <img src="{{asset('images/volunteers.png')}}" width="110px" height="110px">
                             <p>
-                                150
+                                {{ $volunteers }}
                             </p>
                             <h2>
                                 Volunteers
@@ -54,7 +54,7 @@
                         <div class="little-div-second d-flex justify-content-center align-items-center flex-column">
                             <img src="{{asset('images/beneficiaries.png')}}" width="100px" height="100px">
                             <p>
-                                557
+                                {{ $collaboration }}
                             </p>
                             <h2>
                                 Beneficiaries
