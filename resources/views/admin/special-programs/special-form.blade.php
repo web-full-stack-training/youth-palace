@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/admin/about.css') }}">
+<link rel="stylesheet" href="{{ asset('css/admin/special-programs.css') }}">
+
 <div class="about-info-form-card">
 
     <form action="{{ $action_url }}" method="post" enctype="multipart/form-data">
@@ -11,7 +13,7 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" class="form-control" rows="7"></textarea>
         </div>
-        <input type="file" class="form-control mt-3" name="image">
+        <input type="file" class="form-control mt-3" name="images[]" multiple>
         <button type="submit" class="btn btn-primary rounded-3 mt-3">Create</button>
     </form>
 

@@ -18,4 +18,4 @@ Route::post('send-message', [\App\Http\Controllers\ContactController::class, 'sa
 
 
 //admin
-Route::post('admin/delete-special-program', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgram'])->name('delete.media');
+Route::post('admin/delete-special-program', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgram'])->name('delete.special.program');

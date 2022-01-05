@@ -1,6 +1,8 @@
 @extends('admin.layout.admin')
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/admin/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/special-programs.css') }}">
+
     <div class="about-content-in-admin">
         <h2>Special-Program Page</h2>
 
@@ -20,14 +22,14 @@
                     <th scope="row">{{ $data['id'] }}</th>
                     <td>{{ $data['title'] }}</td>
                     <td>{{ $data['description'] }}</td>
-                    <td class="edit"><a href="{{ 'media/edit/' . $data['id'] }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
+                    <td class="edit"><a href="{{ 'special-programs/edit/' . $data['id'] }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
                     <td class="delete"><button class="border-0" ><i class="fas fa-trash"></i></button></td>
                 </tr>
             @endforeach
             </tbody>
         </table>
 
-        <a class="btn btn-primary" href="special-program/create" role="button">Create New</a>
+        <a class="btn btn-primary" href="special-programs/create" role="button">Create New</a>
 
         <div class="modal modal-windows" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">

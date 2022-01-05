@@ -9,7 +9,6 @@ use http\Env\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use function GuzzleHttp\Promise\all;
 
 
 class SpecialProgramsController extends Controller
@@ -28,18 +27,30 @@ class SpecialProgramsController extends Controller
     {
         $title = $request->input('title');
         $description = $request->input('description');
-        $file = $request->file('image');
+        $files = $request->file('images');
+        $savedImagePath = [];
 
         $directory = public_path('storage/uploads/special-programs/');
         File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = '/storage/uploads/special-programs/' . $file->getClientOriginalName();
 
-        SpecialProgram::create([
+        foreach ($files as $file) {
+            $imagePath = $file->move($directory, $file->getClientOriginalName());
+            $savedImagePath[] = '/storage/uploads/special-programs/' . $file->getClientOriginalName();
+        }
+
+
+        $program = SpecialProgram::create([
             'title' => $title,
-            'description' => $description,
-            'image_path' => $savedImagePath
+            'description' => $description
         ]);
+
+        foreach ($savedImagePath as $path) {
+            SpecialProgramImage::create([
+                'special_programs_id' => $program->id,
+                'image_path' => $path
+            ]);
+        }
+
 
         return redirect()->route('special.programs');
     }

@@ -9,8 +9,7 @@ class SpecialProgramsController extends Controller
 {
     public function index() {
 
-        $programs = SpecialProgram::with('specialProgramImages')->limit(15)->get();
-        $showSpecialProgram = SpecialProgram::first();
+        $showSpecialProgram = SpecialProgram::with('specialProgramImages')->limit(15)->get();
         return view ('special-programs.special-programs', compact('showSpecialProgram'));
     }
 
