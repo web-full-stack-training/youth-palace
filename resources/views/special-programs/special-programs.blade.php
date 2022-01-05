@@ -3,22 +3,21 @@
 
     <div class="row  col-12 bg-white mt-3 mx-0 p-5 d-flex justify-content-center" >
         <h2 class="text-center ">Special Programs</h2>
-
         <div class="row col-6">
-            <strong class="text-center mb-3">{{ $specialProgram->title }}</strong>
-            <span class="text-center px-5 ">{{ $specialProgram->description }}</span>
+            <strong class="text-center mb-3">{{ $showSpecialProgram->title }}</strong>
+            <span class="text-center px-5 ">{{ $showSpecialProgram->description }}</span>
             <div class=" col-12 p-0 d-flex justify-content-center mt-2 mb-5 ">
 
                 <div class=" col-3 mx-1 ">
 
                     <img
-                        src="{{ $specialProgram->image_path }}"
+                        src="{{ $showSpecialProgram->image_path }}"
                         class="w-100 shadow-1-strong rounded mb-1"
                         alt="Special Programs "
                     />
 
                     <img
-                        src="{{ $specialProgram->image_path }}"
+                        src="{{ $showSpecialProgram->image_path }}"
                         class="w-100 shadow-1-strong rounded "
                         alt="Special Programs"
                     />
@@ -26,13 +25,13 @@
 
                 <div class="col-3 mx-1">
                     <img
-                        src="{{ $specialProgram->image_path }}"
+                        src="{{ $showSpecialProgram->image_path }}"
                         class="w-100 shadow-1-strong rounded mb-1"
                         alt="Special Programs"
                     />
 
                     <img
-                        src="{{ $specialProgram->image_path }}"
+                        src="{{ $showSpecialProgram->image_path }}"
                         class="w-100 shadow-1-strong rounded "
                         alt="Special Programs"
                     />
@@ -40,13 +39,13 @@
 
                 <div class="col-3 mx-1">
                     <img
-                        src="{{ $specialProgram->image_path }}"
+                        src="{{ $showSpecialProgram->image_path }}"
                         class="w-100 shadow-1-strong rounded mb-1"
                         alt="Special Programs"
                     />
 
                     <img
-                        src="{{ $specialProgram->image_path }}"
+                        src="{{ $showSpecialProgram->image_path }}"
                         class="w-100 shadow-1-strong rounded "
                         alt="Special Programs"
                     />

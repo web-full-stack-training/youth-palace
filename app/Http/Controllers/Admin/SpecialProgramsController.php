@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\SpecialProgram;
 use App\Models\SpecialProgramImage;
+use http\Env\Response;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use function GuzzleHttp\Promise\all;
 
 
 class SpecialProgramsController extends Controller
@@ -37,6 +40,8 @@ class SpecialProgramsController extends Controller
             'description' => $description,
             'image_path' => $savedImagePath
         ]);
+
+        return redirect()->route('special.programs');
     }
         public function showEditForm()
     {
@@ -49,7 +54,15 @@ class SpecialProgramsController extends Controller
         $description = $request->input('description');
         $file = $request->file('image');
     }
+    public function deleteSpecialProgram(Request $request): JsonResponse
+    {
+        $mediaId = $request->input('media_id');
+        SpecialProgram::where('id', $mediaId)->delete();
 
+        return response()->json([
+            'message' => 'Special Program deleted successfully'
+        ]);
+    }
 
 
 }

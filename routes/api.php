@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('send-message', [\App\Http\Controllers\ContactController::class, 'saveContactMessage'])->name('send.message');
+
+
+//admin
+Route::post('admin/delete-special-program', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgram'])->name('delete.media');
