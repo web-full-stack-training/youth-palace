@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Volunteering extends Model
 {
     use HasFactory;
-    protected $fillable = ['full_name', 'image_path', 'email','description'];
+    protected $fillable = ['full_name', 'image_path'];
 }
