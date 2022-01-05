@@ -5,7 +5,7 @@
     <div class="row d-flex">
     @foreach($collaboration as $data)
         <div class="col-3 d-flex flex-column justify-content-center align-items-center p-5">
-            <img src="{{ $data['img_path'] }}" alt="">
+            <img src="{{ $data['img_path'] }}" alt="" width="140px" height="140px" class="rounded-circle">
             <h3>{{ $data['name'] }}</h3>
         </div>
     @endforeach

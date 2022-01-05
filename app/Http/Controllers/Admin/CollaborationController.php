@@ -4,42 +4,77 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Collaborations;
+
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class CollaborationController extends Controller
 {
     public function index()
     {
-        return view('admin.collaboration.show');
+        $collaboration = Collaborations::all();
+        return view('admin.collaboration.show', compact('collaboration'));
     }
-
-    public function addOrUpdateCollaboration(Request $request)
+    public function showCreateForm()
     {
-        $collaborationId = $request->input('collaboration_id');
-        $name = $request->input('name');
-        $description = $request->input('description');
-        $websiteUrl = $request->input('website_url');
-        $socialMedias = $request->input('social_medias');
-        $images = $request->file('image');
+        return view('admin.collaboration.create');
+    }
+    public function addCollaborationInfo(Request $request): \Illuminate\Http\RedirectResponse
+    {
+        $title = $request->input('title');
+        $file = $request->file('image');
 
-        $imagePath = '';
+        $directory = public_path('storage/uploads/collaboration/');
+        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+        $imagePath = $file->move($directory, $file->getClientOriginalName());
+        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
 
-        Collaborations::updateOrCreate(
+        Collaborations::create([
+            'name' => $title,
+            'img_path' => $savedImagePath
+        ]);
+        return redirect()->route('collaboration');
+    }
+    public function showEditForm($id)
+    {
+        $collaborationData = Collaborations::find($id);
+        return view('admin.collaboration.edit', compact('collaborationData'));
+    }
+    public function editCollaborationInfo(Request $request): \Illuminate\Http\RedirectResponse
+    {
+        $title = $request->input('title');
+        $file = $request->file('image');
+        $directory = public_path('storage/uploads/collaboration/');
+        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+        $imagePath = $file->move($directory, $file->getClientOriginalName());
+        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+        $id = $request->input('collaboration-id');
+
+        Collaborations::where('id', $id)->update(
             [
-                'id' => $collaborationId
-            ],
-            [
-                'name' => $name,
-                'description' => $description,
-                'website_url' => $websiteUrl,
-                'img_path' => $imagePath,
-                'social_medias' => json_encode($socialMedias)
+                'name' => $title,
+                'img_path' => $savedImagePath
             ]
         );
+        return redirect()->route('collaboration');
+    }
+    public function showCollaborationPage() {
+        return view('collaboration.collaboration');
     }
 
-    public function deleteCollaboration(Request $request)
-    {
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
 
+    public function deleteCollaboration(Request $request): JsonResponse
+    {
+        $collaborationId = $request->input('collaboration_id');
+        Collaborations::where('id', $collaborationId)->delete();
+
+        return response()->json([
+            'message' => 'Collaboration deleted successfully'
+        ]);
     }
 }

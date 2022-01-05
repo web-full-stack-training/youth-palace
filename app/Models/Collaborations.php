@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Collaborations extends Model
 {
     use HasFactory;
-    protected $fillable = ['img_path', 'name', 'description', 'website_url', 'social_medias'];
+    protected $fillable = ['img_path', 'name'];
 
     public function getSocialMediasAttribute($value)
     {
