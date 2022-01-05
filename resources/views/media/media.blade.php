@@ -5,7 +5,7 @@
 <h1 class="page-name">Media</h1>
 <div class="container-fluid news-top ">
     <div class="row">
-        @foreach($median as $data)
+        @foreach($media as $data)
             <div class="col-6">
                 <div class="card border-0 align-items-center">
                     <video width="500" height="420" controls>

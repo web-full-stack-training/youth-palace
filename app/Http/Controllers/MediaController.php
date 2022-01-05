@@ -9,7 +9,7 @@ class MediaController extends Controller
 {
     public function index()
     {
-        $median = Media::all();
-        return view('media.media', compact('median'));
+        $media = Media::all();
+        return view('media.media', compact('media'));
     }
 }

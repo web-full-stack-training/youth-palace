@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 <div class="container-fluid py-3 mt-3 bg-white footer-container">
     <div class="row d-flex justify-content-center">
