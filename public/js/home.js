@@ -126,3 +126,5 @@ setInterval(function () {
     }
 },400)
 
+const app = window.location.href;
+console.log(app)
