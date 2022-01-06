@@ -56,6 +56,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'editAboutInfo'])->name('edit.about.info');
 
+
+
+    Route::get('contact',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('contact');
+    Route::get('contact/create',[\App\Http\Controllers\Admin\FeedbackController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('contact/create',[\App\Http\Controllers\Admin\FeedbackController::class, 'addContactInfo'])->name('add.contact.info');
+    Route::get('contact/edit/{id}',[\App\Http\Controllers\Admin\FeedbackController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('contact/edit',[\App\Http\Controllers\Admin\FeedbackController::class, 'editContactInfo'])->name('edit.contact.info');
+    Route::post('contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'showContactPage'])->name('show.contact.page');
+
+
     // Manage contacts
     Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
 });

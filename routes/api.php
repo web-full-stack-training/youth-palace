@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('send-message', [\App\Http\Controllers\ContactController::class, 'saveContactMessage'])->name('send.message');
+
+
+Route::post('admin/delete-contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'deleteContact'])->name('delete.contact');
