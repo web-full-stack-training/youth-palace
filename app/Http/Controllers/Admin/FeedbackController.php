@@ -9,6 +9,6 @@ class FeedbackController extends Controller
 {
     public function index()
     {
-        return view('admin.feedback.show');
+        return view('admin.contact.show');
     }
 }

@@ -157,60 +157,28 @@
             </div>
         </div>
 
+
         <div class="col-12">
             <div class="our-works-container">
                 <div class="content">
                     <h2 class="our-works-h2">Our Works</h2>
                     <div class="our-works">
-                        <div class="first-child-our-works js">
-                            <img src="{{asset('images/volunteer-in-your-community.png')}}" alt="">
-                            <h2>
-                                Reusable components available for every layout
-                            </h2>
-                            <p>
-                                Let me explain the meaning reusable component as I feel it contextually.
-                            </p>
-                            <button type="button">
-                                Read more
-                            </button>
-                        </div>
-                        <div class="second-child-our-works js">
-                            <img src="{{asset('images/cheap-affordable-volunteer-programs-header.png')}}" alt="">
-                            <h2>
-                                Reusable components available for every layout
-                            </h2>
-                            <p>
-                                Let me explain the meaning reusable component as I feel it contextually.
-                            </p>
-                            <button type="button">
-                                Read more
-                            </button>
-                        </div>
-                        <div class="first-child-our-works-first js">
-                            <img src="{{asset('images/volunteer-in-your-community.png')}}" alt="">
-                            <h2>
-                                Reusable components available for every layout
-                            </h2>
-                            <p>
-                                Let me explain the meaning reusable component as I feel it contextually.
-                            </p>
-                            <button type="button">
-                                Read more
-                            </button>
-                        </div>
-                        <div class="second-child-our-works-second js">
-                            <img src="{{asset('images/cheap-affordable-volunteer-programs-header.png')}}" alt="">
-                            <h2>
-                                Reusable components available for every layout
-                            </h2>
-                            <p>
-                                Let me explain the meaning reusable component as I feel it contextually.
-                            </p>
-                            <button type="button">
-                                Read more
-                            </button>
-                        </div>
+                        @foreach($ourWork as $data)
+                            <div class="child-our-works js">
+                                <img src="{{ $data['img_path'] }}" alt="">
+                                <h2>
+                                    {{ $data['title'] }}
+                                </h2>
+                                <p>
+                                    {{ $data['description'] }}
+                                </p>
+                                <button type="button">
+                                    Read more
+                                </button>
+                            </div>
+                        @endforeach
                     </div>
+
                     <div class="arrow-left">
                         <i class="fal fa-chevron-left"></i>
                     </div>
@@ -218,9 +186,9 @@
                         <i class="fal fa-chevron-right"></i>
                     </div>
 
-                </div>
             </div>
         </div>
+
 
         <div class="col-12">
             <div class="latest-news-container">
@@ -228,105 +196,20 @@
                     <h2>Latest News</h2>
                     <div class="test">
                         <div class="latest-news-first-part">
-                            <div class="col latest">
-                                <img src="{{asset('images/volunteers-needed.jpg')}}" alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
-                            <div class="col latest">
-                                <img src="{{asset('images/community-award-2%201.jpg')}}" alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
-                            <div class="col latest">
-                                <img src="{{asset('images/prepare-for-a-successful-volunteer-program-in-3-thoughtful-steps-588a393c7d0b5%201.jpg')}} "
-                                     alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
-                            <div class="col latest">
-                                <img src="{{asset('images/Youth-for-Integration-India-2%201.jpg')}} " alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
-
-
-                            <div class="col latest" style="margin-left: 20px">
-                                <img src="{{asset('images/volunteers-needed.jpg')}}" alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
-                            <div class="col latest">
-                                <img src="{{asset('images/community-award-2%201.jpg')}} " alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
-                            <div class="col latest">
-                                <img src="{{asset('images/prepare-for-a-successful-volunteer-program-in-3-thoughtful-steps-588a393c7d0b5%201.jpg')}} " alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
-                            <div class="col latest">
-                                <img src=" {{asset('images/Youth-for-Integration-India-2%201.jpg')}}" alt="">
-                                <h3>
-                                    Made by reusable components
-                                </h3>
-                                <p>
-                                    Let me explain the meaning reusable component as I feel it contextually.
-                                </p>
-                                <button type="button">
-                                    Read more
-                                </button>
-                            </div>
+                            @foreach($latestNews as $data)
+                                <div class="col latest">
+                                    <img src="{{ $data['img_path'] }}" alt="">
+                                    <h3>
+                                        {{ $data['title'] }}
+                                    </h3>
+                                    <p>
+                                        {{ $data['description'] }}
+                                    </p>
+                                    <button type="button">
+                                        Read more
+                                    </button>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="latest-news-arrow-left">

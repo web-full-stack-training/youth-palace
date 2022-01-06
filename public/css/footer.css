@@ -133,3 +133,7 @@ button {
 .footer-right-side {
     margin-right: -80px;
 }
+
+.active-footer {
+    display: block;
+}
