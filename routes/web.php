@@ -60,3 +60,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     // Manage contacts
     Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
 });
+// Manage volunteering info
+Route::get('volunteer',[\App\Http\Controllers\Admin\VolunteeringController::class, 'index'])->name('add-volunteering');
+Route::get('volunteer/create',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showCreateForm'])->name('show.create.form');
+Route::post('volunteer/create',[\App\Http\Controllers\Admin\VolunteeringController::class, 'addVolunteeringInfo'])->name('add.volunteering.info');
+Route::get('volunteer/create',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showCreateForm'])->name('show.create.form');
+Route::get('volunteer/edit',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showEditForm'])->name('show.edit.form');
+Route::post('volunteer/edit',[\App\Http\Controllers\Admin\VolunteeringController::class, 'editVolunteeringInfo'])->name('edit.volunteering.info');
