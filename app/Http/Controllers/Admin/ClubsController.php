@@ -27,10 +27,22 @@ class ClubsController extends Controller
         $description = $request->input('description');
         $file = $request->file('image');
 
-        $directory = public_path('storage/uploads/clubs/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    $directory = public_path('storage/uploads/clubs/');
+                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                    $imagePath = $file->move($directory, $file->getClientOriginalName());
+                    $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
 
         Clubs::create([
             'title' => $title,
@@ -49,11 +61,27 @@ class ClubsController extends Controller
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('image');
-        $directory = public_path('storage/uploads/clubs/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
         $id = $request->input('clubs-id');
+        $savedImagePath = 0;
+
+
+
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    $directory = public_path('storage/uploads/clubs/');
+                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                    $imagePath = $file->move($directory, $file->getClientOriginalName());
+                    $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
 
         Clubs::where('id', $id)->update(
             [
@@ -78,6 +106,7 @@ class ClubsController extends Controller
         Clubs::where('id', $clubsId)->delete();
 
         return response()->json([
+            'status' => true,
             'message' => 'Clubs deleted successfully'
         ]);
     }

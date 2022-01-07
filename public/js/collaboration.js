@@ -28,16 +28,11 @@ close.addEventListener('click', function () {
 })
 deleteButton.addEventListener('click', function () {
     const data = {
-        collaboration_id: tr
+        clubs_id: tr
     }
-    api('admin/delete-collaboration', 'post', data).then((res) => {
+    api('admin/delete-clubs', 'post', data).then((res) => {
         modal.style.display = 'none';
         remove.parentNode.remove();
-        setTimeout(function () {
-            modal.style.display = 'block';
-            p.innerHTML = res.message;
-            deleteButton.style.display = 'none';
-        }, 1000);
-
+        showModal(true, res.message, res.status);
     })
 })

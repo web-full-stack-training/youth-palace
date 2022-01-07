@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class FeedbackController extends Controller
 {
@@ -28,14 +29,31 @@ class FeedbackController extends Controller
         $phone_number = $request->input('phone_number');
         $address = $request->input('address');
 
-        Contact::create([
-            'email' => $email,
-            'telephone' => $telephone,
-            'phone_number' => $phone_number,
-            'address' => $address
-        ]);
+        if (!is_null($email)) {
+            if (!is_null($telephone)) {
+                if (!is_null($phone_number)) {
+                    if (!is_null($address)) {
+                        Contact::create([
+                            'email' => $email,
+                            'telephone' => $telephone,
+                            'phone_number' => $phone_number,
+                            'address' => $address
+                        ]);
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
         return redirect()->route('contact');
     }
+
     public function showEditForm($id)
     {
         $contactData = Contact::find($id);
@@ -50,14 +68,29 @@ class FeedbackController extends Controller
 
         $id = $request->input('contact-id');
 
-        Contact::where('id', $id)->update(
-            [
-                'email' => $email,
-                'telephone' => $telephone,
-                'phone_number' => $phone_number,
-                'address' => $address
-            ]
-        );
+        if (!is_null($email)) {
+            if (!is_null($telephone)) {
+                if (!is_null($phone_number)) {
+                    if (!is_null($address)) {
+                        Contact::create([
+                            'email' => $email,
+                            'telephone' => $telephone,
+                            'phone_number' => $phone_number,
+                            'address' => $address
+                        ]);
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
         return redirect()->route('contact');
     }
     public function showContactPage() {

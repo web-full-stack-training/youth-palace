@@ -25,10 +25,18 @@ class CollaborationController extends Controller
         $title = $request->input('title');
         $file = $request->file('image');
 
-        $directory = public_path('storage/uploads/collaboration/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+        if (!is_null($title)) {
+            if (!is_null($file)) {
+                $directory = public_path('storage/uploads/collaboration/');
+                File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                $imagePath = $file->move($directory, $file->getClientOriginalName());
+                $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
 
         Collaborations::create([
             'name' => $title,
@@ -45,11 +53,20 @@ class CollaborationController extends Controller
     {
         $title = $request->input('title');
         $file = $request->file('image');
-        $directory = public_path('storage/uploads/collaboration/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
         $id = $request->input('collaboration-id');
+
+        if (!is_null($title)) {
+            if (!is_null($file)) {
+                $directory = public_path('storage/uploads/collaboration/');
+                File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                $imagePath = $file->move($directory, $file->getClientOriginalName());
+                $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
 
         Collaborations::where('id', $id)->update(
             [
