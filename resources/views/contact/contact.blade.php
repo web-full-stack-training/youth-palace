@@ -9,11 +9,13 @@
             <h2>Contact us</h2>
             <div class="contact-page">
                 <p>CONTACT</p>
-                <div class="contact-page-information">
-                    <h1>hello@fapsterapp.com</h1>
-                    <h1>+ 374 (93) 55 55 55</h1>
-                    <h1>0312 5 55 55</h1>
-                </div>
+                @if($contact)
+                    <div class="contact-page-information">
+                        <h1>{{ $contact->email }}</h1>
+                        <h1>{{ $contact->telephone }}</h1>
+                        <h1>{{ $contact->phone_number }}</h1>
+                    </div>
+                @endif
             </div>
             <div class="keep-in-touch d-flex">
                 <p>KEEP IN TOUCH</p>

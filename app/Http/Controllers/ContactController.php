@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\SendingMail;
 use App\Http\Requests\ContactFormRequest;
 use App\Models\Contact;
+use App\Models\Message;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -19,11 +21,13 @@ class ContactController extends Controller
     {
         $inputs = $request->validated();
 
-        Contact::create([
+        Message::create([
             'from_user' => $inputs['user_name'],
             'from_email' => $inputs['email'],
             'message' => $inputs['message']
         ]);
+
+        Mail::to($inputs['email'])->send(new SendingMail($inputs['user_name']));
 
         return response()->json([
             'status' => true,

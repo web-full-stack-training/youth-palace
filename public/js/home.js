@@ -3,7 +3,7 @@ const children = document.querySelectorAll('.js')
 const arrowLeft = document.querySelector('.arrow-left');
 const arrowRight = document.querySelector('.arrow-right');
 const interval = 3000;
-let x = -Math.abs(children[0].offsetWidth - 10);//poqr diveri laynutyun + margin left u right
+let x = -Math.abs(children[0].offsetWidth + parseInt(window.getComputedStyle(children[0], null).getPropertyValue("margin-right")));//poqr diveri laynutyun + margin left u right
 let y = x;
 let coin = 0;
 let lastPosition = 0;
@@ -12,8 +12,7 @@ const contentLatest = document.querySelector('.test');
 const childrenLatest = document.querySelectorAll('.latest')
 const arrowLeftLatest = document.querySelector('.latest-news-arrow-left');
 const arrowRightLatest = document.querySelector('.latest-news-arrow-right');
-let ara = childrenLatest[0].offsetWidth;
-let position = -Math.abs(ara + 35);//poqr diveri laynutyun + margin left u right
+let position = -Math.abs(childrenLatest[0].offsetWidth + parseInt(window.getComputedStyle(childrenLatest[0], null).getPropertyValue("margin-right")));//poqr diveri laynutyun + margin left u right
 let k = position;
 let i = position;
 let lastPositionLatest = 0;
@@ -30,18 +29,18 @@ function arrowLeftAndRight(direction) {
         lastPosition = y * (children.length - 1);
         if (coin === children.length - 2) {
             content.style.transform = `translateX(0px)`;
-            x = (-488 + 10);
+            x = -Math.abs(y);
             coin = 0;
         } else {
             content.style.transform = `translateX(${x}px)`;
-            x += (-488 + 10);
+            x += -Math.abs(y);
             coin++;
         }
     }
 
     if (direction === 'left') {
         let z = getTranslateX(content);
-        z = -Math.abs(z + 478);
+        z = -Math.abs(z + Math.abs(y));
         content.style.transform = `translateX(${z}px)`;
         x = z;
     }
@@ -106,7 +105,7 @@ arrowLeftLatest.addEventListener('click', function () {
 setInterval(function () {
     let res = getTranslateX(contentLatest);
     if (res === 0) {
-        arrowLeftLatest.style.color = '#cdc6c6';
+        arrowLeftLatest.style.color = '#FFFFFF';
     } else {
         arrowLeftLatest.style.color = 'black';
     }
@@ -115,7 +114,6 @@ setInterval(function () {
     } else {
         arrowRightLatest.style.color = 'black';
     }
-
     if (res === 0) {
         arrowLeft.style.color = '#cdc6c6';
     } else {
@@ -128,3 +126,5 @@ setInterval(function () {
     }
 },400)
 
+const app = window.location.href;
+console.log(app)

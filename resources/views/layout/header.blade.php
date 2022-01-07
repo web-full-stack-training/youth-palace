@@ -4,9 +4,10 @@
     <div class="left-side d-flex align-items-center col-md-4 col-xs-12">
         <h4 class="text-white font-weight-bold m-0">Follow Us</h4>
         <div class="social-medias">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
+            <a href="https://www.facebook.com/YPCNCO" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/yp_cnco/?hl=ru" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-linkedin-in fa-2x"></i></a>
         </div>
     </div>
     <div class="right-side d-flex align-items-center justify-content-end col-md-8 col-xs-12">
@@ -35,12 +36,12 @@
         <p>Palace</p>
     </div>
     <div class="header-menus">
-        <a href="#">Special Programs</a>
-        <a href="#">Clubs</a>
-        <a href="#">Collaboration</a>
-        <a href="#">Volunteering</a>
-        <a href="#">Media</a>
-        <a href="#">Feedback</a>
-        <a href="#">About as</a>
+        <a href="/special-programs"  class="{{ (Request::path() === 'special-programs' ? 'active-menu' : '') }}">Special Programs</a>
+        <a href="/clubs" class="{{ (Request::path() === 'clubs' ? 'active-menu' : '') }}">Clubs</a>
+        <a href="/collaboration"  class="{{ (Request::path() === 'collaboration' ? 'active-menu' : '') }}">Collaboration</a>
+        <a href="/volunteering"  class="{{ (Request::path() === 'volunteering' ? 'active-menu' : '') }}">Volunteering</a>
+        <a href="/media"  class="{{ (Request::path() === 'media' ? 'active-menu' : '') }}">Media</a>
+        <a href="/contact"  class="{{ (Request::path() === 'contact' ? 'active-menu' : '') }}">Contact Us</a>
+        <a href="/about" class="{{ (Request::path() === 'about' ? 'active-menu' : '') }}">About as</a>
     </div>
 </div>
