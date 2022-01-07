@@ -1,0 +1,139 @@
+.footer-container {
+    background-image: url("/images/footer/footerback.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
+
+.footer-container > div {
+    padding-bottom: 130px;
+}
+
+.keep-in-touch {
+    margin-top: 30px;
+    color: #b1b1b1;
+}
+
+.contact {
+    margin-top: 80px;
+    margin-bottom: 0;
+    color: #b1b1b1;
+}
+
+.contactUs {
+    color: #7769e4;
+}
+
+.links-social {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.links-social:hover {
+    background: #fae7ac;
+}
+
+.fab {
+    color: #7769e4;
+}
+
+.blue-text {
+    color: #00BCD4
+}
+
+#form-message {
+    background-color: #ededed;
+    border-radius: 18px;
+    border: 1px solid #ccc;
+    color: #7769e4;
+}
+
+.form-control-label {
+    margin-bottom: 0;
+    padding-left: 30px;
+}
+
+button {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
+
+.contact-form-inputs {
+    background-color: #ededed;
+    padding: 15px 15px;
+    border-radius: 18px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px !important;
+    color: #7769e4;
+}
+
+.error-message {
+    display: none;
+    padding-left: 5px;
+}
+
+.contact-form-inputs:focus,
+.contact-form-inputs:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #7769e4;
+    outline-width: 0;
+    font-weight: 400
+}
+
+.send-contact-form-button {
+    background-color: #7769e4;
+    border: 1px solid #5d50bd;
+    font-size: 18px;
+    font-weight: 400;
+    height: 50px;
+    margin-top: 63px;
+    cursor: pointer;
+    padding: 8px 15px;
+    transition: all .3s ease;
+}
+
+.send-contact-form-button:hover {
+    background-color: #5D50BDFF;
+}
+
+/*left footer side*/
+.social-medias {
+    max-width: 350px;
+    justify-content: space-around;
+}
+
+.links {
+    max-width: 350px;
+    display: flex;
+}
+
+.left-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.link-dark {
+    padding: 16px 0 16px 0;
+}
+
+.right-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-right-side {
+    margin-right: -80px;
+}
+
+.active-footer {
+    display: block;
+}

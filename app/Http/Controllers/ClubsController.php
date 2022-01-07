@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 class ClubsController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         return view('clubs.clubs');
     }
 }

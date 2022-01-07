@@ -1,0 +1,7 @@
+.page-name, .media-title, .news-date {
+    text-align: center;
+}
+
+.news-top,.news-bottom {
+    margin-top: 65px;
+}
