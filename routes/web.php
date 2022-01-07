@@ -22,9 +22,10 @@ Route::get('/clubs', [\App\Http\Controllers\ClubsController::class, 'index']);
 Route::get('/collaboration', [\App\Http\Controllers\CollaborationController::class, 'index']);
 Route::get('/contact', [\App\Http\Controllers\FeedbackController::class, 'index']);
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
+Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
 Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
-
+Route::get('/contact', [\App\Http\Controllers\ContactPageController::class, 'index']);
 
 /*
 |--------------------------------------------------------------------------
@@ -72,8 +73,36 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('media/edit',[\App\Http\Controllers\Admin\MediaController::class, 'editMediaInfo'])->name('edit.media.info');
     Route::post('media', [\App\Http\Controllers\Admin\MediaController::class, 'showMediaPage'])->name('show.media.page');
 
+    //Manage collaboration info
+    Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
+    Route::get('collaboration/create',[\App\Http\Controllers\Admin\CollaborationController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('collaboration/create',[\App\Http\Controllers\Admin\CollaborationController::class, 'addCollaborationInfo'])->name('add.collaboration.info');
+    Route::get('collaboration/edit/{id}',[\App\Http\Controllers\Admin\CollaborationController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('collaboration/edit',[\App\Http\Controllers\Admin\CollaborationController::class, 'editCollaborationInfo'])->name('edit.collaboration.info');
+    Route::post('collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'showCollaborationPage'])->name('show.collaboration.page');
+
+
+
+
+    Route::get('contact',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('contact');
+    Route::get('contact/create',[\App\Http\Controllers\Admin\FeedbackController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('contact/create',[\App\Http\Controllers\Admin\FeedbackController::class, 'addContactInfo'])->name('add.contact.info');
+    Route::get('contact/edit/{id}',[\App\Http\Controllers\Admin\FeedbackController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('contact/edit',[\App\Http\Controllers\Admin\FeedbackController::class, 'editContactInfo'])->name('edit.contact.info');
+    Route::post('contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'showContactPage'])->name('show.contact.page');
+
+
     // Manage contacts
     Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
+
+
+    Route::get('volunteering',[\App\Http\Controllers\Admin\VolunteeringController::class, 'index'])->name('volunteering');
+    Route::get('volunteering/create',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('volunteering/create',[\App\Http\Controllers\Admin\VolunteeringController::class, 'addVolunteeringInfo'])->name('add.volunteering.info');
+    Route::get('volunteering/edit/{id}',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('volunteering/edit',[\App\Http\Controllers\Admin\VolunteeringController::class, 'editVolunteeringInfo'])->name('edit.volunteering.info');
+    Route::post('volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'showVolunteeringPage'])->name('show.volunteering.page');
+
 });
 
     // Manage special-program-page-info

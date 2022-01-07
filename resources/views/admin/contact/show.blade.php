@@ -2,29 +2,36 @@
 @section('content')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{ asset('css/admin/collaboration.css') }}">
-    <h2>collaboration Page</h2>
+    <link rel="stylesheet" href="{{ asset('css/admin/contact.css') }}">
+    <h2>Contact Page</h2>
     <table class="table table-bordered border border-dark">
         <thead>
         <tr class="border">
             <th scope="col">ID</th>
-            <th scope="col">TITLE</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">TELEPHONE</th>
+            <th scope="col">PHONE_NUMBER</th>
+            <th scope="col">ADDRESS</th>
             <th scope="col" width="140px">EDIT</th>
             <th scope="col" width="140px">DELETE</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($collaboration as $data)
+        @if($contact)
             <tr class="tr border">
-                <th scope="row">{{ $data['id'] }}</th>
-                <td>{{ $data['name'] }}</td>
-                <td class="edit"><a href="{{ 'collaboration/edit/' . $data['id'] }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
+                <th scope="row">{{ $contact->id }}</th>
+                <td>{{ $contact->email }}</td>
+                <td>{{ $contact->telephone }}</td>
+                <td>{{ $contact->phone_number }}</td>
+                <td>{{ $contact->address }}</td>
+                <td class="edit"><a href="{{ 'contact/edit/' . $contact->id }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
                 <td class="delete"><button class="border-0" ><i class="fas fa-trash"></i></button></td>
             </tr>
-        @endforeach
+        @endif
+
         </tbody>
     </table>
-    <a class="btn btn-primary" href="collaboration/create" role="button">Create New</a>
+    <a class="btn btn-primary create-button" href="contact/create" role="button">Create New</a>
 
     <div class="modal modal-windows" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -46,7 +53,5 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{ asset('js/helpers.js') }}"></script>
-    <script src="{{ asset('js/collaboration.js') }}"></script>
+    <script src="{{ asset('js/admin/contacts.js') }}"></script>
 @endsection
