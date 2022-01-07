@@ -20,3 +20,9 @@ Route::post('send-message', [\App\Http\Controllers\ContactController::class, 'sa
 Route::post('admin/delete-collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'deleteCollaboration'])->name('delete.collaboration');
 
 Route::post('admin/delete-clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'deleteClubs'])->name('delete.clubs');
+
+
+Route::post('admin/delete-contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'deleteContact'])->name('delete.contact');
+
+
+Route::post('admin/delete-volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'deleteVolunteering'])->name('delete.volunteering');
