@@ -76,6 +76,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     // Manage contacts
     Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
+
+
+    Route::get('volunteering',[\App\Http\Controllers\Admin\VolunteeringController::class, 'index'])->name('volunteering');
+    Route::get('volunteering/create',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('volunteering/create',[\App\Http\Controllers\Admin\VolunteeringController::class, 'addVolunteeringInfo'])->name('add.volunteering.info');
+    Route::get('volunteering/edit/{id}',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('volunteering/edit',[\App\Http\Controllers\Admin\VolunteeringController::class, 'editVolunteeringInfo'])->name('edit.volunteering.info');
+    Route::post('volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'showVolunteeringPage'])->name('show.volunteering.page');
+
 });
 
     // Manage special-program-page-info

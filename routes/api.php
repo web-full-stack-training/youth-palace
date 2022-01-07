@@ -20,3 +20,6 @@ Route::post('admin/delete-clubs', [\App\Http\Controllers\Admin\ClubsController::
 
 
 Route::post('admin/delete-contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'deleteContact'])->name('delete.contact');
+
+
+Route::post('admin/delete-volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'deleteVolunteering'])->name('delete.volunteering');
