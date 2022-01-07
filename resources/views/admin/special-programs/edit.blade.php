@@ -5,4 +5,5 @@
         'action_url' => route('edit.SpecialProgram.info'),
         'special-programs_data' => $specialProgramData
     ])
+
 @endsection

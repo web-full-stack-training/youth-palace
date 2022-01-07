@@ -4,3 +4,14 @@
     background-color: #fff;
     border-radius: 3px;
 }
+.description{
+    overflow: hidden;
+    display: -webkit-box;
+    line-height: 21px;
+    max-height: 48px;
+}
+.specialImages{
+    cursor: pointer;
+
+
+}

@@ -1,54 +1,96 @@
 @extends('app')
 @section('content')
+    <div class=" bg-white mt-3">
+    <h2 class="text-center ">Special Programs</h2>
 
-    <div class="row  col-12 bg-white mt-3 mx-0 p-5 d-flex justify-content-center" >
-        <h2 class="text-center ">Special Programs</h2>
+    <div class=" row col-12 m-0 justify-content-between">
+        <div class="row col-6">
+            <div class="col-12 mx-2 " >
+                <div class="col-12 text-center m-3">
+                    @foreach($showSpecialProgram as $data)
+                        <strong class="text-center ">{{ $data['title'] }}</strong>
+                        <br>
+                        <span class="text-center ">{{ $data['description'] }}</span>
+                    @endforeach
+                </div>
+                <div class="col-12 align-items-center text-center">
+                    @foreach($showSpecialProgram as $data)
+                        @if($data['specialProgramImages'])
+                            @foreach($data['specialProgramImages'] as $dataImage)
 
-        <div class="row col-12">
-            @foreach($showSpecialProgram as $data)
-                <div class="row col-6">
-            <strong class="text-center mb-3">{{ $data['title'] }}</strong>
-            <span class="text-center px-5 ">{{ $data['description'] }}</span>
+                                <img
+                                    src="{{ $dataImage['image_path'] }}"
+                                    class="w-25 shadow-1-strong rounded mb-1"
+                                    alt="Special Programs "
+                                />
 
-            <div class=" col-12 p-0  mt-2 mb-5 ">
-                <div class=" col-3 mx-1 ">
-                    @if($data['specialProgramImages'])
-                        @foreach($data['specialProgramImages'] as $dataImage)
-                            <img
-                                src="{{ $dataImage['image_path'] }}"
-                                class="w-100 shadow-1-strong rounded mb-1"
-                                alt="Special Programs "
-                            />
-                        @endforeach
-                    @endif
+                            @endforeach
+
+                        @endif
+                    @endforeach
                 </div>
 
-{{--                <div class=" col-3 mx-1 ">--}}
-{{--                    @if($data['specialProgramImages'])--}}
-{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
-{{--                            <img--}}
-{{--                                src="{{ $dataImage['image_path'] }}"--}}
-{{--                                class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                                alt="Special Programs "--}}
-{{--                            />--}}
-{{--                        @endforeach--}}
-{{--                    @endif--}}
-{{--                </div>--}}
-{{--                <div class=" col-3 mx-1 ">--}}
-{{--                    @if($data['specialProgramImages'])--}}
-{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
-{{--                            <img--}}
-{{--                                src="{{ $dataImage['image_path'] }}"--}}
-{{--                                class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                                alt="Special Programs "--}}
-{{--                            />--}}
-{{--                        @endforeach--}}
-{{--                    @endif--}}
-{{--                </div>--}}
             </div>
-            </div>
-            @endforeach
+
         </div>
+    </div>
+
+    </div>
+
+
+{{--    <div class="row  col-12 bg-white mt-3 mx-0 p-5 d-flex justify-content-center" >--}}
+{{--        <h2 class="text-center ">Special Programs</h2>--}}
+
+
+{{--        <div class="row col-12">--}}
+{{--            @foreach($showSpecialProgram as $data)--}}
+{{--                <div class="row col-6">--}}
+{{--            <strong class="text-center mb-3">{{ $data['title'] }}</strong>--}}
+{{--            <span class="text-center px-5 ">{{ $data['description'] }}</span>--}}
+
+{{--            <div class=" col-12 p-0  mt-2 mb-5 ">--}}
+{{--                <div class=" col-3 mx-1 ">--}}
+
+{{--                    @if($data['specialProgramImages'])--}}
+{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
+
+{{--                                <img--}}
+{{--                                    src="{{ $dataImage['image_path'] }}"--}}
+{{--                                    class="w-100 shadow-1-strong rounded mb-1"--}}
+{{--                                    alt="Special Programs "--}}
+{{--                                />--}}
+
+{{--                        @endforeach--}}
+
+{{--                    @endif--}}
+{{--                </div>--}}
+
+{{--                <div class=" col-3 mx-1 ">--}}
+{{--                    @if($data['specialProgramImages'])--}}
+{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
+{{--                            <img--}}
+{{--                                src="{{ $dataImage['image_path'] }}"--}}
+{{--                                class="w-100 shadow-1-strong rounded mb-1"--}}
+{{--                                alt="Special Programs "--}}
+{{--                            />--}}
+{{--                        @endforeach--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+{{--                <div class=" col-3 mx-1 ">--}}
+{{--                    @if($data['specialProgramImages'])--}}
+{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
+{{--                            <img--}}
+{{--                                src="{{ $dataImage['image_path'] }}"--}}
+{{--                                class="w-100 shadow-1-strong rounded mb-1"--}}
+{{--                                alt="Special Programs "--}}
+{{--                            />--}}
+{{--                        @endforeach--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            </div>--}}
+{{--            @endforeach--}}
+{{--        </div>--}}
 
 
 
@@ -117,7 +159,7 @@
 
 
 
-    </div>
+{{--    </div>--}}
 
 
 @endsection

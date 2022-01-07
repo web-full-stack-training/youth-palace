@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/admin/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin/special-programs.css') }}">
 
-    <div class="about-content-in-admin">
+    <div class="specialProgram-info-form-card">
         <h2>Special-Program Page</h2>
 
         <table class="table table-bordered border border-dark">
@@ -11,9 +11,10 @@
             <tr class="border">
                 <th scope="col">ID</th>
                 <th scope="col">TITLE</th>
-                <th scope="col">DESCRIPTION</th>
-                <th scope="col" width="140px">EDIT</th>
-                <th scope="col" width="140px">DELETE</th>
+                <th scope="col" class="text-center" >DESCRIPTION</th>
+                <th scope="col" width="40px">EDIT</th>
+                <th scope="col" width="40px">DELETE</th>
+                <th> PHOTOS</th>
             </tr>
             </thead>
             <tbody>
@@ -21,9 +22,21 @@
                 <tr class="tr border">
                     <th scope="row">{{ $data['id'] }}</th>
                     <td>{{ $data['title'] }}</td>
-                    <td>{{ $data['description'] }}</td>
+                    <td class="description">{{ $data['description'] }}</td>
                     <td class="edit"><a href="{{ 'special-programs/edit/' . $data['id'] }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
                     <td class="delete"><button class="border-0" ><i class="fas fa-trash"></i></button></td>
+                    <td>
+                        <div class="data-photos d-flex w-50 mt-1">
+                            @if($data['specialProgramImages'])
+                                @foreach($data['specialProgramImages'] as $dataImage)
+                                    <img
+                                        src="{{ $dataImage['image_path'] }}"
+                                        class="w-25 shadow-1-strong rounded mx-1 "
+                                        alt="Special Programs "
+                                    />
+                        @endforeach
+                        @endif
+                    </td>
                 </tr>
             @endforeach
             </tbody>

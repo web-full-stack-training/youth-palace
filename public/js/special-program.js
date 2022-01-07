@@ -28,7 +28,7 @@ close.addEventListener('click', function () {
 })
 deleteButton.addEventListener('click', function () {
     const data = {
-        media_id: tr
+        specialPrograms_id: tr
     }
     api('admin/delete-special-program', 'post', data).then((res) => {
         modal.style.display = 'none';

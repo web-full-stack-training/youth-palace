@@ -64,7 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
     Route::post('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'addSpecialProgramInfo'])->name('add.special.program.info');
     Route::get('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
-    Route::get('special-programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showEditForm'])->name('show.edit.form');
+    Route::get('special-programs/edit/{id}',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('special-programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'editSpecialProgramInfo'])->name('edit.SpecialProgram.info');
 
 
