@@ -1,8 +1,8 @@
 .title-clubs {
-        width: 100%;
-        position: relative;
-        top: 17px;
-     }
+    width: 100%;
+    position: relative;
+    top: 17px;
+}
 
 .card-container {
     display: flex;
@@ -15,100 +15,13 @@
     flex-wrap: wrap;
 }
 
+.cards-description-content {
+    width: 370px;
+}
 
-.first-card-content {
-        block-size: fit-content;
-        width: fit-content;
-    }
-
-.first-card-title {
-          font-size: 22px;
-          font-family: Inter;
-          font-weight: bold;
-          letter-spacing: 1px;
-      }
-
-.first-card-description-content{
-      width: 370px;
-     }
-
-.second-card-content {
-         block-size: fit-content;
-          width: fit-content;
-
-      }
-
-.second-card-title {
-          font-size: 22px;
-          font-family: Inter, serif;
-          font-weight: bold;
-          letter-spacing: 1px;
-      }
-
-.second-card-description-content {
-         width: 370px;
-      }
-
-.third-card-content {
-         block-size: fit-content;
-         width: fit-content;
-     }
-
-.third-card-title {
-         font-size: 22px;
-         font-family: Inter, serif;
-         font-weight: bold;
-         letter-spacing: 1px;
-     }
-
-.third-card-description-content {
-          width: 370px;
-      }
-
-.fourth-card-content {
-          block-size: fit-content;
-          width: fit-content;
-      }
-
-.fourth-card-title {
-          font-size: 22px;
-          font-family: Inter, serif;
-          font-weight: bold;
-          letter-spacing: 1px;
-      }
-
-.fourth-card-description-content {
-     width: 370px;
-    }
-
-.five-card-content {
-          block-size: fit-content;
-          width: fit-content;
-      }
-
-.five-card-title {
-          font-size: 22px;
-          font-family: Inter, serif;
-          font-weight: bold;
-          letter-spacing: 1px;
-      }
-
-.five-card-description-content {
-          width: 370px;
-      }
-
-.six-card-content {
-          block-size: fit-content;
-          width: fit-content;
-      }
-
-.six-card-title {
-          font-size: 22px;
-          font-family: Inter, serif;
-          font-weight: bold;
-          letter-spacing: 1px;
-      }
-
-.six-card-description-content {
-         width: 370px;
-      }
+.cards-title {
+    font-size: 22px;
+    font-family: Inter, serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
