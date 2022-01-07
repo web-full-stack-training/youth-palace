@@ -22,7 +22,9 @@
 .header .social-medias i {
     cursor: pointer;
 }
-
+.header .social-medias a {
+    margin: 0 5px;
+}
 .sub-header {
     width: 100%;
     height: 64px;

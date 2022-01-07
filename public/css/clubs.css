@@ -1,0 +1,27 @@
+.title-clubs {
+    width: 100%;
+    position: relative;
+    top: 17px;
+}
+
+.card-container {
+    display: flex;
+    position: relative;
+    top: 20px;
+    bottom: 15px;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cards-description-content {
+    width: 370px;
+}
+
+.cards-title {
+    font-size: 22px;
+    font-family: Inter, serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

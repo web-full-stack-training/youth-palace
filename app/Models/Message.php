@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Message extends Model
 {
     use HasFactory;
-    protected $fillable = ['email', 'telephone', 'phone_number', 'address'];
+    protected $fillable = ['from_user', 'from_email', 'message'];
 }

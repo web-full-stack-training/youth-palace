@@ -1,3 +1,5 @@
+let app = window.location.href.split('/').pop();
+const footer = document.querySelector('.active-footer');
 const sendButton = document.querySelector('.send-contact-form-button');
 
 sendButton.addEventListener('click', function () {
@@ -46,3 +48,6 @@ function clearErrorMessages(formElements) {
         })
     });
 }
+
+if (app === 'contact') footer.style.display = 'none';
+

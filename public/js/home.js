@@ -12,8 +12,7 @@ const contentLatest = document.querySelector('.test');
 const childrenLatest = document.querySelectorAll('.latest')
 const arrowLeftLatest = document.querySelector('.latest-news-arrow-left');
 const arrowRightLatest = document.querySelector('.latest-news-arrow-right');
-let ara = childrenLatest[0].offsetWidth;
-let position = -Math.abs(ara + 35);//poqr diveri laynutyun + margin left u right
+let position = -Math.abs(childrenLatest[0].offsetWidth + parseInt(window.getComputedStyle(childrenLatest[0], null).getPropertyValue("margin-right")));//poqr diveri laynutyun + margin left u right
 let k = position;
 let i = position;
 let lastPositionLatest = 0;
@@ -127,3 +126,5 @@ setInterval(function () {
     }
 },400)
 
+const app = window.location.href;
+console.log(app)

@@ -16,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('send-message', [\App\Http\Controllers\ContactController::class, 'saveContactMessage'])->name('send.message');
 
+Route::post('admin/delete-clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'deleteClubs'])->name('delete.clubs');
+
 
 Route::post('admin/delete-volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'deleteVolunteering'])->name('delete.volunteering');
