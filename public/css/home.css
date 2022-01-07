@@ -439,7 +439,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.first-child-our-works, .second-child-our-works, .first-child-our-works-first, .second-child-our-works-second {
+.child-our-works {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -495,22 +495,6 @@ body {
     margin-top: 15px;
 }
 
-.first-child-our-works-first {
-
-}
-
-.first-child-our-works-first button {
-
-}
-
-.second-child-our-works-second {
-
-}
-
-.second-child-our-works-second button {
-
-}
-
 .our-works-container {
     width: 100%;
     background-color: white;
@@ -532,13 +516,6 @@ body {
     overflow: hidden;
 }
 
-.first, .second, .third, .fourth, .fifth, .sixth {
-    width: 200px;
-    height: 500px;
-    border: 1px solid gray;
-    margin-left: 40px;
-}
-
 .test {
     position: absolute;
     width: 969px;
@@ -546,13 +523,13 @@ body {
     left: 5%;
 }
 
-.test div {
-    margin: 20px 35px 0 0;
+.latest-news-first-part div {
+    margin: 20px 50px 0 0;
     width: 180px;
 }
 
 .latest-news {
-    width: 940px;
+    width: 960px;
     height: 550px;
     margin-top: 15px;
     position: relative;
@@ -572,30 +549,20 @@ body {
     display: flex;
 }
 
-.latest-news img {
-    margin: 0 18px;
-    padding: 0;
-}
-
 .latest-news h3 {
     font-family: sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0.2px;
     color: #2D3436;
-    margin-left: 18px;
 }
 
 .latest-news p {
-    margin-left: 18px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 24px;
-    margin-right: 0;
-    letter-spacing: 0.25px;
     color: #2D3436;
 }
 
@@ -620,12 +587,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    letter-spacing: 0.25px;
     color: #6C5CE7;
     background-color: white;
     margin-left: 18px;
     margin-right: 20px;
-    margin-top: 0;
 }
 
 .latest-news-arrow-right {

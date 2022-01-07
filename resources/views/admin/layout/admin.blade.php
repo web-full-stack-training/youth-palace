@@ -30,7 +30,7 @@
             <a href="{{ route('collaboration') }}" class="{{ (Route::currentRouteName() === 'collaboration' ? 'active-menu' : '') }}">Collaboration</a>
             <a href="{{ route('volunteering') }}" class="{{ (Route::currentRouteName() === 'volunteering' ? 'active-menu' : '') }}">Volunteering</a>
             <a href="{{ route('media') }}" class="{{ (Route::currentRouteName() === 'media' ? 'active-menu' : '') }}">Media</a>
-            <a href="{{ route('feedback') }}" class="{{ (Route::currentRouteName() === 'feedback' ? 'active-menu' : '') }}">Feedback</a>
+            <a href="{{ route('contact') }}" class="{{ (Route::currentRouteName() === 'contact' ? 'active-menu' : '') }}">Feedback</a>
             <a href="{{ route('about.us') }}" class="{{ (Route::currentRouteName() === 'about.us' ? 'active-menu' : '') }}">About as</a>
             <div class="dropdown">
                 <p>More</p>
