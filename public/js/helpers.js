@@ -8,7 +8,7 @@
 async function api(url, method, body) {
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    return await fetch('api/' + url, {
+    return await fetch('/api/' + url, {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*",
