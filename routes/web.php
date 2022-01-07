@@ -56,6 +56,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'editAboutInfo'])->name('edit.about.info');
 
+    Route::get('clubs',[\App\Http\Controllers\Admin\ClubsController::class, 'index'])->name('clubs');
+    Route::get('clubs/create',[\App\Http\Controllers\Admin\ClubsController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('clubs/create',[\App\Http\Controllers\Admin\ClubsController::class, 'addClubsInfo'])->name('add.clubs.info');
+    Route::get('clubs/edit/{id}',[\App\Http\Controllers\Admin\ClubsController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('clubs/edit',[\App\Http\Controllers\Admin\ClubsController::class, 'editClubsInfo'])->name('edit.clubs.info');
+    Route::post('clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'showClubsPage'])->name('show.clubs.page');
+
+
 
 
     Route::get('contact',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('contact');
