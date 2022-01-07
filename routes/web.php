@@ -20,7 +20,7 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/clubs', [\App\Http\Controllers\ClubsController::class, 'index']);
 Route::get('/collaboration', [\App\Http\Controllers\CollaborationController::class, 'index']);
-Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index']);
+Route::get('/contact', [\App\Http\Controllers\FeedbackController::class, 'index']);
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
 Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
@@ -45,7 +45,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('clubs',[\App\Http\Controllers\Admin\ClubsController::class, 'index'])->name('clubs');
     Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
     Route::get('volunteering',[\App\Http\Controllers\Admin\VolunteeringController::class, 'index'])->name('volunteering');
-    Route::get('feedback',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('feedback');
+    Route::get('media',[\App\Http\Controllers\Admin\MediaController::class, 'index'])->name('media');
+    Route::get('contact',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('contact');
 
     // Manage about info
     Route::get('about-us',[\App\Http\Controllers\Admin\AboutAsController::class, 'index'])->name('about.us');
@@ -54,6 +55,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('about-us/create',[\App\Http\Controllers\Admin\AboutAsController::class, 'showCreateForm'])->name('show.create.form');
     Route::get('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('about-us/edit',[\App\Http\Controllers\Admin\AboutAsController::class, 'editAboutInfo'])->name('edit.about.info');
+
+    Route::get('clubs',[\App\Http\Controllers\Admin\ClubsController::class, 'index'])->name('clubs');
+    Route::get('clubs/create',[\App\Http\Controllers\Admin\ClubsController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('clubs/create',[\App\Http\Controllers\Admin\ClubsController::class, 'addClubsInfo'])->name('add.clubs.info');
+    Route::get('clubs/edit/{id}',[\App\Http\Controllers\Admin\ClubsController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('clubs/edit',[\App\Http\Controllers\Admin\ClubsController::class, 'editClubsInfo'])->name('edit.clubs.info');
+    Route::post('clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'showClubsPage'])->name('show.clubs.page');
+
 
     //Manage media info
     Route::get('media',[\App\Http\Controllers\Admin\MediaController::class, 'index'])->name('media');
