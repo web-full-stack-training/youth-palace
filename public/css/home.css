@@ -136,7 +136,6 @@ body {
     font-weight: bold;
     font-size: 18px;
     line-height: 24px;
-    display: flex;
     align-items: flex-end;
     letter-spacing: 0.25px;
     color: #EF831F;
@@ -164,7 +163,6 @@ body {
     font-weight: bold;
     font-size: 18px;
     line-height: 24px;
-    display: flex;
     align-items: flex-end;
     letter-spacing: 0.25px;
     color: #EF831F;

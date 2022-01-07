@@ -64,6 +64,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'showClubsPage'])->name('show.clubs.page');
 
 
+    //Manage collaboration info
+    Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
+    Route::get('collaboration/create',[\App\Http\Controllers\Admin\CollaborationController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('collaboration/create',[\App\Http\Controllers\Admin\CollaborationController::class, 'addCollaborationInfo'])->name('add.collaboration.info');
+    Route::get('collaboration/edit/{id}',[\App\Http\Controllers\Admin\CollaborationController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('collaboration/edit',[\App\Http\Controllers\Admin\CollaborationController::class, 'editCollaborationInfo'])->name('edit.collaboration.info');
+    Route::post('collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'showCollaborationPage'])->name('show.collaboration.page');
+
+
 
 
     Route::get('contact',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('contact');
