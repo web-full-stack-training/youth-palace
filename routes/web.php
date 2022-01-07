@@ -65,6 +65,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'showClubsPage'])->name('show.clubs.page');
 
 
+    //Manage media info
+    Route::get('media',[\App\Http\Controllers\Admin\MediaController::class, 'index'])->name('media');
+    Route::get('media/create',[\App\Http\Controllers\Admin\MediaController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('media/create',[\App\Http\Controllers\Admin\MediaController::class, 'addMediaInfo'])->name('add.media.info');
+    Route::get('media/edit/{id}',[\App\Http\Controllers\Admin\MediaController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('media/edit',[\App\Http\Controllers\Admin\MediaController::class, 'editMediaInfo'])->name('edit.media.info');
+    Route::post('media', [\App\Http\Controllers\Admin\MediaController::class, 'showMediaPage'])->name('show.media.page');
+
     //Manage collaboration info
     Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
     Route::get('collaboration/create',[\App\Http\Controllers\Admin\CollaborationController::class, 'showCreateForm'])->name('show.create.form');

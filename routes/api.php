@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('send-message', [\App\Http\Controllers\ContactController::class, 'saveContactMessage'])->name('send.message');
 
+//admin
+Route::post('admin/delete-media', [\App\Http\Controllers\Admin\MediaController::class, 'deleteMedia'])->name('delete.media');
+
 
 Route::post('admin/delete-collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'deleteCollaboration'])->name('delete.collaboration');
 
