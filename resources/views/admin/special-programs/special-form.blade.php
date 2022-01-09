@@ -14,28 +14,22 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" class="form-control" rows="7" >{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->description : '' }}</textarea>
         </div>
-
-        @if($action_url === 'http://youth-palace.loc/admin/special-programs/edit')
-            <div class="data-photos d-flex w-25 mt-3">
+{{--$action_url i dzevy poxel--}}
+        @if($action_url === 'http://yp.loc/admin/special-programs/edit')
+           <div class="data-photos d-flex w-25 mt-3">
                 @if($specialProgramData['specialProgramImages'])
                     @foreach($specialProgramData['specialProgramImages'] as $dataImage)
-
-                        <img
+                       <a href="#" class="rollover"><img
                             src="{{ $dataImage['image_path'] }}"
-                            class="w-25 shadow-1-strong rounded mx-2 specialImages "
+                            class=" shadow-1-strong rounded specialImages "
                             alt="Special Programs "
-
-                        />
-
+                        /></a>
                     @endforeach
                 @endif
             </div>
         @endif
-
-
-
         <input type="file" class="form-control mt-3" name="images[]" multiple>
         <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? 'edit' : 'creat' }}</button>
     </form>
-
 </div>
+

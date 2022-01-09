@@ -1,165 +1,28 @@
 @extends('app')
 @section('content')
-    <div class=" bg-white mt-3">
-    <h2 class="text-center ">Special Programs</h2>
+    <div class=" bg-white mt-3 ">
+        <h2 class="text-center">Special Programs</h2>
+        <div class="text-center align-items-center ">
+            @foreach($showSpecialProgram as $data)
 
-    <div class=" row col-12 m-0 justify-content-between">
-        <div class="row col-6">
-            <div class="col-12 mx-2 " >
-                <div class="col-12 text-center m-3">
-                    @foreach($showSpecialProgram as $data)
-                        <strong class="text-center ">{{ $data['title'] }}</strong>
-                        <br>
-                        <span class="text-center ">{{ $data['description'] }}</span>
-                    @endforeach
-                </div>
-                <div class="col-12 align-items-center text-center">
-                    @foreach($showSpecialProgram as $data)
-                        @if($data['specialProgramImages'])
-                            @foreach($data['specialProgramImages'] as $dataImage)
-
-                                <img
-                                    src="{{ $dataImage['image_path'] }}"
-                                    class="w-25 shadow-1-strong rounded mb-1"
-                                    alt="Special Programs "
-                                />
-
-                            @endforeach
-
-                        @endif
-                    @endforeach
+                <div class="container col-10 text-center align-items-center">
+                    <strong class="text-center mt-3">{{ $data['title'] }}</strong>
+                    <br>
+                    <p class="text-center mt-3 mx-5">{{ $data['description'] }}</p>
+                    <br>
                 </div>
 
-            </div>
-
+            @if($data['specialProgramImages'])
+                    @foreach($data['specialProgramImages'] as $dataImage)
+                        <img
+                            src="{{ $dataImage['image_path'] }}"
+                            class="w-25 shadow-1-strong rounded mb-1 "
+                            alt="Special Programs "
+                        />
+                    @endforeach
+                    <hr>
+                @endif
+            @endforeach
         </div>
     </div>
-
-    </div>
-
-
-{{--    <div class="row  col-12 bg-white mt-3 mx-0 p-5 d-flex justify-content-center" >--}}
-{{--        <h2 class="text-center ">Special Programs</h2>--}}
-
-
-{{--        <div class="row col-12">--}}
-{{--            @foreach($showSpecialProgram as $data)--}}
-{{--                <div class="row col-6">--}}
-{{--            <strong class="text-center mb-3">{{ $data['title'] }}</strong>--}}
-{{--            <span class="text-center px-5 ">{{ $data['description'] }}</span>--}}
-
-{{--            <div class=" col-12 p-0  mt-2 mb-5 ">--}}
-{{--                <div class=" col-3 mx-1 ">--}}
-
-{{--                    @if($data['specialProgramImages'])--}}
-{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
-
-{{--                                <img--}}
-{{--                                    src="{{ $dataImage['image_path'] }}"--}}
-{{--                                    class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                                    alt="Special Programs "--}}
-{{--                                />--}}
-
-{{--                        @endforeach--}}
-
-{{--                    @endif--}}
-{{--                </div>--}}
-
-{{--                <div class=" col-3 mx-1 ">--}}
-{{--                    @if($data['specialProgramImages'])--}}
-{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
-{{--                            <img--}}
-{{--                                src="{{ $dataImage['image_path'] }}"--}}
-{{--                                class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                                alt="Special Programs "--}}
-{{--                            />--}}
-{{--                        @endforeach--}}
-{{--                    @endif--}}
-{{--                </div>--}}
-{{--                <div class=" col-3 mx-1 ">--}}
-{{--                    @if($data['specialProgramImages'])--}}
-{{--                        @foreach($data['specialProgramImages'] as $dataImage)--}}
-{{--                            <img--}}
-{{--                                src="{{ $dataImage['image_path'] }}"--}}
-{{--                                class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                                alt="Special Programs "--}}
-{{--                            />--}}
-{{--                        @endforeach--}}
-{{--                    @endif--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            </div>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}
-
-
-
-
-
-
-
-{{--        <div class="row col-6">--}}
-{{--            <strong class="text-center mb-3">Special Programs</strong>--}}
-{{--            <span class="text-center px-5 ">--}}
-{{--                Lorem Ipsum is simply dummy text of the printing and typesetting industry.--}}
-{{--                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,--}}
-{{--                when an unknown printer took a galley of type and scrambled it to make a type--}}
-{{--                specimen book. It has survived not only five centuries, but also the leap into--}}
-{{--                electronic typesetting, remaining essentially unchanged. It was popularised in--}}
-{{--                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,--}}
-{{--                and more recently with desktop publishing software like Aldus PageMaker--}}
-{{--                including versions of Lorem Ipsum.--}}
-{{--            </span>--}}
-{{--            <div class=" col-12 p-0 d-flex justify-content-center mt-2 mb-5 ">--}}
-
-{{--                <div class=" col-3 mx-1 ">--}}
-
-{{--                    <img--}}
-{{--                        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"--}}
-{{--                        class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                        alt="Boat on Calm Water "--}}
-{{--                    />--}}
-
-{{--                    <img--}}
-{{--                        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"--}}
-{{--                        class="w-100 shadow-1-strong rounded "--}}
-{{--                        alt="Wintry Mountain Landscape"--}}
-{{--                    />--}}
-{{--                </div>--}}
-
-{{--                <div class="col-3 mx-1">--}}
-{{--                    <img--}}
-{{--                        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"--}}
-{{--                        class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                        alt="Mountains in the Clouds"--}}
-{{--                    />--}}
-
-{{--                    <img--}}
-{{--                        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"--}}
-{{--                        class="w-100 shadow-1-strong rounded "--}}
-{{--                        alt="Boat on Calm Water"--}}
-{{--                    />--}}
-{{--                </div>--}}
-
-{{--                <div class="col-3 mx-1">--}}
-{{--                    <img--}}
-{{--                        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"--}}
-{{--                        class="w-100 shadow-1-strong rounded mb-1"--}}
-{{--                        alt="Waves at Sea"--}}
-{{--                    />--}}
-
-{{--                    <img--}}
-{{--                        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"--}}
-{{--                        class="w-100 shadow-1-strong rounded "--}}
-{{--                        alt="Yosemite National Park"--}}
-{{--                    />--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-
-
-{{--    </div>--}}
-
-
 @endsection

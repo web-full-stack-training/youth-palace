@@ -4,14 +4,31 @@
     background-color: #fff;
     border-radius: 3px;
 }
+
 .description{
     overflow: hidden;
     display: -webkit-box;
     line-height: 21px;
     max-height: 48px;
 }
+
 .specialImages{
     cursor: pointer;
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin-right: 30px;
+}
 
+a.rollover {
 
+    background: #ffffff;
+    display: block;
+    width: 150px;
+    height: 70px;
+}
+
+a.rollover:hover {
+
+    background-image: url("public/images/icons/close-modal.png");
 }
