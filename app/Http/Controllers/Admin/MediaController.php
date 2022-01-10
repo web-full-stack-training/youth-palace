@@ -23,6 +23,7 @@ class MediaController extends Controller
     }
     public function addMediaInfo(Request $request)
     {
+        $type = ['mp4'];
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('video');
@@ -30,16 +31,20 @@ class MediaController extends Controller
         if (!is_null($title)) {
             if (!is_null($description)) {
                 if (!is_null($file)) {
-                    $directory = public_path('storage/uploads/media/');
-                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-                    $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
+                    if (in_array($file->getClientOriginalExtension(), $type)) {
+                        $directory = public_path('storage/uploads/media/');
+                        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                        $imagePath = $file->move($directory, $file->getClientOriginalName());
+                        $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
 
-                    Media::create([
-                        'title' => $title,
-                        'description' => $description,
-                        'video_path' => $savedImagePath
-                    ]);
+                        Media::create([
+                            'title' => $title,
+                            'description' => $description,
+                            'video_path' => $savedImagePath
+                        ]);
+                    } else {
+                        return redirect()->back();
+                    }
                 } else {
                     return redirect()->back();
                 }
@@ -59,6 +64,7 @@ class MediaController extends Controller
     }
     public function editMediaInfo(Request $request)
     {
+        $type = ['mp4'];
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('video');
@@ -67,18 +73,22 @@ class MediaController extends Controller
         if (!is_null($title)) {
             if (!is_null($description)) {
                 if (!is_null($file)) {
-                    $directory = public_path('storage/uploads/media/');
-                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-                    $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
+                    if (in_array($file->getClientOriginalExtension(), $type)) {
+                        $directory = public_path('storage/uploads/media/');
+                        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                        $imagePath = $file->move($directory, $file->getClientOriginalName());
+                        $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
 
-                    Media::where('id', $id)->update(
-                        [
-                            'title' => $title,
-                            'description' => $description,
-                            'video_path' => $savedImagePath
-                        ]
-                    );
+                        Media::where('id', $id)->update(
+                            [
+                                'title' => $title,
+                                'description' => $description,
+                                'video_path' => $savedImagePath
+                            ]
+                        );
+                    } else {
+                        return redirect()->back();
+                    }
                 } else {
                     return redirect()->back();
                 }
