@@ -24,7 +24,7 @@ Route::get('/feedback', [\App\Http\Controllers\FeedbackController::class, 'index
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
 Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index']);
-
+Route::post('send-message', [\App\Http\Controllers\ContactController::class, 'saveContactMessage'])->name('send.message');
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
     Route::get('special-programs/edit/{id}',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('special-programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'editSpecialProgramInfo'])->name('edit.SpecialProgram.info');
-
-
+    Route::post('delete-special-program', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgram'])->name('delete.special.program');
+    Route::post('delete-special-program-image', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgramImage'])->name('delete.special.program.image');
 });
 

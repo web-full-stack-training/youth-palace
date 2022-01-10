@@ -1,3 +1,10 @@
+.about-info-form-card {
+    width: 100%;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
 .specialProgram-info-form-card {
     width: 100%;
     padding: 25px;
@@ -10,9 +17,10 @@
     display: -webkit-box;
     line-height: 21px;
     max-height: 48px;
+    width: 500px;
 }
 
-.specialImages{
+.special-images{
     cursor: pointer;
     display: block;
     width: 70px;
@@ -20,15 +28,19 @@
     margin-right: 30px;
 }
 
-a.rollover {
-
-    background: #ffffff;
+.rollover {
     display: block;
-    width: 150px;
-    height: 70px;
+    position: relative;
 }
 
-a.rollover:hover {
-
-    background-image: url("public/images/icons/close-modal.png");
+.delete-special-program-image-icon {
+    display: none;
+    color: #ad0303;
+    position: absolute;
+    padding: 0;
+    top: -4px;
+    left: 10px;
+}
+.special-images:hover + .delete-special-program-image-icon {
+    display: block;
 }

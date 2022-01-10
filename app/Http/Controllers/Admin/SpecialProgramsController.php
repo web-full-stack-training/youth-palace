@@ -101,9 +101,11 @@ class SpecialProgramsController extends Controller
 
         return redirect()->route('special.programs');
     }
+
     public function showSpecialProgramPage() {
         return view('special-programs.special-programs');
     }
+
     public function deleteSpecialProgram(Request $request): JsonResponse
     {
         $specialProgramId = $request->input('specialPrograms_id');
@@ -116,5 +118,16 @@ class SpecialProgramsController extends Controller
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function deleteSpecialProgramImage(Request $request): JsonResponse
+    {
+        $imageId = $request->input('image_id');
 
+        if (!$imageId || !is_numeric($imageId)) return response()->json(['status' => false, 'message' => 'Wrong data']);
+        SpecialProgramImage::where('id', $imageId)->delete();
+        return response()->json(['status' => true, 'message' => 'Image deleted successfully.']);
+    }
 }
