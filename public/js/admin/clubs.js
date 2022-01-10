@@ -33,10 +33,6 @@ deleteButton.addEventListener('click', function () {
     api('admin/delete-clubs', 'post', data).then((res) => {
         modal.style.display = 'none';
         remove.parentNode.remove();
-        setTimeout(function () {
-            modal.style.display = 'block';
-            p.innerHTML = res.message;
-            deleteButton.style.display = 'none';
-        }, 800);
+        showModal(true, res.message, res.status);
     })
 })

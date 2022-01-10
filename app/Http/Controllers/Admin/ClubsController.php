@@ -23,20 +23,38 @@ class ClubsController extends Controller
     }
     public function addClubsInfo(Request $request): \Illuminate\Http\RedirectResponse
     {
+        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('image');
 
-        $directory = public_path('storage/uploads/clubs/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    if (in_array($file->getClientOriginalExtension(), $type)) {
+                        $directory = public_path('storage/uploads/clubs/');
+                        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                        $imagePath = $file->move($directory, $file->getClientOriginalName());
+                        $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
 
-        Clubs::create([
-            'title' => $title,
-            'description' => $description,
-            'img_path' => $savedImagePath
-        ]);
+                        Clubs::create([
+                            'title' => $title,
+                            'description' => $description,
+                            'img_path' => $savedImagePath
+                        ]);
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
         return redirect()->route('clubs');
     }
     public function showEditForm($id)
@@ -46,22 +64,42 @@ class ClubsController extends Controller
     }
     public function editClubsInfo(Request $request): \Illuminate\Http\RedirectResponse
     {
+        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('image');
-        $directory = public_path('storage/uploads/clubs/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
         $id = $request->input('clubs-id');
+        $savedImagePath = 0;
 
-        Clubs::where('id', $id)->update(
-            [
-                'title' => $title,
-                'description' => $description,
-                'img_path' => $savedImagePath
-            ]
-        );
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    if (in_array($file->getClientOriginalExtension(), $type)) {
+                        $directory = public_path('storage/uploads/clubs/');
+                        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                        $imagePath = $file->move($directory, $file->getClientOriginalName());
+                        $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
+
+                        Clubs::where('id', $id)->update(
+                            [
+                                'title' => $title,
+                                'description' => $description,
+                                'img_path' => $savedImagePath
+                            ]
+                        );
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
         return redirect()->route('clubs');
     }
     public function showClubsPage() {
@@ -78,6 +116,7 @@ class ClubsController extends Controller
         Clubs::where('id', $clubsId)->delete();
 
         return response()->json([
+            'status' => true,
             'message' => 'Clubs deleted successfully'
         ]);
     }

@@ -4,3 +4,17 @@
     background-color: #fff;
     border-radius: 3px;
 }
+.about-info {
+    width: 100%;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.about-info img {
+    margin-top: 50px;
+}
+.content p {
+    overflow: auto;
+    width: 700px;
+    height: 250px;
+}

@@ -22,18 +22,33 @@ class CollaborationController extends Controller
     }
     public function addCollaborationInfo(Request $request): \Illuminate\Http\RedirectResponse
     {
+        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $file = $request->file('image');
 
-        $directory = public_path('storage/uploads/collaboration/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+        if (!is_null($title)) {
+            if (!is_null($file)) {
+                if (in_array($file->getClientOriginalExtension(), $type)) {
+                    $directory = public_path('storage/uploads/collaboration/');
+                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                    $imagePath = $file->move($directory, $file->getClientOriginalName());
+                    $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
 
-        Collaborations::create([
-            'name' => $title,
-            'img_path' => $savedImagePath
-        ]);
+                    Collaborations::create([
+                        'name' => $title,
+                        'img_path' => $savedImagePath
+                    ]);
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
+
         return redirect()->route('collaboration');
     }
     public function showEditForm($id)
@@ -43,20 +58,35 @@ class CollaborationController extends Controller
     }
     public function editCollaborationInfo(Request $request): \Illuminate\Http\RedirectResponse
     {
+        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $file = $request->file('image');
-        $directory = public_path('storage/uploads/collaboration/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
         $id = $request->input('collaboration-id');
 
-        Collaborations::where('id', $id)->update(
-            [
-                'name' => $title,
-                'img_path' => $savedImagePath
-            ]
-        );
+        if (!is_null($title)) {
+            if (!is_null($file)) {
+                if (in_array($file->getClientOriginalExtension(), $type)) {
+                    $directory = public_path('storage/uploads/collaboration/');
+                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                    $imagePath = $file->move($directory, $file->getClientOriginalName());
+                    $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+
+                    Collaborations::where('id', $id)->update(
+                        [
+                            'name' => $title,
+                            'img_path' => $savedImagePath
+                        ]
+                    );
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
         return redirect()->route('collaboration');
     }
     public function showCollaborationPage() {

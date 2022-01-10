@@ -11,7 +11,7 @@
         <div class='row card-container mt-4 p-0'>
             @foreach($clubs as $data)
                 <div class='mt-4 col-xl-4  col-lg-6 d-flex justify-content-center align-items-center flex-column'>
-                    <img src='{{ $data['img_path'] }}' width='370px' height='250px' alt="first image">
+                    <img src='{{ $data['img_path'] }}' width='370px' height='250px' alt="No Picture">
                     <div class='cards-description-content mt-1'>
                         <h1 class='cards-title'>{{ $data['title'] }}</h1>
                         <p class='d-block'>

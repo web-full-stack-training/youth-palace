@@ -26,27 +26,74 @@ class AboutAsController extends Controller
         $description = $request->input('description');
         $file = $request->file('image');
 
-        $directory = public_path('storage/uploads/about/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = '/storage/uploads/about/' . $file->getClientOriginalName();
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    $directory = public_path('storage/uploads/about/');
+                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                    $imagePath = $file->move($directory, $file->getClientOriginalName());
+                    $savedImagePath = '/storage/uploads/about/' . $file->getClientOriginalName();
 
-        About::create([
-            'title' => $title,
-            'description' => $description,
-            'image_path' => $savedImagePath
-        ]);
+                    About::create([
+                        'title' => $title,
+                        'description' => $description,
+                        'image_path' => $savedImagePath
+                    ]);
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
+        return redirect()->route('about.us');
     }
 
     public function showEditForm()
     {
-        return view('admin.about.edit');
+        $aboutData = About::first();
+        return view('admin.about.edit', compact('aboutData'));
     }
 
     public function editAboutInfo(Request $request)
     {
+        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('image');
+
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    if (in_array($file->getClientOriginalExtension(), $type)) {
+                        $directory = public_path('storage/uploads/about/');
+                        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                        $imagePath = $file->move($directory, $file->getClientOriginalName());
+                        $savedImagePath = '/storage/uploads/about/' . $file->getClientOriginalName();
+
+                        About::first()->update(
+                            [
+                                'title' => $title,
+                                'description' => $description,
+                                'image_path' => $savedImagePath
+                            ]
+                        );
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
+        return redirect()->route('about.us');
     }
 }

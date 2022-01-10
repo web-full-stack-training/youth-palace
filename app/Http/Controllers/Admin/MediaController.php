@@ -23,20 +23,38 @@ class MediaController extends Controller
     }
     public function addMediaInfo(Request $request)
     {
+        $type = ['mp4'];
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('video');
 
-        $directory = public_path('storage/uploads/media/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    if (in_array($file->getClientOriginalExtension(), $type)) {
+                        $directory = public_path('storage/uploads/media/');
+                        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                        $imagePath = $file->move($directory, $file->getClientOriginalName());
+                        $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
 
-        Media::create([
-            'title' => $title,
-            'description' => $description,
-            'video_path' => $savedImagePath
-        ]);
+                        Media::create([
+                            'title' => $title,
+                            'description' => $description,
+                            'video_path' => $savedImagePath
+                        ]);
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
         return redirect()->route('media');
     }
     public function showEditForm($id)
@@ -46,22 +64,41 @@ class MediaController extends Controller
     }
     public function editMediaInfo(Request $request)
     {
+        $type = ['mp4'];
         $title = $request->input('title');
         $description = $request->input('description');
         $file = $request->file('video');
-        $directory = public_path('storage/uploads/media/');
-        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-        $imagePath = $file->move($directory, $file->getClientOriginalName());
-        $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
         $id = $request->input('media-id');
 
-        Media::where('id', $id)->update(
-            [
-                'title' => $title,
-                'description' => $description,
-                'video_path' => $savedImagePath
-            ]
-        );
+        if (!is_null($title)) {
+            if (!is_null($description)) {
+                if (!is_null($file)) {
+                    if (in_array($file->getClientOriginalExtension(), $type)) {
+                        $directory = public_path('storage/uploads/media/');
+                        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+                        $imagePath = $file->move($directory, $file->getClientOriginalName());
+                        $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
+
+                        Media::where('id', $id)->update(
+                            [
+                                'title' => $title,
+                                'description' => $description,
+                                'video_path' => $savedImagePath
+                            ]
+                        );
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
         return redirect()->route('media');
     }
     public function showMediaPage() {
