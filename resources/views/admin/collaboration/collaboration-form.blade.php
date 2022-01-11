@@ -9,7 +9,8 @@
             <label for="title">Title</label>
             <input type="text" id="title" name="title" class="form-control" value="{{ (parse_url($action_url)['path'] === '/admin/collaboration/edit') ? $collaboration_data->name : '' }}">
         </div>
-        <input type="file" class="form-control mt-3" name="image"  accept=".jpg, .jpeg, .png">
-        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/collaboration/edit') ? 'edit' : 'creat' }}</button>
+
+        <input type="file" class="form-control mt-3" name="image"  accept=".jpg, .jpeg, .png" value="Browse">
+        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/collaboration/edit') ? 'Save' : 'Creat' }}</button>
     </form>
 </div>

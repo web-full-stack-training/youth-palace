@@ -65,14 +65,13 @@ class FeedbackController extends Controller
         $telephone = $request->input('telephone');
         $phone_number = $request->input('phone_number');
         $address = $request->input('address');
-
         $id = $request->input('contact-id');
 
         if (!is_null($email)) {
             if (!is_null($telephone)) {
                 if (!is_null($phone_number)) {
                     if (!is_null($address)) {
-                        Contact::create([
+                        Contact::where('id', $id)->update([
                             'email' => $email,
                             'telephone' => $telephone,
                             'phone_number' => $phone_number,
@@ -107,7 +106,8 @@ class FeedbackController extends Controller
         Contact::where('id', $contactId)->delete();
 
         return response()->json([
-            'message' => 'Media deleted successfully'
+            'status' => true,
+            'message' => 'Contact deleted successfully'
         ]);
     }
 }

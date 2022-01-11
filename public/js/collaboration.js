@@ -28,9 +28,9 @@ close.addEventListener('click', function () {
 })
 deleteButton.addEventListener('click', function () {
     const data = {
-        clubs_id: tr
+        collaboration_id: tr
     }
-    api('admin/delete-clubs', 'post', data).then((res) => {
+    api('admin/delete-collaboration', 'post', data).then((res) => {
         modal.style.display = 'none';
         remove.parentNode.remove();
         showModal(true, res.message, res.status);

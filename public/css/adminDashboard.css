@@ -1,0 +1,59 @@
+img {
+    object-fit: cover;
+}
+
+.content h2 {
+    margin: 0 20px;
+    color: #8533ba;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.content a {
+    margin-left: 50px;
+    font-size: 18px;
+    padding: 0;
+}
+
+hr {
+    color: black;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.content h1 {
+    margin: 5px 5px;
+    font-size: 16px;
+}
+.collaboration {
+    position: relative;
+    margin-right: 100px;
+}
+.collaboration h4 {
+    position: absolute;
+    left: -55%;
+    color: #646067;
+}
+
+.collaboration-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+}
+
+.collaboration-content a {
+    background-color: #34A66D;
+    color: white;
+}
+
+.collaboration-button a {
+    margin: 15px 20px;
+    background-color: #34A66D;
+    color: white;
+    padding: 7px;
+}
+
+
+

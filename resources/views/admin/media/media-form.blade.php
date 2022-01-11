@@ -14,6 +14,6 @@
             <textarea id="description" name="description" class="form-control" rows="7">{{ (parse_url($action_url)['path'] === '/admin/media/edit') ? $media_data->description : '' }}</textarea>
         </div>
         <input type="file" class="form-control mt-3" name="video"  accept=".mp4">
-        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/media/edit') ? 'edit' : 'creat' }}</button>
+        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/media/edit') ? 'Save' : 'Creat' }}</button>
     </form>
 </div>

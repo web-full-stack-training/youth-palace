@@ -115,6 +115,7 @@ class MediaController extends Controller
         Media::where('id', $mediaId)->delete();
 
         return response()->json([
+            'status' => true,
             'message' => 'Media deleted successfully'
         ]);
     }

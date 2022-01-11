@@ -34,9 +34,9 @@ deleteButton.addEventListener('click', function () {
         modal.style.display = 'none';
         remove.parentNode.remove();
         setTimeout(function () {
-            modal.style.display = 'block';
-            p.innerHTML = res.message;
-            deleteButton.style.display = 'none';
+            modal.style.display = 'none';
+            remove.parentNode.remove();
+            showModal(true, res.message, res.status);
         }, 1000);
 
     })

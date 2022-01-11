@@ -20,8 +20,8 @@
             <div class="keep-in-touch d-flex">
                 <p>KEEP IN TOUCH</p>
                 <div class="keep-in-touch-input">
-                    <input type="text" class="contact-form-inputs" name="fname" placeholder="Your first name">
-                    <input type="text" class="contact-form-inputs" name="fname" placeholder="Your second name">
+                    <input type="text" id="fname" class="contact-form-inputs" name="fname" placeholder="Your first name">
+                    <input type="text" id="sname" class="contact-form-inputs" name="sname" placeholder="Your second name">
                     <input type="text" id="email" class="contact-form-inputs" name="email" placeholder="E-mail">
                     <textarea id="form-message" name="message" class="form-control contact-form-inputs" placeholder="Leave your message"></textarea>
                 </div>
@@ -55,4 +55,6 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ asset('js/footer.js') }}"></script>
 @endsection

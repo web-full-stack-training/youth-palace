@@ -21,6 +21,6 @@
             <input type="text" id="address" name="address" class="form-control" value="{{ (parse_url($action_url)['path'] === '/admin/contact/edit') ? $contact_data->address : '' }}">
         </div>
 
-        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/contact/edit') ? 'edit' : 'creat' }}</button>
+        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/contact/edit') ? 'Save' : 'creat' }}</button>
     </form>
 </div>

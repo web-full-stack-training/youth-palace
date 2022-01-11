@@ -101,6 +101,7 @@ class VolunteeringController extends Controller
         Volunteering::where('id', $volunteeringId)->delete();
 
         return response()->json([
+            'status' => true,
             'message' => 'Volunteering deleted successfully'
         ]);
     }
