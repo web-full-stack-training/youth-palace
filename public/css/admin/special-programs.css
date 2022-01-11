@@ -17,10 +17,13 @@
     display: -webkit-box;
     line-height: 21px;
     max-height: 48px;
-    width: 500px;
+    width: 400px;
 }
+.photos {
+    vertical-align: text-top;
 
-.special-images{
+}
+.special-images {
     cursor: pointer;
     display: block;
     width: 70px;
@@ -31,6 +34,10 @@
 .rollover {
     display: block;
     position: relative;
+    width: 80px;
+}
+.icon-for-delete{
+    width: 120%;
 }
 
 .delete-special-program-image-icon {
@@ -38,9 +45,11 @@
     color: #ad0303;
     position: absolute;
     padding: 0;
-    top: -4px;
-    left: 10px;
+    top: -13px;
+    left: -13px;
 }
-.special-images:hover + .delete-special-program-image-icon {
+.rollover:hover >  .delete-special-program-image-icon {
     display: block;
+
 }
+
