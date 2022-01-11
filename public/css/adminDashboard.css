@@ -42,6 +42,13 @@ hr {
     border-radius: 10px;
     background-color: #dbd7de;
 }
+.club-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+}
 
 .collaboration-content a {
     background-color: #34A66D;
@@ -54,6 +61,10 @@ hr {
     color: white;
     padding: 7px;
 }
-
+.description-club {
+    width: 275px;
+    height: 130px;
+    overflow: auto;
+}
 
 

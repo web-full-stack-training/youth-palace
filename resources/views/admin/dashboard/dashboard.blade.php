@@ -52,9 +52,25 @@
             </div>
         </div>
 
+        <hr>
+
+        <div class="club">
+            <h4 class="mt-3"><strong>Club</strong> <br> Active Now <strong>{{ $clubCount }}</strong></h4>
+            <div class="club-body d-flex justify-content-center align-items-center mt-3">
+                @foreach($club as $data)
+                    <div class="collaboration-content d-flex flex-column justify-content-center align-items-center mx-4">
+                        <img src="{{ asset($data['img_path']) }}" width="150px" height="150px" class="rounded-circle">
+                        <h3 class="mt-2">{{ $data['title'] }}</h3>
+                        <div class="description-club">
+                            @foreach($arr as $test)
+                                <p>{{ $test }}</p>
+                            @endforeach
+                        </div>
+                        <a href="clubs/edit/{{ $data['id'] }}" class="btn mt-3 mx-0 px-2">Edit</a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
-
-
-
 
 @endsection

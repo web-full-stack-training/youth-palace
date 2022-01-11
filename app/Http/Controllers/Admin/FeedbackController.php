@@ -14,7 +14,6 @@ class FeedbackController extends Controller
     {
 
         $contact = Contact::first();
-        $count = Contact::count();
         return view('admin.contact.show', compact('contact'));
     }
 

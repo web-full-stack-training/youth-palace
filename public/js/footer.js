@@ -50,6 +50,6 @@ window.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // if (app === 'contact') footer.style.display = 'none';
+    if (app === 'contact') footer.style.display = 'none';
 })
 
