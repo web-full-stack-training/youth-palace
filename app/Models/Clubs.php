@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Clubs extends Model
 {
     use HasFactory;
-    protected $fillable = ['img_path', 'title', 'description'];
+    protected $fillable = ['img_path', 'title', 'description', 'short_description'];
 }

@@ -34,6 +34,16 @@ hr {
     left: -55%;
     color: #646067;
 }
+.club {
+    position: relative;
+    margin-right: 50px;
+}
+
+.club-subsection֊title {
+    position: absolute;
+    left: -20%;
+    color: #646067;
+}
 
 .collaboration-content {
     margin: 0 20px;
