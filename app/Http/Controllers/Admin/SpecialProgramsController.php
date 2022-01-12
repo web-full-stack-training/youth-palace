@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProgramInfoRequest;
 use App\Models\SpecialProgram;
 use App\Models\SpecialProgramImage;
 use http\Env\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-
 
 class SpecialProgramsController extends Controller
 {
@@ -23,11 +23,14 @@ class SpecialProgramsController extends Controller
     {
         return view('admin.special-programs.create');
     }
-    public function addSpecialProgramInfo(Request $request)
+
+    public function addSpecialProgramInfo(ProgramInfoRequest $request)
     {
-        $title = $request->input('title');
-        $description = $request->input('description');
-        $files = $request->file('images');
+
+        $inputData = $request->validated();
+        $title = $inputData['title'];
+        $description = $inputData['description'];
+        $files = $inputData['images'];
         $savedImagePath = [];
 
         $directory = public_path('storage/uploads/special-programs/');
@@ -37,7 +40,6 @@ class SpecialProgramsController extends Controller
             $file->move($directory, $file->getClientOriginalName());
             $savedImagePath[] = '/storage/uploads/special-programs/' . $file->getClientOriginalName();
         }
-
 
         $program = SpecialProgram::create([
             'title' => $title,
@@ -50,7 +52,6 @@ class SpecialProgramsController extends Controller
                 'image_path' => $path
             ]);
         }
-
 
         return redirect()->route('special.programs');
     }
@@ -69,7 +70,6 @@ class SpecialProgramsController extends Controller
         $savedImagePath = [];
 
         $oldImagePaths = SpecialProgramImage::where('special_programs_id', $id)->pluck('image_path');
-
 
         foreach ($oldImagePaths as $path) {
             @unlink(public_path() . $path);
@@ -115,7 +115,9 @@ class SpecialProgramsController extends Controller
 
         return response()->json([
             'message' => 'Special Program deleted successfully'
+
         ]);
+
     }
 
     /**
@@ -125,7 +127,6 @@ class SpecialProgramsController extends Controller
     public function deleteSpecialProgramImage(Request $request): JsonResponse
     {
         $imageId = $request->input('image_id');
-
         if (!$imageId || !is_numeric($imageId)) return response()->json(['status' => false, 'message' => 'Wrong data']);
         SpecialProgramImage::where('id', $imageId)->delete();
         return response()->json(['status' => true, 'message' => 'Image deleted successfully.']);

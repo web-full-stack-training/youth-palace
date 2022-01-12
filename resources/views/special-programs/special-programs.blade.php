@@ -22,21 +22,12 @@
                         />
                     @endforeach
                     <hr>
-                        @foreach($data['specialProgramImages'] as $dataImage)
-                            <div >
-                                <img
-                                    src="{{ $dataImage['image_path'] }}"
-                                    class="w-100 shadow-1-strong rounded mb-1 photos-big"
-                                    alt="Special Programs "
-                                    data-image-id = {{ $dataImage['id'] }}
-                                />
-                            </div>
 
-                        @endforeach
                 @endif
 
             @endforeach
         </div>
+
     </div>
     <script src="{{ asset('js/special-program.js') }}"></script>
 @endsection
