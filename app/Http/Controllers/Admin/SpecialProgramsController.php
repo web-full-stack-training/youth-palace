@@ -30,16 +30,20 @@ class SpecialProgramsController extends Controller
         $inputData = $request->validated();
         $title = $inputData['title'];
         $description = $inputData['description'];
-        $files = $inputData['images'];
+
+
         $savedImagePath = [];
 
         $directory = public_path('storage/uploads/special-programs/');
         File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
 
-        foreach ($files as $file) {
-            $file->move($directory, $file->getClientOriginalName());
-            $savedImagePath[] = '/storage/uploads/special-programs/' . $file->getClientOriginalName();
+        if (array_key_exists('images',$inputData)){
+            foreach ($inputData['images'] as $file) {
+                $file->move($directory, $file->getClientOriginalName());
+                $savedImagePath[] = '/storage/uploads/special-programs/' . $file->getClientOriginalName();
+            }
         }
+
 
         $program = SpecialProgram::create([
             'title' => $title,
@@ -61,7 +65,7 @@ class SpecialProgramsController extends Controller
         return view('admin.special-programs.edit',compact('specialProgramData'));
     }
 
-        public function editSpecialProgramInfo(Request $request)
+        public function editSpecialProgramInfo(ProgramInfoRequest $request)
     {
         $id = $request->input('special_programs_id');
         $title = $request->input('title');

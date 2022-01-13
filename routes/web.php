@@ -64,6 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('clubs/edit/{id}',[\App\Http\Controllers\Admin\ClubsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('clubs/edit',[\App\Http\Controllers\Admin\ClubsController::class, 'editClubsInfo'])->name('edit.clubs.info');
     Route::post('clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'showClubsPage'])->name('show.clubs.page');
+    Route::post('delete-clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'deleteClubs'])->name('delete.clubs');
 
 
     //Manage media info
@@ -73,6 +74,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('media/edit/{id}',[\App\Http\Controllers\Admin\MediaController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('media/edit',[\App\Http\Controllers\Admin\MediaController::class, 'editMediaInfo'])->name('edit.media.info');
     Route::post('media', [\App\Http\Controllers\Admin\MediaController::class, 'showMediaPage'])->name('show.media.page');
+    Route::post('delete-media', [\App\Http\Controllers\Admin\MediaController::class, 'deleteMedia'])->name('delete.media');
 
     //Manage collaboration info
     Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
@@ -81,6 +83,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('collaboration/edit/{id}',[\App\Http\Controllers\Admin\CollaborationController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('collaboration/edit',[\App\Http\Controllers\Admin\CollaborationController::class, 'editCollaborationInfo'])->name('edit.collaboration.info');
     Route::post('collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'showCollaborationPage'])->name('show.collaboration.page');
+    Route::post('delete-collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'deleteCollaboration'])->name('delete.collaboration');
 
 
 
@@ -91,6 +94,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('contact/edit/{id}',[\App\Http\Controllers\Admin\FeedbackController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('contact/edit',[\App\Http\Controllers\Admin\FeedbackController::class, 'editContactInfo'])->name('edit.contact.info');
     Route::post('contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'showContactPage'])->name('show.contact.page');
+    Route::post('delete-contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'deleteContact'])->name('delete.contact');
 
 
     // Manage contacts
@@ -103,6 +107,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('volunteering/edit/{id}',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('volunteering/edit',[\App\Http\Controllers\Admin\VolunteeringController::class, 'editVolunteeringInfo'])->name('edit.volunteering.info');
     Route::post('volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'showVolunteeringPage'])->name('show.volunteering.page');
+    Route::post('delete-volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'deleteVolunteering'])->name('delete.volunteering');
 
     // Manage special-program-page-info
     Route::get('special-programs',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'index'])->name('special.programs');
