@@ -9,10 +9,11 @@ img {
     display: flex;
     align-items: center;
 }
-.content a {
-    margin-left: 50px;
-    font-size: 18px;
-    padding: 0;
+.edit-button {
+    margin: 15px 20px;
+    background-color: #34A66D;
+    color: white;
+    padding: 7px;
 }
 
 hr {
@@ -29,11 +30,24 @@ hr {
     position: relative;
     margin-right: 100px;
 }
+
+.volunteering {
+    position: relative;
+    margin-right: 100px;
+}
+
 .collaboration h4 {
     position: absolute;
-    left: -55%;
+    left: -160px;
     color: #646067;
 }
+
+.volunteering h4 {
+    position: absolute;
+    left: -160px;
+    color: #646067;
+}
+
 .club {
     position: relative;
     margin-right: 50px;
@@ -41,7 +55,7 @@ hr {
 
 .club-subsection֊title {
     position: absolute;
-    left: -20%;
+    left: -160px;
     color: #646067;
 }
 
@@ -52,7 +66,17 @@ hr {
     border-radius: 10px;
     background-color: #dbd7de;
 }
-.club-content {
+
+.media-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+    height: 440px;
+}
+
+.volunteering-content {
     margin: 0 20px;
     box-shadow: 0 0 5px #4c2c8e;
     padding: 10px;
@@ -60,21 +84,26 @@ hr {
     background-color: #dbd7de;
 }
 
-.collaboration-content a {
-    background-color: #34A66D;
-    color: white;
+.club-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+    width: 245px;
+    height: 385px;
 }
 
-.collaboration-button a {
-    margin: 15px 20px;
-    background-color: #34A66D;
-    color: white;
-    padding: 7px;
-}
 .description-club {
-    width: 275px;
-    height: 130px;
+    width: 215px;
+    height: 120px;
     overflow: auto;
+}
+
+.media-subsection֊title {
+    position: absolute;
+    left: 95px;
+    color: #646067;
 }
 
 

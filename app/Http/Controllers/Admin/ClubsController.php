@@ -37,14 +37,10 @@ class ClubsController extends Controller
                         $imagePath = $file->move($directory, $file->getClientOriginalName());
                         $savedImagePath = 'storage/uploads/clubs/' . $file->getClientOriginalName();
 
-                        $short_description = explode('.', $description);
-                        $short_description = array_shift($short_description);
-
                         Clubs::create([
                             'title' => $title,
                             'description' => $description,
                             'img_path' => $savedImagePath,
-                            'short_description' => $short_description
                         ]);
                     } else {
                         return redirect()->back();

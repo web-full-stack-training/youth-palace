@@ -24,7 +24,7 @@ class DashboardController extends Controller
         $clubCount = Clubs::count();
 
         $media = Media::all()->take(3);
-        $mediaCount = Clubs::count();
+        $mediaCount = Media::count();
 
         return view('admin.dashboard.dashboard', compact('contact', 'collaboration', 'volunteering', 'collCount', 'volCount', 'club', 'clubCount', 'media', 'mediaCount'));
     }

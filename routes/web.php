@@ -21,7 +21,7 @@ Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/clubs', [\App\Http\Controllers\ClubsController::class, 'index'])->name('club.page');
 Route::get('/collaboration', [\App\Http\Controllers\CollaborationController::class, 'index'])->name('collaboration.page');
 Route::get('/contact', [\App\Http\Controllers\FeedbackController::class, 'index']);
-Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index']);
+Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index'])->name('media.page');
 Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
 Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index'])->name('volunteering.page');
