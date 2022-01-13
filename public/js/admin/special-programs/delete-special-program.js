@@ -19,6 +19,7 @@ for (let i = 0; i < edit.length; i++) {
         remove = deleted[i];
         close.addEventListener('click', function () {
             modal.style.display = 'none';
+            location.reload();
         })
     })
 }
@@ -41,4 +42,5 @@ deleteButton.addEventListener('click', function () {
 
 closeButton.addEventListener('click', function () {
     modal.style.display = 'none';
+    location.reload();
 });

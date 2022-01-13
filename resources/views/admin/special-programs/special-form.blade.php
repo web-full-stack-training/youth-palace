@@ -18,10 +18,7 @@
             <textarea id="description" name="description" class="form-control special-description " rows="7" >{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->description : '' }}</textarea>
             <small class="text-danger">{{ $errors->first('description') }}</small >
         </div>
-
-{{--        $action_url need to change--}}
-
-                @if($action_url === 'http://youth-palace.loc/admin/special-programs/edit')
+                @if($action_url === env('APP_URL').'/admin/special-programs/edit')
                    <div class="data-photos d-flex w-25 mt-3">
                         @if($specialProgramData['specialProgramImages'])
                             @foreach($specialProgramData['specialProgramImages'] as $dataImage)
@@ -72,7 +69,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-{{--<script src="{{ asset('js/helpers.js') }}"></script>--}}
+<script src="{{ asset('js/helpers.js') }}"></script>
 <script src="{{ asset('js/special-program.js') }}"></script>
 <script src="{{asset('js/admin/special-programs/edit-special-program.js')}}"></script>
 

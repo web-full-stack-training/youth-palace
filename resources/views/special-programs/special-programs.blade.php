@@ -16,7 +16,7 @@
                     @foreach($data['specialProgramImages'] as $dataImage)
                         <img
                             src="{{ $dataImage['image_path'] }}"
-                            class="w-25 shadow-1-strong rounded mb-1 photos"
+                            class=" shadow-1-strong rounded mb-1 photos"
                             alt="Special Programs "
                             data-image-id = {{ $dataImage['id'] }}
                         />
