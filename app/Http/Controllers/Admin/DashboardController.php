@@ -31,24 +31,7 @@ class DashboardController extends Controller
         $specialProgram = SpecialProgram::all()->take(2);
         $specialProgramCount = SpecialProgram::count();
 
-        $specialProgramImagePath = [];
-        $ara = [];
-        $i = 0;
-        $j = 0;
-        foreach ($specialProgram as $data) {
-            $specialProgramImage = SpecialProgramImage::all()->where('special_programs_id', $data['id'])->take(3);
-            foreach ($specialProgramImage as $value) {
-                $specialProgramImagePath[$i] = $value->image_path;
-                $i++;
-//                dump($specialProgramImagePath[$i - 1]);
-            }
-            $ara[$j] = $specialProgramImagePath;
-            $j++;
-            $specialProgramImagePath = [];
-        }
-//        dd($ara);
 
-
-        return view('admin.dashboard.dashboard', compact('contact', 'collaboration', 'volunteering', 'collCount', 'volCount', 'club', 'clubCount', 'media', 'mediaCount', 'specialProgram', 'specialProgramCount', 'ara'));
+        return view('admin.dashboard.dashboard', compact('contact', 'collaboration', 'volunteering', 'collCount', 'volCount', 'club', 'clubCount', 'media', 'mediaCount', 'specialProgram', 'specialProgramCount'));
     }
 }
