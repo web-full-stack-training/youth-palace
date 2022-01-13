@@ -18,10 +18,7 @@
             <textarea id="description" name="description" class="form-control special-description " rows="7" >{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->description : '' }}</textarea>
             <small class="text-danger">{{ $errors->first('description') }}</small >
         </div>
-
-{{--        $action_url need to change--}}
-
-                @if($action_url === 'http://youth-palace.loc/admin/special-programs/edit')
+                @if($action_url === env('APP_URL').'/admin/special-programs/edit')
                    <div class="data-photos d-flex w-25 mt-3">
                         @if($specialProgramData['specialProgramImages'])
                             @foreach($specialProgramData['specialProgramImages'] as $dataImage)
