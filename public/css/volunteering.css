@@ -1,0 +1,30 @@
+.image--cover {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 72px;
+    object-fit: cover;
+    object-position: center;
+}
+.volunteer-header {
+    position: relative;
+    top: 17px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    color: #000000;
+}
+.volunteer-body{
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+}
+.caption{
+    margin-top: -68px;
+}
+

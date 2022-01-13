@@ -1,6 +1,5 @@
-
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-<div class="container-fluid py-3 mt-3 bg-white footer-container">
+<div class="container-fluid py-3 mt-3 bg-white footer-container active-footer">
     <div class="row d-flex justify-content-center">
         <div class="footer-left-side col-md-5">
             <p class="contact">FOLLOW US</p>
@@ -16,7 +15,7 @@
                     </a>
                 </div>
                 <div class="links-social">
-                    <a href="Not Found"><i class="fab fa-slack-hash fa-2x"></i></a>
+                    <a href="https://www.instagram.com/yp_cnco/?hl=ru"><i class="fab fa-instagram fa-2x"></i></a>
                 </div>
                 <div class="links-social">
                     <a href="Not Found"><i class="fab fa-twitter fa-2x"></i></a>
@@ -75,3 +74,4 @@
 </div>
 
 <script src="{{ asset('js/footer.js') }}"></script>
+

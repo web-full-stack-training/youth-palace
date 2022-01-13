@@ -3,12 +3,111 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class FeedbackController extends Controller
 {
     public function index()
     {
-        return view('admin.feedback.show');
+
+        $contact = Contact::first();
+        $count = Contact::count();
+        return view('admin.contact.show', compact('contact'));
+    }
+
+    public function showCreateForm()
+    {
+        return view('admin.contact.create');
+    }
+    public function addContactInfo(Request $request)
+    {
+        $email = $request->input('email');
+        $telephone = $request->input('telephone');
+        $phone_number = $request->input('phone_number');
+        $address = $request->input('address');
+
+        if (!is_null($email)) {
+            if (!is_null($telephone)) {
+                if (!is_null($phone_number)) {
+                    if (!is_null($address)) {
+                        Contact::create([
+                            'email' => $email,
+                            'telephone' => $telephone,
+                            'phone_number' => $phone_number,
+                            'address' => $address
+                        ]);
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+        return redirect()->route('contact');
+    }
+
+    public function showEditForm($id)
+    {
+        $contactData = Contact::find($id);
+        return view('admin.contact.edit', compact('contactData'));
+    }
+    public function editContactInfo(Request $request)
+    {
+        $email = $request->input('email');
+        $telephone = $request->input('telephone');
+        $phone_number = $request->input('phone_number');
+        $address = $request->input('address');
+
+        $id = $request->input('contact-id');
+
+        if (!is_null($email)) {
+            if (!is_null($telephone)) {
+                if (!is_null($phone_number)) {
+                    if (!is_null($address)) {
+                        Contact::create([
+                            'email' => $email,
+                            'telephone' => $telephone,
+                            'phone_number' => $phone_number,
+                            'address' => $address
+                        ]);
+                    } else {
+                        return redirect()->back();
+                    }
+                } else {
+                    return redirect()->back();
+                }
+            } else {
+                return redirect()->back();
+            }
+        } else {
+            return redirect()->back();
+        }
+
+        return redirect()->route('contact');
+    }
+    public function showContactPage() {
+        return view('contact.contact');
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function deleteContact(Request $request): JsonResponse
+    {
+        $contactId = $request->input('contact_id');
+        Contact::where('id', $contactId)->delete();
+
+        return response()->json([
+            'message' => 'Media deleted successfully'
+        ]);
     }
 }
