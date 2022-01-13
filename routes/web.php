@@ -104,8 +104,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('volunteering/edit',[\App\Http\Controllers\Admin\VolunteeringController::class, 'editVolunteeringInfo'])->name('edit.volunteering.info');
     Route::post('volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'showVolunteeringPage'])->name('show.volunteering.page');
 
-});
-
     // Manage special-program-page-info
     Route::get('special-programs',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'index'])->name('special.programs');
     Route::get('special-programs/create',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'showCreateForm'])->name('show.create.form');
@@ -115,5 +113,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('special-programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'editSpecialProgramInfo'])->name('edit.SpecialProgram.info');
     Route::post('delete-special-program', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgram'])->name('delete.special.program');
     Route::post('delete-special-program-image', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgramImage'])->name('delete.special.program.image');
+
 });
+
 
