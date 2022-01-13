@@ -5,39 +5,41 @@
 
     <form action="{{ $action_url }}" method="post" enctype="multipart/form-data">
         @csrf
-        <input type="hidden" name="specialPrograms-id" value="{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->id : '' }}">
+
+        <input type="hidden" name="special_programs_id" value="{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->id : '' }}">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" id="title" name="title" class="form-control" value="{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->title : '' }}">
+            <input type="text" id="title" name="title" class="form-control" value="{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->title : '' }}" >
+            <small class="text-danger">{{ $errors->first('title') }}</small >
         </div>
+
         <div class="form-group mt-3">
             <label for="description">Description</label>
             <textarea id="description" name="description" class="form-control special-description " rows="7" >{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? $specialProgramData->description : '' }}</textarea>
+            <small class="text-danger">{{ $errors->first('description') }}</small >
         </div>
 
-{{--$action_url i dzevy poxel--}}
+{{--        $action_url need to change--}}
 
-        @if($action_url === 'http://youth-palace.loc/admin/special-programs/edit')
-           <div class="data-photos d-flex w-25 mt-3">
-                @if($specialProgramData['specialProgramImages'])
-                    @foreach($specialProgramData['specialProgramImages'] as $dataImage)
-                       <div class="rollover">
-                           <img
-                            src="{{ $dataImage['image_path'] }}"
-                            class=" shadow-1-strong rounded special-images "
-                            alt="Special Programs"
-
-                           />
-                           <img src="{{asset('images/icons/close-modal.png')}}" alt="icon-for-delete"
-                                class="delete-special-program-image-icon icon-for-delete"
-                                data-image-id = {{ $dataImage['id'] }}
-                           >
-                       </div>
-                    @endforeach
-                @endif
-            </div>
-
-{{--modal for delet photo in edit--}}
+                @if($action_url === 'http://youth-palace.loc/admin/special-programs/edit')
+                   <div class="data-photos d-flex w-25 mt-3">
+                        @if($specialProgramData['specialProgramImages'])
+                            @foreach($specialProgramData['specialProgramImages'] as $dataImage)
+                               <div class="rollover">
+                                   <img
+                                    src="{{ $dataImage['image_path'] }}"
+                                    class=" shadow-1-strong rounded special-images "
+                                    alt="Special Programs"
+                                   />
+                                   <img src="{{asset('images/icons/close-modal.png')}}" alt="icon-for-delete"
+                                        class="delete-special-program-image-icon icon-for-delete"
+                                        data-image-id = {{ $dataImage['id'] }}
+                                   >
+                               </div>
+                            @endforeach
+                        @endif
+                    </div>
+        {{--modal for delet photo in edit--}}
             <div class="modal modal-delete-image" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -64,6 +66,7 @@
 
 
         <input type="file" class="form-control mt-3" name="images[]" multiple>
+        <small class="text-danger">{{ $errors->first('images') }}</small ><br>
         <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/special-programs/edit') ? 'edit' : 'creat' }}</button>
     </form>
 </div>

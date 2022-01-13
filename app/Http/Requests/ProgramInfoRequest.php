@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use http\Env\Response;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Support\Facades\Session;
 
 class ProgramInfoRequest extends FormRequest
 {
@@ -26,11 +28,11 @@ class ProgramInfoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'specialPrograms-id' => '',
-            'title' => 'required',
-            'description' => 'required',
+            'special_programs_id' => '',
+            'title' => 'required|string',
+            'description' => 'required|string',
             'images.*' => 'required|mimes:jpeg,png,jpg|max:10000',
-            'images' => 'max:6',
+            'images' => 'max:6'
         ];
     }
 
@@ -42,12 +44,14 @@ class ProgramInfoRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'title.required' => 'title is required',
-            'description.required' => 'description is required',
-            'images' => 'images is required',
-            'images.mimes' => ' please upload only jpeg,png,jpg',
-            'images.max' => 'please upload only 6 images',
-            'images.required' => 'images size is too big '
+            'title.string'=> 'Title is required',
+            'title.required' => 'Title is required',
+            'description.required' => 'Description is required',
+            'description.string' => 'Description is required',
+            'images' => 'Images is required',
+            'images.mimes' => ' Please upload only jpeg,png,jpg',
+            'images.max' => 'Please upload only 6 images',
+            'images.required' => 'Images size is too big'
         ];
     }
 
@@ -60,10 +64,16 @@ class ProgramInfoRequest extends FormRequest
     {
         $errors = $validator->errors()->toArray();
         $firstError = array_shift($errors);
-
-        throw new HttpResponseException(response()->json([
-            'status' => false,
-            'message' => array_shift($firstError)
-        ], 400));
+        if (!$firstError)
+        {
+            Session::flash('errors', 'Wrong credentials.');
+            return redirect()->back();
+        }
     }
 }
+
+
+//         new HttpResponseException(response()->json([
+//            'status' => false,
+//            'message' => array_shift($firstError)
+//        ], 400));

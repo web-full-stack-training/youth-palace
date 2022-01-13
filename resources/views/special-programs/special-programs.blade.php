@@ -22,12 +22,9 @@
                         />
                     @endforeach
                     <hr>
-
                 @endif
-
             @endforeach
         </div>
-
     </div>
     <script src="{{ asset('js/special-program.js') }}"></script>
 @endsection

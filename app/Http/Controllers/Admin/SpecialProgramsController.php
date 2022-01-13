@@ -63,7 +63,7 @@ class SpecialProgramsController extends Controller
 
         public function editSpecialProgramInfo(Request $request)
     {
-        $id = $request->input('specialPrograms-id');
+        $id = $request->input('special_programs_id');
         $title = $request->input('title');
         $description = $request->input('description');
         $files = $request->file('images');
