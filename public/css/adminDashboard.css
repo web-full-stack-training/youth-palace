@@ -76,6 +76,21 @@ hr {
     height: 440px;
 }
 
+.special-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+    height: 330px;
+}
+
+.special h4 {
+    position: absolute;
+    left: -200px;
+    color: #646067;
+}
+
 .volunteering-content {
     margin: 0 20px;
     box-shadow: 0 0 5px #4c2c8e;

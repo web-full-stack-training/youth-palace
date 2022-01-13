@@ -23,7 +23,7 @@ Route::get('/collaboration', [\App\Http\Controllers\CollaborationController::cla
 Route::get('/contact', [\App\Http\Controllers\FeedbackController::class, 'index']);
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index'])->name('media.page');
 Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
-Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index']);
+Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index'])->name('special.program.page');
 Route::get('/volunteering', [\App\Http\Controllers\VolunteeringController::class, 'index'])->name('volunteering.page');
 Route::get('/contact', [\App\Http\Controllers\ContactPageController::class, 'index']);
 

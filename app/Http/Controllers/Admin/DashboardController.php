@@ -7,6 +7,8 @@ use App\Models\Clubs;
 use App\Models\Collaborations;
 use App\Models\Contact;
 use App\Models\Media;
+use App\Models\SpecialProgram;
+use App\Models\SpecialProgramImage;
 use App\Models\Volunteering;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $contact = Contact::first();
+         $contact = Contact::first();
         $collaboration = Collaborations::all()->take(3);
         $volunteering = Volunteering::all()->take(3);
         $collCount = Collaborations::count();
@@ -26,6 +28,27 @@ class DashboardController extends Controller
         $media = Media::all()->take(3);
         $mediaCount = Media::count();
 
-        return view('admin.dashboard.dashboard', compact('contact', 'collaboration', 'volunteering', 'collCount', 'volCount', 'club', 'clubCount', 'media', 'mediaCount'));
+        $specialProgram = SpecialProgram::all()->take(2);
+        $specialProgramCount = SpecialProgram::count();
+
+        $specialProgramImagePath = [];
+        $ara = [];
+        $i = 0;
+        $j = 0;
+        foreach ($specialProgram as $data) {
+            $specialProgramImage = SpecialProgramImage::all()->where('special_programs_id', $data['id'])->take(3);
+            foreach ($specialProgramImage as $value) {
+                $specialProgramImagePath[$i] = $value->image_path;
+                $i++;
+//                dump($specialProgramImagePath[$i - 1]);
+            }
+            $ara[$j] = $specialProgramImagePath;
+            $j++;
+            $specialProgramImagePath = [];
+        }
+//        dd($ara);
+
+
+        return view('admin.dashboard.dashboard', compact('contact', 'collaboration', 'volunteering', 'collCount', 'volCount', 'club', 'clubCount', 'media', 'mediaCount', 'specialProgram', 'specialProgramCount', 'ara'));
     }
 }

@@ -12,6 +12,95 @@
 
         <hr>
 
+        <div class="special position-relative">
+            <h4 class="mt-3"><strong>Special Program</strong> <br> Active Now <strong>{{ $specialProgramCount }}</strong></h4>
+            <div class="special-body d-flex justify-content-center align-items-center mt-3">
+                @foreach($specialProgram as $data)
+                    <div class="special-content d-flex flex-column justify-content-center align-items-center mx-4">
+                        <h3 class="mt-2">{{ mb_strimwidth($data['title'], 0, 15) }}</h3>
+                        <div class="description-club">
+                            <p> {{ mb_strimwidth($data['description'], 0, 100) . '...' }}</p>
+                        </div>
+
+                        <div class="special-program-image d-flex align-items-center justify-content-center">
+                            @if($data['specialProgramImages'])
+                                @foreach($data['specialProgramImages'] as $key => $dataImage)
+                                    @if($key <= 2)
+                                        <img
+                                            src="{{ asset($dataImage['image_path']) }}"
+                                            alt="Special Programs "
+                                            width="60px"
+                                            height="70px"
+                                            class="mx-1"
+                                            data-image-id = {{ $dataImage['id'] }}
+                                        />
+                                    @endif
+                                @endforeach
+                            @endif
+                        </div>
+
+                        <a href="special-programs/edit/{{ $data['id'] }}" class="edit-button btn mt-3 mx-0 px-2">Edit</a>
+                    </div>
+                @endforeach
+
+{{--                <div class="text-center align-items-center ">--}}
+{{--                    @foreach($specialProgram as $data)--}}
+
+{{--                        <div class="container col-10 text-center align-items-center">--}}
+{{--                            <strong class="text-center mt-3">{{ $data['title'] }}</strong>--}}
+{{--                            <br>--}}
+{{--                            <p class="text-center mt-3 mx-5">{{ $data['description'] }}</p>--}}
+{{--                            <br>--}}
+{{--                        </div>--}}
+{{--                        @if($data['specialProgramImages'])--}}
+{{--                            @foreach($data['specialProgramImages'] as $dataImage)--}}
+{{--                                <img--}}
+{{--                                    src="{{ $dataImage['image_path'] }}"--}}
+{{--                                    class="w-25 shadow-1-strong rounded mb-1 photos"--}}
+{{--                                    alt="Special Programs "--}}
+{{--                                    data-image-id = {{ $dataImage['id'] }}--}}
+{{--                                />--}}
+{{--                            @endforeach--}}
+{{--                            <hr>--}}
+{{--                        @endif--}}
+{{--                    @endforeach--}}
+{{--                </div>--}}
+            </div>
+
+            <div class="collaboration-button flex-column justify-content-center align-items-center mt-3">
+                <a href="{{ route('special.program.page') }}" class="edit-button btn px-2 border border-secondary">Volunteering Page</a>
+                <a href="special-programs" class="edit-button btn px-2 border border-secondary">Admin Volunteering Page</a>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <div class="body-card position-relative">
+            <h4 class="club-subsection֊title mt-3"><strong>Club</strong> <br> Active Now <strong>{{ $clubCount }}</strong></h4>
+            <div class="collaboration-body d-flex justify-content-center align-items-center mt-3">
+
+                @foreach($club as $data)
+                    <div class="club-content d-flex flex-column justify-content-center align-items-center mx-4">
+                        <img src="{{ asset($data['img_path']) }}" width="130px" height="130px" class="rounded-circle">
+                        <h3 class="mt-2">{{ mb_strimwidth($data['title'], 0, 15) }}</h3>
+                        <div class="description-club">
+                            <p> {{ mb_strimwidth($data['description'], 0, 100) . '...' }}</p>
+                        </div>
+                        <a href="clubs/edit/{{ $data['id'] }}" class="edit-button btn mt-3 mx-0 px-2">Edit</a>
+                    </div>
+                @endforeach
+
+            </div>
+
+            <div class="collaboration-button flex-column justify-content-center align-items-center mt-3">
+                <a href="{{ route('club.page') }}" class="edit-button btn px-2 border border-secondary">Club Page</a>
+                <a href="clubs" class="edit-button btn px-2 border border-secondary">Admin Club Page</a>
+            </div>
+        </div>
+
+        <hr>
+
         <div class="collaboration">
             <h4 class="mt-3"><strong>Collaboration</strong> <br> Active Now <strong>{{ $collCount }}</strong></h4>
             <div class="collaboration-body d-flex justify-content-center align-items-center mt-3">
@@ -54,30 +143,7 @@
 
         <hr>
 
-        <div class="body-card position-relative">
-            <h4 class="club-subsection֊title mt-3"><strong>Club</strong> <br> Active Now <strong>{{ $clubCount }}</strong></h4>
-            <div class="collaboration-body d-flex justify-content-center align-items-center mt-3">
 
-                @foreach($club as $data)
-                    <div class="club-content d-flex flex-column justify-content-center align-items-center mx-4">
-                        <img src="{{ asset($data['img_path']) }}" width="130px" height="130px" class="rounded-circle">
-                        <h3 class="mt-2">{{ mb_strimwidth($data['title'], 0, 15) }}</h3>
-                        <div class="description-club">
-                            <p> {{ mb_strimwidth($data['description'], 0, 100) . '...' }}</p>
-                        </div>
-                        <a href="clubs/edit/{{ $data['id'] }}" class="edit-button btn mt-3 mx-0 px-2">Edit</a>
-                    </div>
-                @endforeach
-
-            </div>
-
-            <div class="collaboration-button flex-column justify-content-center align-items-center mt-3">
-                <a href="{{ route('club.page') }}" class="edit-button btn px-2 border border-secondary">Club Page</a>
-                <a href="clubs" class="edit-button btn px-2 border border-secondary">Admin Club Page</a>
-            </div>
-        </div>
-
-        <hr>
 
         <div class="body-card position-relative">
             <h4 class="club-subsection֊title mt-3"><strong>Media</strong> <br> Active Now <strong>{{ $mediaCount }}</strong></h4>
