@@ -1,0 +1,55 @@
+.about-info-form-card {
+    width: 100%;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.specialProgram-info-form-card {
+    width: 100%;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.description{
+    overflow: hidden;
+    display: -webkit-box;
+    line-height: 21px;
+    max-height: 48px;
+    width: 400px;
+}
+.photos {
+    vertical-align: text-top;
+
+}
+.special-images {
+    cursor: pointer;
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin-right: 30px;
+}
+
+.rollover {
+    display: block;
+    position: relative;
+    width: 80px;
+}
+.icon-for-delete{
+    width: 120%;
+}
+
+.delete-special-program-image-icon {
+    display: none;
+    color: #ad0303;
+    position: absolute;
+    padding: 0;
+    top: -13px;
+    left: -13px;
+}
+.rollover:hover >  .delete-special-program-image-icon {
+    display: block;
+
+}
+
