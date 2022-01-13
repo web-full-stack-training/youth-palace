@@ -17,19 +17,36 @@
                     </div>
                 @endif
             </div>
-            <div class="keep-in-touch d-flex">
-                <p>KEEP IN TOUCH</p>
-                <div class="keep-in-touch-input">
-                    <input type="text" id="fname" class="contact-form-inputs" name="fname" placeholder="Your first name">
-                    <input type="text" id="sname" class="contact-form-inputs" name="sname" placeholder="Your second name">
-                    <input type="text" id="email" class="contact-form-inputs" name="email" placeholder="E-mail">
-                    <textarea id="form-message" name="message" class="form-control contact-form-inputs" placeholder="Leave your message"></textarea>
+
+            <form class="form-card">
+                <div class="row  text-left">
+                    <div class="form-group col-sm-5 flex-column d-flex">
+                        <input type="text" id="fname" class="contact-form-inputs" name="fname" placeholder="Your name">
+                        <small class="text-danger error-message">Name is required</small>
+                    </div>
+                    <div class="form-group col-sm-5 flex-column d-flex">
+                        <input type="text" id="email" class="contact-form-inputs" name="email" placeholder="E-mail">
+                        <small class="text-danger error-message">Email is required</small>
+                    </div>
                 </div>
-            </div>
-            <button type="button" class="btn-block btn-primary send-contact-form-button">
-                Send
-                <i class="fas fa-arrow-right"></i>
-            </button>
+                <div class="row justify-content-between">
+                    <div class="col-md-8">
+                        <label for="form-message">
+                            <span class="text-danger"></span>
+                        </label>
+                        <textarea  id="form-message" name="message"  class="form-control contact-form-inputs"
+                                   placeholder="Leave your message"></textarea>
+                        <small class="text-danger error-message">Message is required</small>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <button type="button" class="btn-block btn-primary send-contact-form-button">
+                            Send
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
             <div class="contact-us-icons d-flex">
                 <div class="links-social">
                     <a href="#" target="_blank">

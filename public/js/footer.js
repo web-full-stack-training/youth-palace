@@ -31,7 +31,6 @@ window.addEventListener('DOMContentLoaded', function () {
     function validateContactForm(formElements) {
         for (let i = 0; i < formElements.length; i++) {
             if (!formElements[i].value.trim()) {
-                console.log(formElements[i].nextElementSibling);
                 formElements[i].nextElementSibling.style.display = 'block';
                 return false;
             }
@@ -51,5 +50,8 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     if (app === 'contact') footer.style.display = 'none';
+
+    console.log(555)
+
 })
 
