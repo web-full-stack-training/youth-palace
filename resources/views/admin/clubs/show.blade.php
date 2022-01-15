@@ -18,7 +18,7 @@
             <tr class="tr border">
                 <th scope="row">{{ $data['id'] }}</th>
                 <td>{{ $data['title'] }}</td>
-                <td>{{ $data['description'] }}</td>
+                <td width="900px">{{ $data['description'] }}</td>
                 <td class="edit"><a href="{{ 'clubs/edit/' . $data['id'] }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
                 <td class="delete"><button class="border-0" ><i class="fas fa-trash"></i></button></td>
             </tr>

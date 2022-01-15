@@ -1,0 +1,124 @@
+img {
+    object-fit: cover;
+}
+
+.content h2 {
+    margin: 0 20px;
+    color: #8533ba;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.edit-button {
+    margin: 15px 20px;
+    background-color: #34A66D;
+    color: white;
+    padding: 7px;
+}
+
+hr {
+    color: black;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.content h1 {
+    margin: 5px 5px;
+    font-size: 16px;
+}
+.collaboration {
+    position: relative;
+    margin-right: 100px;
+}
+
+.volunteering {
+    position: relative;
+    margin-right: 100px;
+}
+
+.collaboration h4 {
+    position: absolute;
+    left: -160px;
+    color: #646067;
+}
+
+.volunteering h4 {
+    position: absolute;
+    left: -160px;
+    color: #646067;
+}
+
+.club {
+    position: relative;
+    margin-right: 50px;
+}
+
+.club-subsection֊title {
+    position: absolute;
+    left: -160px;
+    color: #646067;
+}
+
+.collaboration-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+}
+
+.media-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+    height: 440px;
+}
+
+.special-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+    height: 330px;
+}
+
+.special h4 {
+    position: absolute;
+    left: -200px;
+    color: #646067;
+}
+
+.volunteering-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+}
+
+.club-content {
+    margin: 0 20px;
+    box-shadow: 0 0 5px #4c2c8e;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #dbd7de;
+    width: 245px;
+    height: 385px;
+}
+
+.description-club {
+    width: 215px;
+    height: 120px;
+    overflow: auto;
+}
+
+.media-subsection֊title {
+    position: absolute;
+    left: 95px;
+    color: #646067;
+}
+
+

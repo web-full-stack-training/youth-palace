@@ -104,6 +104,7 @@ class CollaborationController extends Controller
         Collaborations::where('id', $collaborationId)->delete();
 
         return response()->json([
+            'status' => true,
             'message' => 'Collaboration deleted successfully'
         ]);
     }

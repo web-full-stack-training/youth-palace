@@ -14,6 +14,6 @@
             <textarea id="description" name="description" class="form-control" rows="7">{{ (parse_url($action_url)['path'] === '/admin/clubs/edit') ? $clubs_data->description : '' }}</textarea>
         </div>
         <input type="file" class="form-control mt-3" name="image"  accept=".jpg, .jpeg, .png">
-        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/clubs/edit') ? 'edit' : 'creat' }}</button>
+        <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/clubs/edit') ? 'Save' : 'creat' }}</button>
     </form>
 </div>

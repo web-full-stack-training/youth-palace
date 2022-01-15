@@ -40,7 +40,7 @@ class ClubsController extends Controller
                         Clubs::create([
                             'title' => $title,
                             'description' => $description,
-                            'img_path' => $savedImagePath
+                            'img_path' => $savedImagePath,
                         ]);
                     } else {
                         return redirect()->back();
@@ -64,6 +64,7 @@ class ClubsController extends Controller
     }
     public function editClubsInfo(Request $request): \Illuminate\Http\RedirectResponse
     {
+        $club = Clubs::all();
         $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $description = $request->input('description');
@@ -84,7 +85,7 @@ class ClubsController extends Controller
                             [
                                 'title' => $title,
                                 'description' => $description,
-                                'img_path' => $savedImagePath
+                                'img_path' => $savedImagePath,
                             ]
                         );
                     } else {

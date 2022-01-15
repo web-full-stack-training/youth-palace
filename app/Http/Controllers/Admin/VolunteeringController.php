@@ -28,10 +28,10 @@ class VolunteeringController extends Controller
         if (!is_null($title)) {
             if (!is_null($file)) {
                 if (in_array($file->getClientOriginalExtension(), $type)) {
-                    $directory = public_path('storage/uploads/media/');
+                    $directory = public_path('storage/uploads/volunteering/');
                     File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
                     $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
+                    $savedImagePath = 'storage/uploads/volunteering/' . $file->getClientOriginalName();
 
                     Volunteering::create([
                         'full_name' => $title,
@@ -64,10 +64,10 @@ class VolunteeringController extends Controller
         if (!is_null($title)) {
             if (!is_null($file)) {
                 if (in_array($file->getClientOriginalExtension(), $type)) {
-                    $directory = public_path('storage/uploads/media/');
+                    $directory = public_path('storage/uploads/volunteering/');
                     File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
                     $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/media/' . $file->getClientOriginalName();
+                    $savedImagePath = 'storage/uploads/volunteering/' . $file->getClientOriginalName();
 
                     Volunteering::where('id', $id)->update(
                         [
@@ -101,6 +101,7 @@ class VolunteeringController extends Controller
         Volunteering::where('id', $volunteeringId)->delete();
 
         return response()->json([
+            'status' => true,
             'message' => 'Volunteering deleted successfully'
         ]);
     }
