@@ -30,7 +30,7 @@ deleteButton.addEventListener('click', function () {
     const data = {
         contact_id: tr
     }
-    api('admin/delete-contact', 'post', data).then((res) => {
+    api('/admin/delete-contact', 'post', data).then((res) => {
         modal.style.display = 'none';
         remove.parentNode.remove();
         setTimeout(function () {

@@ -1,5 +1,59 @@
 
 .photos {
-   width: 25%;
-
+    width: 333px;
+    height: 200px;
+    vertical-align: text-top;!important;
+    object-fit: cover;!important;
 }
+
+.photos-big {
+    display: none;
+    width: 800px;
+    height: 500px;
+    position: fixed;
+    top: 5%;
+    left: 19%;
+    border: thick solid #491f75;
+    z-index: 9999;
+    object-fit: cover;!important;
+}
+
+.icon-for-delete {
+    display: none;
+    position: fixed;
+    top: 7%;
+    left: 78%;
+    z-index: 99999;
+    width: 25px;
+    }
+
+.left {
+    width: 50px;
+    position: fixed;
+    display: none;
+    z-index: 9999999;
+    left: 19%;
+    top: 250px;
+}
+.right {
+    width: 50px;
+    position: fixed;
+    display: none;
+    z-index: 9999999;
+    top: 250px;
+    right: 19%;
+}
+
+.layer {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(40, 40, 40, 0.7);
+}
+
+
+

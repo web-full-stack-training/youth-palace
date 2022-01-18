@@ -16,15 +16,35 @@
                     @foreach($data['specialProgramImages'] as $dataImage)
                         <img
                             src="{{ $dataImage['image_path'] }}"
-                            class=" shadow-1-strong rounded mb-1 photos"
+                            class=" shadow-1-strong rounded mb-1 photos photo-i"
                             alt="Special Programs "
                             data-image-id = {{ $dataImage['id'] }}
                         />
+                        <img
+                            src="{{ $dataImage['image_path'] }}"
+                            class=" shadow-1-strong rounded mb-1 photos-big photo-i"
+                            alt="Special Programs "
+                            data-image-id = {{ $dataImage['id'] }}
+                        />
+                        <img src="{{asset('images/icons/XXX.png')}}" alt="icon-for-delete"
+                             class="delete-special-program-image-icon icon-for-delete"
+                             data-image-id = {{ $dataImage['id'] }}
+                        >
+                            <img src="{{asset('images/icons/left.png')}}" alt="icon-for-delete"
+                                 class="delete-special-program-image-icon left"
+                                 data-image-id = {{ $dataImage['id'] }}
+                            >
+                            <img src="{{asset('images/icons/right.png')}}" alt="icon-for-delete"
+                                 class="delete-special-program-image-icon right"
+                                 data-image-id = {{ $dataImage['id'] }}
+                            >
                     @endforeach
                     <hr>
                 @endif
             @endforeach
         </div>
     </div>
+    <div class="layer"></div>
+
     <script src="{{ asset('js/special-program.js') }}"></script>
 @endsection
