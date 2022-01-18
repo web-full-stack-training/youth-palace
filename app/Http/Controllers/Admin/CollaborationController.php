@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\HalfRequest;
 use App\Models\Collaborations;
 
 use Illuminate\Http\JsonResponse;
@@ -20,33 +21,21 @@ class CollaborationController extends Controller
     {
         return view('admin.collaboration.create');
     }
-    public function addCollaborationInfo(Request $request): \Illuminate\Http\RedirectResponse
+    public function addCollaborationInfo(HalfRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $file = $request->file('image');
 
-        if (!is_null($title)) {
-            if (!is_null($file)) {
-                if (in_array($file->getClientOriginalExtension(), $type)) {
-                    $directory = public_path('storage/uploads/collaboration/');
-                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-                    $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
 
-                    Collaborations::create([
-                        'name' => $title,
-                        'img_path' => $savedImagePath
-                    ]);
-                } else {
-                    return redirect()->back();
-                }
-            } else {
-                return redirect()->back();
-            }
-        } else {
-            return redirect()->back();
-        }
+        $directory = public_path('storage/uploads/collaboration/');
+        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+        $imagePath = $file->move($directory, $file->getClientOriginalName());
+        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+
+        Collaborations::create([
+            'name' => $title,
+            'img_path' => $savedImagePath
+        ]);
 
 
         return redirect()->route('collaboration');
@@ -56,36 +45,23 @@ class CollaborationController extends Controller
         $collaborationData = Collaborations::find($id);
         return view('admin.collaboration.edit', compact('collaborationData'));
     }
-    public function editCollaborationInfo(Request $request): \Illuminate\Http\RedirectResponse
+    public function editCollaborationInfo(HalfRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $file = $request->file('image');
         $id = $request->input('collaboration-id');
 
-        if (!is_null($title)) {
-            if (!is_null($file)) {
-                if (in_array($file->getClientOriginalExtension(), $type)) {
-                    $directory = public_path('storage/uploads/collaboration/');
-                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-                    $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
+        $directory = public_path('storage/uploads/collaboration/');
+        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+        $imagePath = $file->move($directory, $file->getClientOriginalName());
+        $savedImagePath = 'storage/uploads/collaboration/' . $file->getClientOriginalName();
 
-                    Collaborations::where('id', $id)->update(
-                        [
-                            'name' => $title,
-                            'img_path' => $savedImagePath
-                        ]
-                    );
-                } else {
-                    return redirect()->back();
-                }
-            } else {
-                return redirect()->back();
-            }
-        } else {
-            return redirect()->back();
-        }
+        Collaborations::where('id', $id)->update(
+            [
+                'name' => $title,
+                'img_path' => $savedImagePath
+            ]
+        );
 
         return redirect()->route('collaboration');
     }

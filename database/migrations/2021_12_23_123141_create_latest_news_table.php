@@ -15,7 +15,7 @@ class CreateLatestNewsTable extends Migration
     {
         Schema::create('latest_news', function (Blueprint $table) {
             $table->id();
-            $table->text('img_path');
+            $table->text('video_path');
             $table->string('title');
             $table->text('description');
             $table->timestamps();

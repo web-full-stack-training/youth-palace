@@ -30,3 +30,4 @@ Route::post('admin/delete-contact', [\App\Http\Controllers\Admin\FeedbackControl
 
 
 Route::post('admin/delete-volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'deleteVolunteering'])->name('delete.volunteering');
+
