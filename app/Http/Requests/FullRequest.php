@@ -14,7 +14,7 @@ class FullRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string',
+            'title' => 'required|string|max:20',
             'description' => 'required|string|max:210',
             'images.*' => 'mimes:jpeg,png,jpg|max:10000',
         ];
