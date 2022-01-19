@@ -32,6 +32,8 @@
             <a href="{{ route('media') }}" class="{{ (Route::currentRouteName() === 'media' ? 'active-menu' : '') }}">Media</a>
             <a href="{{ route('contact') }}" class="{{ (Route::currentRouteName() === 'contact' ? 'active-menu' : '') }}">Feedback</a>
             <a href="{{ route('about.us') }}" class="{{ (Route::currentRouteName() === 'about.us' ? 'active-menu' : '') }}">About as</a>
+            <a href="{{ route('our.works') }}" class="{{ (Route::currentRouteName() === 'our.works' ? 'active-menu' : '') }}">Our Works</a>
+
             <div class="dropdown">
                 <p>More</p>
                 <div class="links">

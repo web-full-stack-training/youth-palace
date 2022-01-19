@@ -22,10 +22,10 @@ class DashboardController extends Controller
         $collCount = Collaborations::count();
         $volCount = Volunteering::count();
 
-        $club = Clubs::all()->take(3);
+        $club = Clubs::all()->take(2);
         $clubCount = Clubs::count();
 
-        $media = Media::all()->take(3);
+        $media = Media::all()->take(2);
         $mediaCount = Media::count();
 
         $specialProgram = SpecialProgram::all()->take(2);

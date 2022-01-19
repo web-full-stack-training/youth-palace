@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\HalfRequest;
 use App\Models\Volunteering;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -19,33 +20,20 @@ class VolunteeringController extends Controller
     {
         return view('admin.volunteering.create');
     }
-    public function addVolunteeringInfo(Request $request): \Illuminate\Http\RedirectResponse
+    public function addVolunteeringInfo(HalfRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $file = $request->file('image');
 
-        if (!is_null($title)) {
-            if (!is_null($file)) {
-                if (in_array($file->getClientOriginalExtension(), $type)) {
-                    $directory = public_path('storage/uploads/volunteering/');
-                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-                    $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/volunteering/' . $file->getClientOriginalName();
+            $directory = public_path('storage/uploads/volunteering/');
+            File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+            $imagePath = $file->move($directory, $file->getClientOriginalName());
+            $savedImagePath = 'storage/uploads/volunteering/' . $file->getClientOriginalName();
 
-                    Volunteering::create([
-                        'full_name' => $title,
-                        'image_path' => $savedImagePath
-                    ]);
-                } else {
-                    return redirect()->back();
-                }
-            } else {
-                return redirect()->back();
-            }
-        } else {
-            return redirect()->back();
-        }
+            Volunteering::create([
+                'full_name' => $title,
+                'image_path' => $savedImagePath
+            ]);
 
         return redirect()->route('volunteering');
     }
@@ -54,36 +42,23 @@ class VolunteeringController extends Controller
         $volunteeringData = Volunteering::find($id);
         return view('admin.volunteering.edit', compact('volunteeringData'));
     }
-    public function editVolunteeringInfo(Request $request): \Illuminate\Http\RedirectResponse
+    public function editVolunteeringInfo(HalfRequest $request): \Illuminate\Http\RedirectResponse
     {
-        $type = ['png', 'jpeg', 'jpg'];
         $title = $request->input('title');
         $file = $request->file('image');
         $id = $request->input('volunteering-id');
 
-        if (!is_null($title)) {
-            if (!is_null($file)) {
-                if (in_array($file->getClientOriginalExtension(), $type)) {
-                    $directory = public_path('storage/uploads/volunteering/');
-                    File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
-                    $imagePath = $file->move($directory, $file->getClientOriginalName());
-                    $savedImagePath = 'storage/uploads/volunteering/' . $file->getClientOriginalName();
+        $directory = public_path('storage/uploads/volunteering/');
+        File::isDirectory($directory) or File::makeDirectory($directory, 0777, true, true);
+        $imagePath = $file->move($directory, $file->getClientOriginalName());
+        $savedImagePath = 'storage/uploads/volunteering/' . $file->getClientOriginalName();
 
-                    Volunteering::where('id', $id)->update(
-                        [
-                            'full_name' => $title,
-                            'image_path' => $savedImagePath
-                        ]
-                    );
-                } else {
-                    return redirect()->back();
-                }
-            } else {
-                return redirect()->back();
-            }
-        } else {
-            return redirect()->back();
-        }
+        Volunteering::where('id', $id)->update(
+            [
+                'full_name' => $title,
+                'image_path' => $savedImagePath
+            ]
+        );
 
         return redirect()->route('volunteering');
     }

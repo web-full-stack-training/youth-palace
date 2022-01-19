@@ -20,7 +20,7 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/clubs', [\App\Http\Controllers\ClubsController::class, 'index'])->name('club.page');
 Route::get('/collaboration', [\App\Http\Controllers\CollaborationController::class, 'index'])->name('collaboration.page');
-Route::get('/contact', [\App\Http\Controllers\FeedbackController::class, 'index']);
+Route::get('/contact', [\App\Http\Controllers\ContactPageController::class, 'index']);
 Route::get('/media', [\App\Http\Controllers\MediaController::class, 'index'])->name('media.page');
 Route::get('/admin-login', [\App\Http\Controllers\AdminLoginController::class, 'index']);
 Route::get('/special-programs' , [\App\Http\Controllers\SpecialProgramsController::class, 'index'])->name('special.program.page');
@@ -64,6 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('clubs/edit/{id}',[\App\Http\Controllers\Admin\ClubsController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('clubs/edit',[\App\Http\Controllers\Admin\ClubsController::class, 'editClubsInfo'])->name('edit.clubs.info');
     Route::post('clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'showClubsPage'])->name('show.clubs.page');
+    Route::post('delete-clubs', [\App\Http\Controllers\Admin\ClubsController::class, 'deleteClubs'])->name('delete.clubs');
 
 
     //Manage media info
@@ -73,6 +74,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('media/edit/{id}',[\App\Http\Controllers\Admin\MediaController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('media/edit',[\App\Http\Controllers\Admin\MediaController::class, 'editMediaInfo'])->name('edit.media.info');
     Route::post('media', [\App\Http\Controllers\Admin\MediaController::class, 'showMediaPage'])->name('show.media.page');
+    Route::post('delete-media', [\App\Http\Controllers\Admin\MediaController::class, 'deleteMedia'])->name('delete.media');
+
 
     //Manage collaboration info
     Route::get('collaboration',[\App\Http\Controllers\Admin\CollaborationController::class, 'index'])->name('collaboration');
@@ -81,20 +84,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('collaboration/edit/{id}',[\App\Http\Controllers\Admin\CollaborationController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('collaboration/edit',[\App\Http\Controllers\Admin\CollaborationController::class, 'editCollaborationInfo'])->name('edit.collaboration.info');
     Route::post('collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'showCollaborationPage'])->name('show.collaboration.page');
+    Route::post('delete-collaboration', [\App\Http\Controllers\Admin\CollaborationController::class, 'deleteCollaboration'])->name('delete.collaboration');
 
 
-
-
+// Manage contacts
+    Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
     Route::get('contact',[\App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('contact');
     Route::get('contact/create',[\App\Http\Controllers\Admin\FeedbackController::class, 'showCreateForm'])->name('show.create.form');
     Route::post('contact/create',[\App\Http\Controllers\Admin\FeedbackController::class, 'addContactInfo'])->name('add.contact.info');
     Route::get('contact/edit/{id}',[\App\Http\Controllers\Admin\FeedbackController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('contact/edit',[\App\Http\Controllers\Admin\FeedbackController::class, 'editContactInfo'])->name('edit.contact.info');
     Route::post('contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'showContactPage'])->name('show.contact.page');
-
-
-    // Manage contacts
-    Route::get('contacts',[\App\Http\Controllers\Admin\ContactsController::class, 'index'])->name('contacts');
+    Route::post('delete-contact', [\App\Http\Controllers\Admin\FeedbackController::class, 'deleteContact'])->name('delete.contact');
 
 
     Route::get('volunteering',[\App\Http\Controllers\Admin\VolunteeringController::class, 'index'])->name('volunteering');
@@ -103,6 +104,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('volunteering/edit/{id}',[\App\Http\Controllers\Admin\VolunteeringController::class, 'showEditForm'])->name('show.edit.form');
     Route::post('volunteering/edit',[\App\Http\Controllers\Admin\VolunteeringController::class, 'editVolunteeringInfo'])->name('edit.volunteering.info');
     Route::post('volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'showVolunteeringPage'])->name('show.volunteering.page');
+    Route::post('delete-volunteering', [\App\Http\Controllers\Admin\VolunteeringController::class, 'deleteVolunteering'])->name('delete.volunteering');
+
 
     // Manage special-program-page-info
     Route::get('special-programs',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'index'])->name('special.programs');
@@ -113,6 +116,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('special-programs/edit',[\App\Http\Controllers\Admin\SpecialProgramsController::class, 'editSpecialProgramInfo'])->name('edit.SpecialProgram.info');
     Route::post('delete-special-program', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgram'])->name('delete.special.program');
     Route::post('delete-special-program-image', [\App\Http\Controllers\Admin\SpecialProgramsController::class, 'deleteSpecialProgramImage'])->name('delete.special.program.image');
+
+    //Our works
+    Route::get('our-works',[\App\Http\Controllers\Admin\OurWorkController::class, 'index'])->name('our.works');
+    Route::get('our-works/create',[\App\Http\Controllers\Admin\OurWorkController::class, 'showCreateForm'])->name('show.create.form');
+    Route::post('our-works/create',[\App\Http\Controllers\Admin\OurWorkController::class, 'addOurWorksInfo'])->name('add.our.works.info');
+    Route::get('our-works/edit/{id}',[\App\Http\Controllers\Admin\OurWorkController::class, 'showEditForm'])->name('show.edit.form');
+    Route::post('our-works/edit',[\App\Http\Controllers\Admin\OurWorkController::class, 'editOurWorksInfo'])->name('edit.our.works.info');
+    Route::post('our-works', [\App\Http\Controllers\Admin\OurWorkController::class, 'showOurWorksPage'])->name('show.our.works.page');
+    Route::post('delete-ourWorks', [\App\Http\Controllers\Admin\OurWorkController::class, 'deleteOurWorks'])->name('delete.our.works');
 
 });
 

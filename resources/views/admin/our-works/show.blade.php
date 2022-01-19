@@ -2,8 +2,7 @@
 @section('content')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{ asset('css/admin/media.css') }}">
-    <h2>Media Page</h2>
+    <h2>Volunteering Page</h2>
     <table class="table table-bordered border border-dark">
         <thead>
         <tr class="border">
@@ -15,18 +14,18 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($media as $data)
+        @foreach($ourWorks as $data)
             <tr class="tr border">
                 <th scope="row">{{ $data['id'] }}</th>
                 <td>{{ $data['title'] }}</td>
-                <td width="900px">{{ $data['description'] }}</td>
-                <td class="edit"><a href="{{ 'media/edit/' . $data['id'] }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
+                <td>{{ $data['description'] }}</td>
+                <td class="edit"><a href="{{ 'our-works/edit/' . $data['id'] }}"><button class="text-dark border-0"><i class="fal fa-edit"></i></button></a></td>
                 <td class="delete"><button class="border-0" ><i class="fas fa-trash"></i></button></td>
             </tr>
         @endforeach
         </tbody>
     </table>
-    <a class="btn btn-primary" href="media/create" role="button">Create New</a>
+    <a class="btn btn-primary" href="our-works/create" role="button">Create New</a>
 
     <div class="modal modal-windows" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -49,5 +48,5 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{ asset('js/media.js') }}"></script>
+    <script src="{{ asset('js/admin/our-works.js') }}"></script>
 @endsection

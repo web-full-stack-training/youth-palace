@@ -8,6 +8,7 @@
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" class="form-control" value="{{ (parse_url($action_url)['path'] === '/admin/collaboration/edit') ? $collaboration_data->name : '' }}">
+            <small class="text-danger">{{ $errors->first('title') }}</small>
         </div>
 
         <input type="file" class="form-control mt-3" name="image"  accept=".jpg, .jpeg, .png" value="Browse">

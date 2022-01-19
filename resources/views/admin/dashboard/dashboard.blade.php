@@ -3,11 +3,13 @@
     <link rel="stylesheet" href="{{ asset('css/adminDashboard.css') }}">
     <div class="dashboard-body d-flex flex-column justify-content-center align-items-center">
         <div class="contact d-flex">
-            <h2>{{ $contact->email }}</h2>
-            <h2>{{ $contact->telephone }}</h2>
-            <h2>{{ $contact->phone_number }}</h2>
-            <h2>{{ $contact->address }}</h2>
-            <a href="contact" class="edit-button btn btn-success"><h1>Edit Contacts</h1></a>
+            @if($contact)
+                <h2>{{ $contact->email }}</h2>
+                <h2>{{ $contact->telephone }}</h2>
+                <h2>{{ $contact->phone_number }}</h2>
+                <h2>{{ $contact->address }}</h2>
+                <a href="contact" class="edit-button btn btn-success"><h1>Edit Contacts</h1></a>
+            @endif
         </div>
 
         <hr>
@@ -42,29 +44,6 @@
                         <a href="special-programs/edit/{{ $data['id'] }}" class="edit-button btn mt-3 mx-0 px-2">Edit</a>
                     </div>
                 @endforeach
-
-{{--                <div class="text-center align-items-center ">--}}
-{{--                    @foreach($specialProgram as $data)--}}
-
-{{--                        <div class="container col-10 text-center align-items-center">--}}
-{{--                            <strong class="text-center mt-3">{{ $data['title'] }}</strong>--}}
-{{--                            <br>--}}
-{{--                            <p class="text-center mt-3 mx-5">{{ $data['description'] }}</p>--}}
-{{--                            <br>--}}
-{{--                        </div>--}}
-{{--                        @if($data['specialProgramImages'])--}}
-{{--                            @foreach($data['specialProgramImages'] as $dataImage)--}}
-{{--                                <img--}}
-{{--                                    src="{{ $dataImage['image_path'] }}"--}}
-{{--                                    class="w-25 shadow-1-strong rounded mb-1 photos"--}}
-{{--                                    alt="Special Programs "--}}
-{{--                                    data-image-id = {{ $dataImage['id'] }}--}}
-{{--                                />--}}
-{{--                            @endforeach--}}
-{{--                            <hr>--}}
-{{--                        @endif--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
             </div>
 
             <div class="collaboration-button flex-column justify-content-center align-items-center mt-3">

@@ -170,7 +170,7 @@
                                     {{ $data['title'] }}
                                 </h2>
                                 <p>
-                                    {{ $data['description'] }}
+                                    {{ mb_strimwidth($data['description'], 0, 210) }}
                                 </p>
                                 <button type="button">
                                     Read more
@@ -198,7 +198,11 @@
                         <div class="latest-news-first-part">
                             @foreach($latestNews as $data)
                                 <div class="col latest">
-                                    <img src="{{ $data['img_path'] }}" alt="">
+                                    <video width="200" height="200" controls>
+                                        <source src="{{ $data['video_path'] }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+
                                     <h3>
                                         {{ $data['title'] }}
                                     </h3>

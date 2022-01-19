@@ -8,6 +8,7 @@
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" class="form-control" value="{{ (parse_url($action_url)['path'] === '/admin/volunteering/edit') ? $volunteering_data->full_name : '' }}">
+            <small class="text-danger">{{ $errors->first('title') }}</small>
         </div>
         <input type="file" class="form-control mt-3" name="image"  accept=".jpg, .jpeg, .png">
         <button type="submit" class="btn btn-primary rounded-3 mt-3">{{ (parse_url($action_url)['path'] === '/admin/volunteering/edit') ? 'Save' : 'Creat' }}</button>
